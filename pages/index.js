@@ -17,37 +17,22 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+          <h2>예니의 페이지에 오신 것을 환영합니다!</h2>
         </p>
 
         <div className={styles.grid}>
+          <Image
+            src="/images/IMG_2089.JPG"
+            alt="Main Image"
+            width={300}
+            height={220}
+          />
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
         </div>
       </main>
-
-      <img src="/images/IMG_2089.JPG" style={{ width: "100%" }} />
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Created by Yeeun{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   );
 }

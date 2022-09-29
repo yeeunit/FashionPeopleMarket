@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/commons/layout/index.js",
-    "pages/_app.js"
+    "pages/_app.js",
+    "src/commons/styles/media.js"
   ],
   "exclude": ["node_modules"]
 }
