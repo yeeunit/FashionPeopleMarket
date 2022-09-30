@@ -35,7 +35,10 @@ export const Menu = styled.div`
   font-size: 1rem;
   margin-right: 1.5rem;
   /* line-height: 3rem; */
-  cursor: pointer;
+  :hover {
+    cursor: pointer;
+    color: #0070f3;
+  }
   @media ${breakPoints.mobile} {
     /* font-size: 0.8em;
     margin-right: 0.8em; */

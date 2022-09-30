@@ -12,15 +12,35 @@
   align-items: center;
   /* background-color: #82addb; */
 }
-
-.footer {
-  background-color: white;
+.middle {
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 30rem;
+  border: 1px solid gray;
+}
+.button {
+  background-color: #333;
+  color: white;
+  width: 11rem;
+  height: 3.3rem;
+  line-height: 3.3rem;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* flex: 1; */
+  background-color: #333;
+  color: white;
+  height: 44rem;
+  font-size: 4rem;
 }
 
 .footer a {
@@ -28,6 +48,18 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* flex: 1; */
+  background-color: #eee;
+  color: white;
+  height: 44rem;
+  font-size: 4rem;
 }
 
 .title a {

@@ -1,3 +1,4 @@
+import { Footer } from "antd/lib/layout/layout";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -33,6 +34,15 @@ export default function Home() {
           </a>
         </div>
       </main>
+
+      <div className={styles.middle}>
+        <div className={styles.button}> Contact with me</div>
+      </div>
+      <div className={styles.footer}>
+        Yeeunit's project is started.
+        <br /> Do not miss it!
+      </div>
+      <div className={styles.bottom}></div>
     </div>
   );
 }
