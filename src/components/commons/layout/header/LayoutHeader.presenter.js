@@ -17,14 +17,23 @@ export default function LayoutHeaderUI() {
           </A.Menu>
           <A.Menu>Market</A.Menu>
           <A.Menu>
-            {/* <Link href="/">My Page</Link>  */}
-            <a>My Page</a>
+            <Link href="/mypage">
+              <a>My Page</a>
+            </Link>
           </A.Menu>
         </A.MenuWrap>
 
         <A.LoginWrap>
-          <A.Login>Join</A.Login>
-          <A.Login>Login</A.Login>
+          <A.Login>
+            <Link href="/join">
+              <a>Join</a>
+            </Link>
+          </A.Login>
+          <A.Login>
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
+          </A.Login>
           {/* <A.Login>Logout</A.Login> */}
         </A.LoginWrap>
       </A.Wrapper>
