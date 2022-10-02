@@ -7,6 +7,8 @@ export const globalStyles = css`
     padding: 0;
     margin: 0;
     font-family: "One";
+    /* display: flex; */
+    /* justify-content: center; */
     /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   }
@@ -21,7 +23,16 @@ export const globalStyles = css`
       color: inherit;
       text-decoration: none;
     }
+    :link {
+      color: inherit;
+      text-decoration: none;
+    }
+    :visited {
+      color: inherit;
+      text-decoration: none;
+    }
   }
+
   @media ${breakPoints.tablet} {
   }
 

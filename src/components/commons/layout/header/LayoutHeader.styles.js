@@ -4,52 +4,63 @@ import { breakPoints } from "../../../../commons/styles/media";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   height: 4.4rem;
   line-height: 3.3rem;
-  padding: 0.5rem 5rem;
+  padding-top: 0.5rem;
   border-bottom: 1px solid gray;
-
-  @media ${breakPoints.tablet} {
-  }
+  /* background-color: yellow; */
 
   @media ${breakPoints.mobile} {
-    padding: 0.8em;
   }
 `;
 
-export const Logo = styled.h1`
-  width: 7rem;
-  cursor: pointer;
+export const LogoMenuWrap = styled.div`
+  display: flex;
+  width: 50rem;
+  width: 70%;
+  /* background-color: rebeccapurple; */
+`;
 
+export const Logo = styled.h1`
+  width: 9rem;
+  margin-left: 8rem;
+  height: 3.3rem;
+  cursor: pointer;
   /* background-color: yellow; */
+  @media ${breakPoints.mobile} {
+  }
 `;
 
 export const MenuWrap = styled.div`
   display: flex;
-  width: 70%;
+  width: 20rem;
+  width: 50%;
   /* background-color: aliceblue; */
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Menu = styled.div`
   font-size: 1rem;
   margin-right: 1.5rem;
-  /* line-height: 3rem; */
   :hover {
     cursor: pointer;
     color: #0070f3;
   }
   @media ${breakPoints.mobile} {
-    /* font-size: 0.8em;
-    margin-right: 0.8em; */
     display: none;
   }
 `;
 
 export const LoginWrap = styled.div`
   display: flex;
-  width: 15%;
+  justify-content: flex-end;
+  width: 20%;
   /* background-color: pink; */
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Login = styled.div`
