@@ -12,11 +12,13 @@ export default function BoardList() {
   };
 
   const { data, refetch } = useQuery(FETCH_BOARDS);
-  console.log("data: ", data);
+  // console.log("data: ", data);
   const router = useRouter();
 
   const onClickMoveToBoardDetail = (event) => {
-    router.push(`/boards/${event.target.boardId}`);
+    console.log("id: ", event.currentTarget.id);
+    router.push(`/boards/${event.currentTarget.id}`);
+    // 리스트 프리젠터에서 id를 지정해줘야함! event.target. 꼭 id 여야 하는가??
   };
 
   return (

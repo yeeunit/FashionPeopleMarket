@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { getDate } from "../../../../commons/libraries/utils";
 import * as A from "./BoardDetail.styles";
 
-export default function BoardDetailUI() {
+export default function BoardDetailUI(props) {
   return (
     <>
       <A.Wrapper>
@@ -9,7 +10,7 @@ export default function BoardDetailUI() {
 
         <A.TopWrapper>
           <A.ImageWrapper>
-            <A.BigImage />
+            <A.BigImage src={`${props.data?.fetchBoard?.images[0]}`} />
             <A.SmallImgWrap>
               <A.SmallImage />
               <A.SmallImage />
@@ -19,32 +20,47 @@ export default function BoardDetailUI() {
           <A.ContentsWrapper>
             <A.InputWrap>
               <A.Label>제목</A.Label>
-              <A.TextBox></A.TextBox>
+              <A.TextBox>{props.data?.fetchBoard?.title}</A.TextBox>
             </A.InputWrap>
 
+            <A.TextBox>
+              작성일 {getDate(props.data?.fetchBoard?.createdAt)}
+            </A.TextBox>
+            <A.TextBox>수정일{props.data?.fetchBoard?.updatedAt}</A.TextBox>
+
+            <A.InputWrap>
+              <A.Label>작성자</A.Label>
+              <A.TextBox>{props.data?.fetchBoard?.writer}</A.TextBox>
+            </A.InputWrap>
             <A.InputWrap>
               <A.Label>내용</A.Label>
-              <A.TextBox></A.TextBox>
+              <A.TextBox>{props.data?.fetchBoard?.contents}</A.TextBox>
             </A.InputWrap>
 
             <A.InputWrap>
               <A.Label>주소</A.Label>
-              <A.TextBox></A.TextBox>
+              <A.TextBox>
+                {props.data?.fetchBoard?.address}
+                {props.data?.fetchBoard?.addressDetail}
+              </A.TextBox>
             </A.InputWrap>
 
             <A.InputWrap>
               <A.Label>유튜브</A.Label>
-              <A.TextBox></A.TextBox>
+              <A.TextBox>{props.data?.fetchBoard?.youtubeUrl}</A.TextBox>
             </A.InputWrap>
+            <A.TextBox>좋아요{props.data?.fetchBoard?.likeCount}</A.TextBox>
+            <A.TextBox>싫어요{props.data?.fetchBoard?.dislikeCount}</A.TextBox>
           </A.ContentsWrapper>
         </A.TopWrapper>
 
         <A.BtnWrap>
-          <A.RegisterBtn>등록하기</A.RegisterBtn>
+          <A.RegisterBtn>수정하기</A.RegisterBtn>
+          <A.RegisterBtn onClick={props.onClickDelete}>삭제하기</A.RegisterBtn>
 
           <A.CancelBtn>
             <Link href="/boards">
-              <a>취소하기</a>
+              <a>목록으로</a>
             </Link>
           </A.CancelBtn>
         </A.BtnWrap>

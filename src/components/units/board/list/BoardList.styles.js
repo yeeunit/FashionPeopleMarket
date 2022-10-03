@@ -70,7 +70,7 @@ export const RowBody = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 2.2rem;
+  height: 2.5rem;
   line-height: 2.2rem;
   border-top: 1px solid gray;
 

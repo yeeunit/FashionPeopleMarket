@@ -1,5 +1,6 @@
 import { Link } from "@material-ui/core";
 import * as A from "./BoardList.styles";
+import { getDate } from "../../../../commons/libraries/utils";
 
 export default function BoardListUI(props) {
   return (
@@ -24,11 +25,15 @@ export default function BoardListUI(props) {
           </A.RowHeader>
 
           {props.data?.fetchBoards.map((el) => (
-            <A.RowBody key={el._id} onClick={props.onClickMoveToDetail}>
+            <A.RowBody
+              key={el._id}
+              id={el._id}
+              onClick={props.onClickMoveToBoardDetail}
+            >
               <A.ColumnText>{el.writer}</A.ColumnText>
               <A.ColumnText>{el.title}</A.ColumnText>
               <A.ColumnText>{el.contents}</A.ColumnText>
-              <A.ColumnText>{el.createdAt}</A.ColumnText>
+              <A.ColumnText> {getDate(el.createdAt)}</A.ColumnText>
               <A.ColumnText>{el.likeCount}</A.ColumnText>
             </A.RowBody>
           ))}
