@@ -1,3 +1,4 @@
+import Link from "next/link";
 import * as A from "./BoardWrite.styles";
 
 export default function BoardWriteUI() {
@@ -33,7 +34,11 @@ export default function BoardWriteUI() {
 
         <A.BtnWrap>
           <A.RegisterBtn>등록하기</A.RegisterBtn>
-          <A.CancelBtn>취소하기</A.CancelBtn>
+          <A.CancelBtn>
+            <Link href="/boards">
+              <a>취소하기</a>
+            </Link>
+          </A.CancelBtn>
         </A.BtnWrap>
       </A.Wrapper>
     </>

@@ -16,24 +16,23 @@ export default function BoardListUI(props) {
         <A.ListWrap>
           <A.TableTop />
           <A.RowHeader>
-            <A.ColumnTitle>작성자</A.ColumnTitle>
+            <A.ColumnTitle>글쓴이</A.ColumnTitle>
             <A.ColumnTitle>제목</A.ColumnTitle>
             <A.ColumnTitle>내용</A.ColumnTitle>
-            <A.ColumnTitle>날짜</A.ColumnTitle>
+            <A.ColumnTitle>작성일</A.ColumnTitle>
+            <A.ColumnTitle>좋아요</A.ColumnTitle>
           </A.RowHeader>
 
-          <A.RowBody>
-            <A.ColumnText>1</A.ColumnText>
-            <A.ColumnText>2</A.ColumnText>
-            <A.ColumnText>3</A.ColumnText>
-            <A.ColumnText>4</A.ColumnText>
-          </A.RowBody>
-          <A.RowBody>
-            <A.ColumnText>1</A.ColumnText>
-            <A.ColumnText>2</A.ColumnText>
-            <A.ColumnText>3</A.ColumnText>
-            <A.ColumnText>4</A.ColumnText>
-          </A.RowBody>
+          {props.data?.fetchBoards.map((el) => (
+            <A.RowBody key={el._id} onClick={props.onClickMoveToDetail}>
+              <A.ColumnText>{el.writer}</A.ColumnText>
+              <A.ColumnText>{el.title}</A.ColumnText>
+              <A.ColumnText>{el.contents}</A.ColumnText>
+              <A.ColumnText>{el.createdAt}</A.ColumnText>
+              <A.ColumnText>{el.likeCount}</A.ColumnText>
+            </A.RowBody>
+          ))}
+
           <A.TableBottom />
         </A.ListWrap>
 
