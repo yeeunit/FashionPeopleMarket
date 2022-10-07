@@ -4,7 +4,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useState } from "react";
 
-export default function MarketListUI() {
+export default function MarketListUI(props) {
   const [alignment, setAlignment] = useState("left");
   const handleAlignment = (event, newAlignment) => {
     if (newAlignment !== null) {
@@ -47,9 +47,23 @@ export default function MarketListUI() {
         </A.ButtonWrap>
 
         <A.ContentsWrap>
-          <A.OneBoxWrap>
-            <A.Image />
-          </A.OneBoxWrap>
+          {props.data?.fetchUseditems.map((el) => (
+            <A.OneBoxWrap
+              key={el._id}
+              id={el._id}
+              onClick={props.onClickMoveToBoardDetail}
+            >
+              <A.Image />
+              {el.name}
+              {el.remakrs}
+              {el.contents}
+              {el.price}
+              {el.tags}
+              {el.createdAt}
+              {el.seller}
+            </A.OneBoxWrap>
+          ))}
+
           <A.OneBoxWrap></A.OneBoxWrap>
           <A.OneBoxWrap></A.OneBoxWrap>
           <A.OneBoxWrap></A.OneBoxWrap>
