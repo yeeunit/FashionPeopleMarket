@@ -1,18 +1,28 @@
 import Link from "next/link";
 import * as A from "./BoardWrite.styles";
 
-export default function BoardWriteUI() {
+export default function BoardWriteUI(props) {
   return (
     <>
       <A.Wrapper>
         <A.Title>글쓰기</A.Title>
         <A.InputWrap>
+          <A.Label>작성자</A.Label>
+          <A.Input type="text" onChange={props.onChangeWriter} />
+        </A.InputWrap>
+
+        <A.InputWrap>
+          <A.Label>비밃번호</A.Label>
+          <A.Input type="text" onChange={props.onChangePassword} />
+        </A.InputWrap>
+
+        <A.InputWrap>
           <A.Label>제목</A.Label>
-          <A.Input type="text" />
+          <A.Input type="text" onChange={props.onChangeTitle} />
         </A.InputWrap>
         <A.InputWrap>
           <A.Label>내용</A.Label>
-          <A.Input type="text" />
+          <A.Input type="text" onChange={props.onChangeContents} />
         </A.InputWrap>
         <A.InputWrap>
           <A.Label>주소</A.Label>
@@ -33,7 +43,9 @@ export default function BoardWriteUI() {
         </A.InputWrap>
 
         <A.BtnWrap>
-          <A.RegisterBtn>등록하기</A.RegisterBtn>
+          <A.RegisterBtn onClick={props.onClickRegister}>
+            등록하기
+          </A.RegisterBtn>
           <A.CancelBtn>
             <Link href="/boards">
               <a>취소하기</a>
