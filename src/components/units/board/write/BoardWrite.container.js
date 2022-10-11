@@ -12,6 +12,8 @@ export default function BoardWrite() {
   const [contents, setContents] = useState("");
   // const [youtubeUrl, setYoutubeUrl] = useState("")
 
+  const [emailError, setEmailError] = useState("");
+
   function onChangeWriter(event) {
     setWriter(event.target.value);
   }
@@ -28,12 +30,25 @@ export default function BoardWrite() {
     setContents(event.target.value);
   }
 
-  function onClickRegister() {
-    console.log(writer);
-    console.log(password);
-    console.log(title);
-    console.log(contents);
-  }
+  const onClickRegister = async () => {
+    // console.log(email);
+
+    // if (email.includes("@") === false) {
+    //   setEmailError("이메일이 올바르지 않습니다.");
+    // } else {
+    //   alert("회원가입 완료");
+    // }
+
+    const result = await createBoard({
+      variables: {
+        writer: "라이터",
+        title: "타이틀",
+        contents: "콘텐츠",
+      },
+    });
+    console.log(result);
+    console.log(result.data.createBoard.message);
+  };
 
   return (
     <>
