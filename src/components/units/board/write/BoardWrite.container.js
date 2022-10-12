@@ -1,9 +1,11 @@
 import { useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { CREATE_BOARD } from "./BoardWrite.queries";
 
 export default function BoardWrite() {
+  const router = useRouter();
   const [createBoard] = useMutation(CREATE_BOARD);
 
   const [writer, setWriter] = useState("");
@@ -14,40 +16,40 @@ export default function BoardWrite() {
 
   const [emailError, setEmailError] = useState("");
 
-  function onChangeWriter(event) {
-    setWriter(event.target.value);
-  }
-
-  function onChangePassword(event) {
-    setPassword(event.target.value);
-  }
-
-  function onChangeTitle(event) {
-    setTitle(event.target.value);
-  }
-
-  function onChangeContents(event) {
-    setContents(event.target.value);
-  }
-
   const onClickRegister = async () => {
-    // console.log(email);
+    try {
+      const result = await createBoard({
+        variables: {
+          writer: writer,
+          password: password,
+          title: title,
+          contents: contents,
+        },
+      });
+      router.push(`/boards/${result.data.createBoard._id}`);
+      console.log(result);
+      console.log(result.data.createBoard.message);
+      console.log(result.data.createBoard._id);
+    } catch (error) {
+      console.log(error.message);
+      alert("실패");
+    }
+  };
 
-    // if (email.includes("@") === false) {
-    //   setEmailError("이메일이 올바르지 않습니다.");
-    // } else {
-    //   alert("회원가입 완료");
-    // }
+  const onChangeWriter = (event) => {
+    setWriter(event.target.value);
+  };
 
-    const result = await createBoard({
-      variables: {
-        writer: "라이터",
-        title: "타이틀",
-        contents: "콘텐츠",
-      },
-    });
-    console.log(result);
-    console.log(result.data.createBoard.message);
+  const onChangePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const onChangeTitle = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const onChangeContents = (event) => {
+    setContents(event.target.value);
   };
 
   return (
