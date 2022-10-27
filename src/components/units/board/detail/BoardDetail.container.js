@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
-import { message } from "antd";
+import { message, Modal } from "antd";
 import { useRouter } from "next/router";
 import BoardDetailUI from "./BoardDetail.presenter";
 import { DELETE_BOARD, FETCH_BOARD } from "./BoardDetail.queries";
@@ -28,9 +28,17 @@ export default function BoardDetail() {
     }
   };
 
+  const onClickTestBtn = () => {
+    Modal.success({ content: "게시글 등록에 성공했습니다!!" });
+  };
+
   return (
     <>
-      <BoardDetailUI data={data} onClickDelete={onClickDelete} />
+      <BoardDetailUI
+        data={data}
+        onClickDelete={onClickDelete}
+        onClickTestBtn={onClickTestBtn}
+      />
     </>
   );
 }

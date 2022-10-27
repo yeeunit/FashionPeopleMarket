@@ -52,6 +52,22 @@ export default function BoardWrite() {
     setContents(event.target.value);
   };
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [address, setAddress] = useState("");
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+  const onChangeAddress = (event) => {
+    setAddress(event.target.value);
+  };
+
   return (
     <>
       <BoardWriteUI
@@ -60,6 +76,12 @@ export default function BoardWrite() {
         onChangeTitle={onChangeTitle}
         onChangeContents={onChangeContents}
         onClickRegister={onClickRegister}
+        //
+        showModal={showModal}
+        isModalVisible={isModalVisible}
+        handleOk={handleOk}
+        handleCancel={handleCancel}
+        onChangeAddress={onChangeAddress}
       />
     </>
   );

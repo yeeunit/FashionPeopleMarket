@@ -38,7 +38,7 @@ export const globalStyles = css`
 
   @media ${breakPoints.mobile} {
   }
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     html {
       color-scheme: dark;
     }
@@ -46,7 +46,7 @@ export const globalStyles = css`
       color: white;
       background: black;
     }
-  }
+  } */
 
   @font-face {
     font-family: "One";

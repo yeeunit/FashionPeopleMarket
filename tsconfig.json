@@ -21,7 +21,11 @@
     "**/*.tsx",
     "src/components/commons/layout/index.js",
     "pages/_app.js",
-    "src/commons/styles/media.js"
+    "src/commons/styles/media.js",
+    "src/components/units/upload/upload.queries.js",
+    "src/components/units/upload/upload.presenter.js",
+    "src/components/units/upload/upload.container.js",
+    "src/components/units/upload/upload.styles.js"
   ],
   "exclude": ["node_modules"]
 }

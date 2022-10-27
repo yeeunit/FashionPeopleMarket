@@ -1,3 +1,4 @@
+import { Modal } from "antd";
 import Link from "next/link";
 import * as A from "./BoardWrite.styles";
 
@@ -27,7 +28,17 @@ export default function BoardWriteUI(props) {
         <A.InputWrap>
           <A.Label>주소</A.Label>
           <A.Zipcode type="text" />
-          <A.AddressBtn>우편번호 검색</A.AddressBtn>
+          <A.AddressBtn onClick={props.showModal}>우편번호 검색</A.AddressBtn>
+
+          <Modal
+            title="모달 제목"
+            visible={props.isModalVisible}
+            onOk={props.handleOk}
+            onCancel={props.handleCancel}
+          >
+            우편번호 입력:{" "}
+            <input type="text" onChange={props.onChangeAddress} />
+          </Modal>
         </A.InputWrap>
         <A.InputWrap>
           <A.Label></A.Label>

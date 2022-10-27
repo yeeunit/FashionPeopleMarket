@@ -7,7 +7,6 @@ export default function BoardDetailUI(props) {
     <>
       <A.Wrapper>
         <A.Title>상세보기</A.Title>
-
         <A.TopWrapper>
           <A.ImageWrapper>
             <A.BigImage src={`${props.data?.fetchBoard?.images[0]}`} />
@@ -53,7 +52,6 @@ export default function BoardDetailUI(props) {
             <A.TextBox>싫어요{props.data?.fetchBoard?.dislikeCount}</A.TextBox>
           </A.ContentsWrapper>
         </A.TopWrapper>
-
         <A.BtnWrap>
           <A.RegisterBtn>수정하기</A.RegisterBtn>
           <A.RegisterBtn onClick={props.onClickDelete}>삭제하기</A.RegisterBtn>
@@ -64,6 +62,7 @@ export default function BoardDetailUI(props) {
             </Link>
           </A.CancelBtn>
         </A.BtnWrap>
+        <button onClick={props.onClickTestBtn}>test1</button>
       </A.Wrapper>
     </>
   );
