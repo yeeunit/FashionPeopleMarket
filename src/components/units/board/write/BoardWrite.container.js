@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import BoardWriteUI from "./BoardWrite.presenter";
@@ -26,13 +27,15 @@ export default function BoardWrite() {
           contents: contents,
         },
       });
-      router.push(`/boards/${result.data.createBoard._id}`);
       console.log(result);
+      Modal.success({ content: "게시글 등록에 성공했습니다" });
+      router.push(`/boards/${result.data.createBoard._id}`);
+
       console.log(result.data.createBoard.message);
       console.log(result.data.createBoard._id);
     } catch (error) {
       console.log(error.message);
-      alert("실패");
+      Modal.error({ content: "등록 실패!!" });
     }
   };
 
@@ -56,14 +59,14 @@ export default function BoardWrite() {
   const [address, setAddress] = useState("");
 
   const showModal = () => {
-    setIsModalVisible(true);
+    setIsModalVisible((prev) => !prev);
   };
-  const handleOk = () => {
+
+  const onCompletePostcode = (data) => {
+    console.log(data);
     setIsModalVisible(false);
   };
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
+
   const onChangeAddress = (event) => {
     setAddress(event.target.value);
   };
@@ -79,8 +82,7 @@ export default function BoardWrite() {
         //
         showModal={showModal}
         isModalVisible={isModalVisible}
-        handleOk={handleOk}
-        handleCancel={handleCancel}
+        onCompletePostcode={onCompletePostcode}
         onChangeAddress={onChangeAddress}
       />
     </>

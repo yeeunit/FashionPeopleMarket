@@ -95,7 +95,19 @@ export const BottomWrap = styled.div`
 
   /* background-color: white; */
 `;
-
+export const Pagination = styled.div`
+  display: flex;
+  /* justify-content: center; */
+  margin-top: 1rem;
+  span {
+    cursor: pointer;
+    margin: 0.5rem;
+    font-size: 0.7rem;
+    :hover {
+      color: blue;
+    }
+  }
+`;
 export const WriteBtn = styled.button`
   width: 6.6rem;
   height: 2.2rem;

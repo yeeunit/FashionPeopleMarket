@@ -1,6 +1,7 @@
 import { Modal } from "antd";
 import Link from "next/link";
 import * as A from "./BoardWrite.styles";
+import DaumPostcodeEmbed from "react-daum-postcode";
 
 export default function BoardWriteUI(props) {
   return (
@@ -13,7 +14,7 @@ export default function BoardWriteUI(props) {
         </A.InputWrap>
 
         <A.InputWrap>
-          <A.Label>비밃번호</A.Label>
+          <A.Label>비밀번호</A.Label>
           <A.Input type="text" onChange={props.onChangePassword} />
         </A.InputWrap>
 
@@ -30,15 +31,16 @@ export default function BoardWriteUI(props) {
           <A.Zipcode type="text" />
           <A.AddressBtn onClick={props.showModal}>우편번호 검색</A.AddressBtn>
 
-          <Modal
-            title="모달 제목"
-            visible={props.isModalVisible}
-            onOk={props.handleOk}
-            onCancel={props.handleCancel}
-          >
-            우편번호 입력:{" "}
-            <input type="text" onChange={props.onChangeAddress} />
-          </Modal>
+          {props.isModalVisible && (
+            <Modal
+              // title="모달 제목"
+              visible={props.isModalVisible}
+              onOk={props.showModal}
+              onCancel={props.showModal}
+            >
+              <DaumPostcodeEmbed onComplete={props.onCompletePostcode} />
+            </Modal>
+          )}
         </A.InputWrap>
         <A.InputWrap>
           <A.Label></A.Label>

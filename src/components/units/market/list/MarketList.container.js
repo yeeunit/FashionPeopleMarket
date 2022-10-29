@@ -4,9 +4,31 @@ import MarketListUI from "./MarketList.presenter";
 import { FETCH_USED_ITEMS } from "./MarketList.queries";
 
 export default function MarketList() {
+  const router = useRouter();
+
   const { data, refetch } = useQuery(FETCH_USED_ITEMS);
   console.log("data: ", data);
-  const router = useRouter();
+
+  const { data: data2, fetchMore } = useQuery(FETCH_USED_ITEMS);
+
+  const onFetchMore = () => {
+    if (!data2) return;
+
+    fetchMore({
+      variables: { page: Math.ceil(data2?.fetchUseditems.length / 10) + 1 },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        if (!fetchMoreResult.fetchUseditems)
+          return { fetchUseditems: [...prev.fetchUseditems] };
+
+        return {
+          fetchUseditems: [
+            ...prev.fetchUseditems,
+            fetchMoreResult.fetchUseditems,
+          ],
+        };
+      },
+    });
+  };
 
   const onClickMoveToBoardDetail = (event) => {
     console.log("id: ", event.currentTarget.id);
@@ -18,6 +40,7 @@ export default function MarketList() {
       <MarketListUI
         data={data}
         refetch={refetch}
+        onFetchMore={onFetchMore}
         onClickMoveToBoardDetail={onClickMoveToBoardDetail}
       />
     </>

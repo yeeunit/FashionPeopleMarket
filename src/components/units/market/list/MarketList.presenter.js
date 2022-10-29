@@ -3,6 +3,7 @@ import * as A from "./MarketList.styles";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useState } from "react";
+import InfiniteScroll from "react-infinite-scroller";
 
 export default function MarketListUI(props) {
   const [alignment, setAlignment] = useState("left");
@@ -46,37 +47,32 @@ export default function MarketListUI(props) {
           </A.WriteBtn>
         </A.ButtonWrap>
 
-        <A.ContentsWrap>
-          {props.data?.fetchUseditems.map((el) => (
-            <A.OneBoxWrap
-              key={el._id}
-              id={el._id}
-              onClick={props.onClickMoveToBoardDetail}
-            >
-              <A.Image />
-              {el.name}
-              {el.remakrs}
-              {el.contents}
-              {el.price}
-              {el.tags}
-              {el.createdAt}
-              {el.seller}
-            </A.OneBoxWrap>
-          ))}
+        <InfiniteScroll
+          pageStart={0}
+          loadMore={props.onFetchMore}
+          hasMore={true}
+        >
+          <A.ContentsWrap>
+            {props.data?.fetchUseditems.map((el) => (
+              <A.OneBoxWrap
+                key={el._id}
+                id={el._id}
+                onClick={props.onClickMoveToBoardDetail}
+              >
+                <A.Image />
+                {el.name}
+                {el.remakrs}
+                {el.contents}
+                {el.price}
+                {el.tags}
+                {el.createdAt}
+                {el.seller}
+              </A.OneBoxWrap>
+            )) || ""}
 
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-          <A.OneBoxWrap></A.OneBoxWrap>
-        </A.ContentsWrap>
+            {/* <A.OneBoxWrap></A.OneBoxWrap> */}
+          </A.ContentsWrap>
+        </InfiniteScroll>
       </A.Wrapper>
     </>
   );

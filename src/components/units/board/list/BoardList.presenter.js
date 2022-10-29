@@ -41,6 +41,20 @@ export default function BoardListUI(props) {
           <A.TableBottom />
         </A.ListWrap>
 
+        <A.Pagination>
+          <span onClick={props.onClickPrevPage}>&lt;</span>
+          {new Array(10).fill(1).map((_, index) => (
+            <span
+              key={index + props.startPage}
+              id={String(index + props.startPage)}
+              onClick={props.onClickPage}
+            >
+              {index + props.startPage}
+            </span>
+          ))}
+          <span onClick={props.onClickNextPage}>&gt;</span>
+        </A.Pagination>
+
         <A.BottomWrap>
           <A.WriteBtn>
             <Link href="/boards/new">
