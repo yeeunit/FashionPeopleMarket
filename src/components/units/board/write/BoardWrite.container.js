@@ -1,11 +1,14 @@
 import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { UPLOAD_FILE } from "../../../commons/uploads/01/Upload.queries";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { CREATE_BOARD } from "./BoardWrite.queries";
 
 export default function BoardWrite() {
+  const fileRef = useRef(null);
+
   const router = useRouter();
   const [createBoard] = useMutation(CREATE_BOARD);
 
@@ -14,6 +17,8 @@ export default function BoardWrite() {
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
   // const [youtubeUrl, setYoutubeUrl] = useState("")
+  const [imageUrl, setImageUrl] = useState();
+  const [uploadFile] = useMutation(UPLOAD_FILE);
 
   const [emailError, setEmailError] = useState("");
 
@@ -25,6 +30,7 @@ export default function BoardWrite() {
           password: password,
           title: title,
           contents: contents,
+          images: [imageUrl],
         },
       });
       console.log(result);
@@ -55,6 +61,22 @@ export default function BoardWrite() {
     setContents(event.target.value);
   };
 
+  const onChangeFile = async (event) => {
+    const file = event.target.files?.[0];
+    console.log(file);
+
+    try {
+      const result = await uploadFile({ variables: { file } });
+      setImageUrl(result.data.uploadFile.url);
+    } catch (error) {
+      Modal.error({ content: "에러발생" });
+    }
+  };
+
+  const onClickImage = () => {
+    fileRef.current?.click();
+  };
+
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [address, setAddress] = useState("");
 
@@ -79,6 +101,10 @@ export default function BoardWrite() {
         onChangeTitle={onChangeTitle}
         onChangeContents={onChangeContents}
         onClickRegister={onClickRegister}
+        onChangeFile={onChangeFile}
+        onClickImage={onClickImage}
+        fileRef={fileRef}
+        imageUrl={imageUrl}
         //
         showModal={showModal}
         isModalVisible={isModalVisible}

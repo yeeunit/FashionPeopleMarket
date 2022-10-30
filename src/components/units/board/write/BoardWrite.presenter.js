@@ -52,7 +52,14 @@ export default function BoardWriteUI(props) {
         </A.InputWrap>
         <A.InputWrap>
           <A.Label>사진 첨부</A.Label>
-          <A.Input type="text" />
+          <A.ImageUploadBtn onClick={props.onClickImage}>+</A.ImageUploadBtn>
+          <A.ImageHide
+            type="file"
+            ref={props.fileRef}
+            onChange={props.onChangeFile}
+            // accept="image/jpeg"
+          />
+          <img src={`https://storage.googleapis.com/${props.imageUrl}`} />
         </A.InputWrap>
 
         <A.BtnWrap>

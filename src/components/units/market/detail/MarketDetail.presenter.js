@@ -1,5 +1,6 @@
 import Link from "next/link";
 import * as A from "./MarketDetail.styles";
+import ReactPlayer from "react-player";
 
 export default function MarketDetailUI() {
   return (
@@ -35,6 +36,7 @@ export default function MarketDetailUI() {
             <A.InputWrap>
               <A.Label>유튜브</A.Label>
               <A.TextBox></A.TextBox>
+              <ReactPlayer url="https://www.youtube.com/watch?v=hnanNlDbsE4"></ReactPlayer>
             </A.InputWrap>
           </A.ContentsWrapper>
         </A.TopWrapper>
