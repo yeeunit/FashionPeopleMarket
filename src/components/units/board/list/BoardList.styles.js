@@ -15,7 +15,7 @@ export const Title = styled.div`
 export const SearchBarWrap = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-right: 10%;
   height: 3rem;
   margin: 1rem 0;
@@ -31,6 +31,16 @@ export const SearchBar = styled.input`
   font-size: 0.7rem;
 `;
 
+export const SearchBtn = styled.div`
+  height: 2.2rem;
+  width: 3.3rem;
+  margin-left: 0.5rem;
+  line-height: 2.2rem;
+  text-align: center;
+  border: 1px solid #555;
+  background-color: #ccc;
+  cursor: pointer;
+`;
 export const ColorChange = styled.div`
   color: ${(props) => (props.isTrue ? "red" : "blue")};
   cursor: pointer;

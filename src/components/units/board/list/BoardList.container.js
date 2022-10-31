@@ -3,25 +3,40 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import BoardListUI from "./BoardList.presenter";
 import { FETCH_BOARDS, FETCH_BOARDS_COUNT } from "./BoardList.queries";
+import _ from "lodash";
 
 export default function BoardList() {
   const router = useRouter();
 
   const [isTrue, setIsTrue] = useState(false);
   const [startPage, setStartPage] = useState(1);
-
-  const handleOnClick = () => {
-    setIsTrue((prev) => !prev);
-  };
+  const [keyword, setKeyword] = useState("");
 
   const { data, refetch } = useQuery(FETCH_BOARDS);
   // console.log("data: ", data);
+
+  const getDebounce = _.debounce((value) => {
+    refetch({ search: value, page: 1 });
+    setKeyword(value);
+  }, 1000);
 
   const { data: dataBoardsCount } = useQuery(FETCH_BOARDS_COUNT);
 
   const lastPage = dataBoardsCount
     ? Math.ceil(dataBoardsCount?.fetchBoardsCount / 10)
     : 0;
+
+  const handleOnClick = () => {
+    setIsTrue((prev) => !prev);
+  };
+
+  const onChangeSearch = (event) => {
+    getDebounce(event.target.value);
+  };
+
+  // const onClickSearch = () => {
+  //   refetch({ search, page: 1 });
+  // };
 
   const onClickMoveToBoardDetail = (event) => {
     console.log("id: ", event.currentTarget.id);
@@ -53,6 +68,8 @@ export default function BoardList() {
       data={data}
       onClickPage={onClickPage}
       startPage={startPage}
+      onChangeSearch={onChangeSearch}
+      keyword={keyword}
       onClickPrevPage={onClickPrevPage}
       onClickNextPage={onClickNextPage}
       refetch={refetch}

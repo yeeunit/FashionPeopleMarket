@@ -1,6 +1,7 @@
 import { Link } from "@material-ui/core";
 import * as A from "./BoardList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
+import { v4 as uuidv4 } from "uuid";
 
 export default function BoardListUI(props) {
   return (
@@ -11,7 +12,12 @@ export default function BoardListUI(props) {
           클릭하면 색변경!
         </A.ColorChange>
         <A.SearchBarWrap>
-          <A.SearchBar type="text" placeholder="검색어를 입력해 주세요" />
+          <A.SearchBar
+            type="text"
+            placeholder="검색어를 입력해 주세요"
+            onChange={props.onChangeSearch}
+          />
+          {/* <A.SearchBtn onClick={props.onClickSearch}>검색</A.SearchBtn> */}
         </A.SearchBarWrap>
 
         <A.ListWrap>
@@ -31,7 +37,19 @@ export default function BoardListUI(props) {
               onClick={props.onClickMoveToBoardDetail}
             >
               <A.ColumnText>{el.writer}</A.ColumnText>
-              <A.ColumnText>{el.title}</A.ColumnText>
+              <A.ColumnText>
+                {el.title
+                  .replaceAll(props.keyword, `#$%${props.keyword}#$%`)
+                  .split("#$%")
+                  .map((el) => (
+                    <span
+                      key={uuidv4()}
+                      style={{ color: props.keyword === el ? "red" : "black" }}
+                    >
+                      {el}
+                    </span>
+                  ))}
+              </A.ColumnText>
               <A.ColumnText>{el.contents}</A.ColumnText>
               <A.ColumnText> {getDate(el.createdAt)}</A.ColumnText>
               <A.ColumnText>{el.likeCount}</A.ColumnText>
