@@ -6,6 +6,7 @@ import Layout from "../src/components/commons/layout";
 // import { AppProps } from "next/app";
 import "../styles/globals.css";
 import "antd/dist/antd.css";
+import { RecoilRoot } from "recoil";
 
 function MyApp({ Component, pageProps }) {
   const client = new ApolloClient({
@@ -14,12 +15,14 @@ function MyApp({ Component, pageProps }) {
   });
 
   return (
-    <ApolloProvider client={client}>
-      <Global styles={globalStyles} />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ApolloProvider>
+    <RecoilRoot>
+      <ApolloProvider client={client}>
+        <Global styles={globalStyles} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ApolloProvider>
+    </RecoilRoot>
   );
 }
 
