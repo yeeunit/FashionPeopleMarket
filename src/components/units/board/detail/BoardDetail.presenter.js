@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getDate } from "../../../../commons/libraries/utils";
 import * as A from "./BoardDetail.styles";
+import ReactPlayer from "react-player";
 
 export default function BoardDetailUI(props) {
   return (
@@ -47,6 +48,7 @@ export default function BoardDetailUI(props) {
             <A.InputWrap>
               <A.Label>유튜브</A.Label>
               <A.TextBox>{props.data?.fetchBoard?.youtubeUrl}</A.TextBox>
+              <ReactPlayer url="https://www.youtube.com/watch?v=hnanNlDbsE4"></ReactPlayer>
             </A.InputWrap>
             <A.TextBox>좋아요{props.data?.fetchBoard?.likeCount}</A.TextBox>
             <A.TextBox>싫어요{props.data?.fetchBoard?.dislikeCount}</A.TextBox>

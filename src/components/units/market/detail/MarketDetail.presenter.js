@@ -1,8 +1,8 @@
 import Link from "next/link";
 import * as A from "./MarketDetail.styles";
-import ReactPlayer from "react-player";
+import Dompurify from "dompurify";
 
-export default function MarketDetailUI() {
+export default function MarketDetailUI(props) {
   return (
     <>
       <A.Wrapper>
@@ -19,12 +19,41 @@ export default function MarketDetailUI() {
           </A.ImageWrapper>
           <A.ContentsWrapper>
             <A.InputWrap>
-              <A.Label>제목</A.Label>
+              <A.Label>상품명</A.Label>
+              <A.TextBox>{props.data?.props.data.fetchUseditem.name}</A.TextBox>
+            </A.InputWrap>
+
+            <A.InputWrap>
+              <A.Label>한줄 설명</A.Label>
               <A.TextBox></A.TextBox>
             </A.InputWrap>
 
             <A.InputWrap>
               <A.Label>내용</A.Label>
+              <A.TextBox> </A.TextBox>
+              {typeof window !== "undefined" && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: Dompurify.sanitize(
+                      props.data?.fetchUseditem.contents
+                    ),
+                  }}
+                ></div>
+              )}
+            </A.InputWrap>
+
+            <A.InputWrap>
+              <A.Label>가격</A.Label>
+              <A.TextBox></A.TextBox>
+            </A.InputWrap>
+
+            <A.InputWrap>
+              <A.Label>태그</A.Label>
+              <A.TextBox></A.TextBox>
+            </A.InputWrap>
+
+            <A.InputWrap>
+              <A.Label>이미지</A.Label>
               <A.TextBox></A.TextBox>
             </A.InputWrap>
 
@@ -34,9 +63,8 @@ export default function MarketDetailUI() {
             </A.InputWrap>
 
             <A.InputWrap>
-              <A.Label>유튜브</A.Label>
+              <A.Label>판매자</A.Label>
               <A.TextBox></A.TextBox>
-              <ReactPlayer url="https://www.youtube.com/watch?v=hnanNlDbsE4"></ReactPlayer>
             </A.InputWrap>
           </A.ContentsWrapper>
         </A.TopWrapper>

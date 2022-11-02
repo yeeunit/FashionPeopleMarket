@@ -20,9 +20,24 @@ export const InputWrap = styled.div`
 `;
 
 export const Label = styled.div`
-  width: 7.7rem;
+  width: 12rem;
   height: 2rem;
   font-size: 1.2rem;
   font-weight: bold;
   /* background-color: pink; */
+`;
+export const InputBox = styled.input`
+  border: 1px solid red;
+  width: 22rem;
+`;
+
+export const RegisterBtn = styled.button`
+  width: 7rem;
+  height: 3.3rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #555;
+  color: white;
+
+  cursor: pointer;
 `;
