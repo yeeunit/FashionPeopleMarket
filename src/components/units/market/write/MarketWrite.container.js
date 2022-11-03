@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 import { CREATE_USED_ITEM } from "./MarketWrite.queries";
+import { useState } from "react";
 
 const schema = yup.object({
   name: yup.string().required("상품명을 입력하세요"),
@@ -26,6 +27,11 @@ export default function MarketWrite() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+
+  // const [imageUrls, setImageUrls] = useState(["", "", ""])
+  // const [files, setFiles] = useState([])
+
+  // const [uploadFile] = useMutation(UPLOAD_FILE)
 
   const onChangeContents = (value) => {
     console.log(value);
