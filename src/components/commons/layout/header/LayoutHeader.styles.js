@@ -16,9 +16,8 @@ export const Wrapper = styled.div`
 
 export const LogoMenuWrap = styled.div`
   display: flex;
-  width: 50rem;
   width: 70%;
-  /* background-color: rebeccapurple; */
+  background-color: rebeccapurple;
 `;
 
 export const Logo = styled.h1`

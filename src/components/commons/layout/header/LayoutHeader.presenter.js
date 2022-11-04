@@ -32,12 +32,27 @@ export default function LayoutHeaderUI() {
         <A.LoginWrap>
           <A.Login>
             <Link href="/join">
-              <a>Join</a>
+              <a>회원가입</a>
             </Link>
           </A.Login>
           <A.Login>
             <Link href="/login">
-              <a>Login</a>
+              <a>로그인</a>
+            </Link>
+          </A.Login>
+          <A.Login>
+            <Link href="/login">
+              <a>로그아웃</a>
+            </Link>
+          </A.Login>
+          <A.Login>
+            <Link href="/login">
+              <a>충전</a>
+            </Link>
+          </A.Login>
+          <A.Login>
+            <Link href="/login">
+              <a>장바구니</a>
             </Link>
           </A.Login>
           {/* <A.Login>Logout</A.Login> */}

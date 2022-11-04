@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 export const Title = styled.h1``;
 
 export const InputWrap = styled.div`
-  padding: 0.7rem;
+  padding-top: 1rem;
   display: flex;
 `;
 
@@ -21,6 +21,14 @@ export const Label = styled.div`
 export const InputBox = styled.input`
   width: 15rem;
   height: 2rem;
+`;
+
+export const Error = styled.span`
+  color: tomato;
+  width: 20rem;
+  padding-left: 5.5rem;
+  padding-top: 0.3rem;
+  font-size: 0.7rem;
 `;
 
 export const LoginBtn = styled.div`

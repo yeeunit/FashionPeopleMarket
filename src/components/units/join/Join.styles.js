@@ -10,17 +10,28 @@ export const Wrapper = styled.div`
 export const Title = styled.h1``;
 
 export const InputWrap = styled.div`
-  padding: 1rem;
+  padding-top: 1rem;
   display: flex;
+  /* background-color: aliceblue; */
 `;
 
 export const Label = styled.div`
-  width: 5rem;
+  width: 6.6rem;
 `;
 
 export const InputBox = styled.input`
-  width: 18rem;
+  width: 20rem;
   height: 2.2rem;
+  padding-left: 1rem;
+  font-size: 0.7rem;
+`;
+
+export const Error = styled.span`
+  color: tomato;
+  width: 20rem;
+  padding-left: 3.3rem;
+  padding-top: 0.3rem;
+  font-size: 0.7rem;
 `;
 
 export const JoinBtn = styled.div`
