@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
 export const LogoMenuWrap = styled.div`
   display: flex;
   width: 70%;
-  background-color: rebeccapurple;
+  /* background-color: rebeccapurple; */
 `;
 
 export const Logo = styled.h1`
@@ -32,7 +32,6 @@ export const Logo = styled.h1`
 
 export const MenuWrap = styled.div`
   display: flex;
-  width: 20rem;
   width: 50%;
   /* background-color: aliceblue; */
   @media ${breakPoints.mobile} {
@@ -55,7 +54,7 @@ export const Menu = styled.div`
 export const LoginWrap = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 20%;
+  width: 30%;
   /* background-color: pink; */
   @media ${breakPoints.mobile} {
     display: none;
@@ -63,7 +62,7 @@ export const LoginWrap = styled.div`
 `;
 
 export const Login = styled.div`
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 200;
   margin-right: 0.8rem;
   line-height: 3rem;
