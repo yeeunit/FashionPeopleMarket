@@ -4,7 +4,7 @@ import { useRef } from "react";
 import UploadUI01 from "./Upload.presenter";
 import { UPLOAD_FILE } from "./Upload.queries";
 
-export default function Upload01() {
+export default function Upload01(props) {
   const fileRef = useRef(null);
   const [imageUrl, setImageUrl] = useState("");
   const [uploadFile] = useMutation(UPLOAD_FILE);
@@ -32,7 +32,7 @@ export default function Upload01() {
     <>
       <UploadUI01
         onChangeFile={onChangeFile}
-        imageUrl={imageUrl}
+        imageUrl={props.imageUrl}
         fileRef={fileRef}
         onClickImage={onClickImage}
       />
