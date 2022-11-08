@@ -106,36 +106,52 @@ export default function BoardWrite(props) {
       title: "제목을 입력해주세요",
       contents: "내용을 입력해주세요",
     };
-
-    try {
-      const result = await createBoard({
-        variables: {
-          writer: writer,
-          password: password,
-          title: title,
-          contents: contents,
-          images: [imageUrl],
-        },
-      });
-      console.log(result);
-      Modal.success({ content: "게시글 등록에 성공했습니다" });
-      router.push(`/boards/${result.data.createBoard._id}`);
-
-      console.log(result.data.createBoard.message);
-      console.log(result.data.createBoard._id);
-    } catch (error) {
-      console.log(error.message);
-      Modal.error({ content: "등록 실패!!" });
+    Object.keys(inputs).forEach((el) => {
+      if (!inputs[el]) {
+        setInputsError({
+          ...inputsError,
+          [el]: errors[el],
+        });
+      }
+    });
+    if (Object.values(inputs).every((el) => el)) {
+      try {
+        const result = await createBoard({
+          variables: {
+            ...inputs,
+            youtubeUrl,
+            boardAddress: {
+              zipcode,
+              address,
+              addressDetail,
+            },
+            images: [...fileUrls],
+          },
+        });
+        console.log(result.data?.createBoard._id);
+        Modal.success({ content: "게시글 등록에 성공했습니다" });
+        router.push(`/boards/${result.data.createBoard._id}`);
+      } catch (error) {
+        console.log(error.message);
+        Modal.error({ content: "등록 실패!!" });
+      }
     }
   };
 
   return (
     <>
       <BoardWriteUI
-        onChangeWriter={onChangeWriter}
-        onChangePassword={onChangePassword}
-        onChangeTitle={onChangeTitle}
-        onChangeContents={onChangeContents}
+        isActive={isActive}
+        inputsError={inputsError}
+        onChangeInputs={onChangeInputs}
+        onChangeYoutubeUrl={onChangeYoutubeUrl}
+        zipcode={zipcode}
+        address={address}
+        addressDetail={addressDetail}
+        onChangeAddressDetail={onChangeAddressDetail}
+        onClickAddressSearch={onClickAddressSearch}
+        onCompleteAddressSearch={onCompleteAddressSearch}
+        onChangeFileUrls={onChangeFileUrls}
         onClickRegister={onClickRegister}
         onChangeFile={onChangeFile}
         onClickImage={onClickImage}

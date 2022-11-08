@@ -25,7 +25,10 @@
     "src/components/units/upload/upload.queries.js",
     "src/components/units/upload/upload.presenter.js",
     "src/components/units/upload/upload.container.js",
-    "src/components/units/upload/upload.styles.js"
+    "src/components/units/upload/upload.styles.js",
+    "src/components/units/payment/payment.success.js",
+    "src/components/units/payment/Payment.styles.js",
+    "src/components/units/payment/index.js"
   ],
   "exclude": ["node_modules"]
 }
