@@ -15,7 +15,7 @@ export default function BoardWriteUI(props) {
 
         <A.InputWrap>
           <A.Label>비밀번호</A.Label>
-          <A.Input type="text" onChange={props.onChangePassword} />
+          <A.Input type="password" onChange={props.onChangePassword} />
         </A.InputWrap>
 
         <A.InputWrap>

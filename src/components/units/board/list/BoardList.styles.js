@@ -71,8 +71,23 @@ export const RowHeader = styled.div`
   border-bottom: 1px solid gray;
 `;
 
+export const Column = styled.div`
+  width: 25%;
+  text-align: center;
+`;
+
 export const ColumnTitle = styled.div`
+  width: 45%;
+  text-align: center;
+`;
+
+export const ColumnDate = styled.div`
   width: 20%;
+  text-align: center;
+`;
+
+export const ColumnLike = styled.div`
+  width: 10%;
   text-align: center;
 `;
 

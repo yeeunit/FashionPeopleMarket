@@ -23,11 +23,11 @@ export default function BoardListUI(props) {
         <A.ListWrap>
           <A.TableTop />
           <A.RowHeader>
-            <A.ColumnTitle>글쓴이</A.ColumnTitle>
+            <A.Column>글쓴이</A.Column>
             <A.ColumnTitle>제목</A.ColumnTitle>
-            <A.ColumnTitle>내용</A.ColumnTitle>
-            <A.ColumnTitle>작성일</A.ColumnTitle>
-            <A.ColumnTitle>좋아요</A.ColumnTitle>
+            {/* <A.ColumnTitle>내용</A.ColumnTitle> */}
+            <A.ColumnDate>작성일</A.ColumnDate>
+            <A.ColumnLike>좋아요</A.ColumnLike>
           </A.RowHeader>
 
           {props.data?.fetchBoards.map((el) => (
@@ -36,8 +36,8 @@ export default function BoardListUI(props) {
               id={el._id}
               onClick={props.onClickMoveToBoardDetail}
             >
-              <A.ColumnText>{el.writer}</A.ColumnText>
-              <A.ColumnText>
+              <A.Column>{el.writer}</A.Column>
+              <A.ColumnTitle>
                 {el.title
                   .replaceAll(props.keyword, `#$%${props.keyword}#$%`)
                   .split("#$%")
@@ -49,10 +49,10 @@ export default function BoardListUI(props) {
                       {el}
                     </span>
                   ))}
-              </A.ColumnText>
-              <A.ColumnText>{el.contents}</A.ColumnText>
-              <A.ColumnText> {getDate(el.createdAt)}</A.ColumnText>
-              <A.ColumnText>{el.likeCount}</A.ColumnText>
+              </A.ColumnTitle>
+              {/* <A.ColumnText>{el.contents}</A.ColumnText> */}
+              <A.ColumnDate> {getDate(el.createdAt)}</A.ColumnDate>
+              <A.ColumnLike>{el.likeCount}</A.ColumnLike>
             </A.RowBody>
           ))}
 
