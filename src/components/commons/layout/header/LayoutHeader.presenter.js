@@ -1,6 +1,7 @@
 import Link from "next/link";
 import * as A from "./LayoutHeader.styles";
-export default function LayoutHeaderUI() {
+
+export default function LayoutHeaderUI(props) {
   return (
     <>
       <A.Wrapper>
@@ -40,18 +41,18 @@ export default function LayoutHeaderUI() {
               <a>로그인</a>
             </Link>
           </A.Login>
-          <A.Login>
+          <A.Login onClick={props.onClickLogOut}>
             <Link href="/login">
               <a>로그아웃</a>
             </Link>
           </A.Login>
           <A.Login>
-            <Link href="/login">
+            <Link href="/mypage">
               <a>충전</a>
             </Link>
           </A.Login>
           <A.Login>
-            <Link href="/login">
+            <Link href="/mypage">
               <a>장바구니</a>
             </Link>
           </A.Login>
