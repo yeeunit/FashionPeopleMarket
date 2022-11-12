@@ -6,34 +6,34 @@ import { UPLOAD_FILE } from "../../../commons/uploads/01/Upload.queries";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { CREATE_BOARD } from "./BoardWrite.queries";
 
+const initialInputs = { writer: "", password: "", title: "", contents: "" };
+
 export default function BoardWrite(props) {
-  const initialInputs = { writer: "", password: "", title: "", contents: "" };
-
-  const [inputs, setInputs] = useState(initialInputs);
-  const [inputsError, setInputsError] = useState(initialInputs);
-
   const router = useRouter();
+
   const [isActive, setIsActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const fileRef = useRef(null);
-
-  // const [writer, setWriter] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [title, setTitle] = useState("");
-  // const [contents, setContents] = useState("");
+  const [inputs, setInputs] = useState(initialInputs);
+  const [inputsError, setInputsError] = useState(initialInputs);
 
   const [youtubeUrl, setYoutubeUrl] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [address, setAddress] = useState("");
   const [addressDetail, setAddressDetail] = useState("");
 
-  const [imageUrl, setImageUrl] = useState(["", "", ""]);
+  const [fileUrls, setFileUrls] = useState(["", "", ""]);
+
+  // const fileRef = useRef(null);
+
+  // const [writer, setWriter] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [contents, setContents] = useState("");
 
   const [createBoard] = useMutation(CREATE_BOARD);
 
-  const [uploadFile] = useMutation(UPLOAD_FILE);
-
+  // const [uploadFile] = useMutation(UPLOAD_FILE);
   // const [emailError, setEmailError] = useState("");
 
   const onChangeInputs = (event) => {
@@ -56,7 +56,7 @@ export default function BoardWrite(props) {
     }
   };
 
-  const onChangeYoutubeYul = (event) => {
+  const onChangeYoutubeUrl = (event) => {
     setYoutubeUrl(event.target.value);
   };
 
@@ -66,6 +66,12 @@ export default function BoardWrite(props) {
 
   const onClickAddressSearch = () => {
     setIsOpen(true);
+  };
+
+  const onCompleteAddressSearch = (data) => {
+    setAddress(data.address);
+    setZipcode(data.zonecode);
+    setIsOpen(false);
   };
 
   const onClickImage = () => {
