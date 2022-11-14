@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import UploadUI01 from "./Upload.presenter";
 import { UPLOAD_FILE } from "./Upload.queries";
 

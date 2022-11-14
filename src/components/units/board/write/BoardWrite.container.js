@@ -2,7 +2,6 @@ import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
-import { UPLOAD_FILE } from "../../../commons/uploads/01/Upload.queries";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { CREATE_BOARD } from "./BoardWrite.queries";
 
@@ -17,24 +16,14 @@ export default function BoardWrite(props) {
   const [inputs, setInputs] = useState(initialInputs);
   const [inputsError, setInputsError] = useState(initialInputs);
 
-  const [youtubeUrl, setYoutubeUrl] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [address, setAddress] = useState("");
   const [addressDetail, setAddressDetail] = useState("");
 
+  const [youtubeUrl, setYoutubeUrl] = useState("");
   const [fileUrls, setFileUrls] = useState(["", "", ""]);
 
-  // const fileRef = useRef(null);
-
-  // const [writer, setWriter] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [title, setTitle] = useState("");
-  // const [contents, setContents] = useState("");
-
   const [createBoard] = useMutation(CREATE_BOARD);
-
-  // const [uploadFile] = useMutation(UPLOAD_FILE);
-  // const [emailError, setEmailError] = useState("");
 
   const onChangeInputs = (event) => {
     const _inputs = {
@@ -60,10 +49,6 @@ export default function BoardWrite(props) {
     setYoutubeUrl(event.target.value);
   };
 
-  const onChangeAddressDetail = (event) => {
-    setAddressDetail(event.target.value);
-  };
-
   const onClickAddressSearch = () => {
     setIsOpen(true);
   };
@@ -74,8 +59,8 @@ export default function BoardWrite(props) {
     setIsOpen(false);
   };
 
-  const onClickImage = () => {
-    fileRef.current?.click();
+  const onChangeAddressDetail = (event) => {
+    setAddressDetail(event.target.value);
   };
 
   const onChangeFileUrls = (fileUrl, index) => {
@@ -89,21 +74,6 @@ export default function BoardWrite(props) {
       setFileUrls([...props.data?.fetchBoard.images]);
     }
   }, [props.data]);
-
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const showModal = () => {
-    setIsModalVisible((prev) => !prev);
-  };
-
-  const onCompletePostcode = (data) => {
-    console.log(data);
-    setIsModalVisible(false);
-  };
-
-  const onChangeAddress = (event) => {
-    setAddress(event.target.value);
-  };
 
   const onClickRegister = async () => {
     const errors = {
@@ -124,14 +94,16 @@ export default function BoardWrite(props) {
       try {
         const result = await createBoard({
           variables: {
-            ...inputs,
-            youtubeUrl,
-            boardAddress: {
-              zipcode,
-              address,
-              addressDetail,
+            createBoardInput: {
+              ...inputs,
+              youtubeUrl,
+              boardAddress: {
+                zipcode,
+                address,
+                addressDetail,
+              },
+              images: [...fileUrls],
             },
-            images: [...fileUrls],
           },
         });
         console.log(result.data?.createBoard._id);
@@ -148,26 +120,19 @@ export default function BoardWrite(props) {
     <>
       <BoardWriteUI
         isActive={isActive}
+        isOpen={isOpen}
         inputsError={inputsError}
         onChangeInputs={onChangeInputs}
-        onChangeYoutubeUrl={onChangeYoutubeUrl}
         zipcode={zipcode}
         address={address}
         addressDetail={addressDetail}
         onChangeAddressDetail={onChangeAddressDetail}
         onClickAddressSearch={onClickAddressSearch}
         onCompleteAddressSearch={onCompleteAddressSearch}
+        onChangeYoutubeUrl={onChangeYoutubeUrl}
         onChangeFileUrls={onChangeFileUrls}
         onClickRegister={onClickRegister}
-        onChangeFile={onChangeFile}
-        onClickImage={onClickImage}
-        fileRef={fileRef}
-        imageUrl={imageUrl}
-        //
-        showModal={showModal}
-        isModalVisible={isModalVisible}
-        onCompletePostcode={onCompletePostcode}
-        onChangeAddress={onChangeAddress}
+        fileUrls={fileUrls}
       />
     </>
   );
