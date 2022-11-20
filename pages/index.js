@@ -12,7 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.main}></main>
+
+      <div className={styles.middle}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Yeeun's project!</a>
         </h1>
@@ -33,9 +35,6 @@ export default function Home() {
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
         </div>
-      </main>
-
-      <div className={styles.middle}>
         <div className={styles.button}> Contact with me</div>
       </div>
       <div className={styles.footer}>

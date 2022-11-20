@@ -27,6 +27,11 @@ export default function LayoutHeaderUI(props) {
                 <a>My Page</a>
               </Link>
             </A.Menu>
+            <A.Menu>
+              <Link href="/other">
+                <a>Other</a>
+              </Link>
+            </A.Menu>
           </A.MenuWrap>
         </A.LogoMenuWrap>
 

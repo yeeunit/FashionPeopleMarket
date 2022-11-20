@@ -67,6 +67,7 @@ export const Image = styled.img`
   /* width: 12rem; */
   height: 50%;
   background-color: #eee;
+  object-fit: cover;
   cursor: pointer;
 `;
 
