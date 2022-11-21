@@ -63,10 +63,38 @@ export const OneBoxWrap = styled.div`
   border: 1px solid grey;
   overflow: hidden;
 `;
-export const Image = styled.img`
+export const ImageBox = styled.div`
   /* width: 12rem; */
   height: 50%;
   background-color: #eee;
+  font-size: 0.7rem;
+  /* object-fit: cover; */
+
+  :hover::after {
+    :hover {
+      background: rgba(9, 9, 9, 0.5);
+      transform: translateY(0);
+      transform: scale(1.1);
+    }
+    content: "예약하기";
+    height: 100%;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    text-align: center;
+    line-height: 9rem;
+    color: #fff;
+    background: rgba(9, 9, 9, 0.5);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s ease-in-out;
+  }
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
 `;

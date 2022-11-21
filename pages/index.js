@@ -18,29 +18,31 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Yeeun's project!</a>
         </h1>
-
         <p className={styles.description}>
-          <h2>예니의 페이지에 오신 것을 환영합니다!</h2>
+          {/* <h2>예니의 페이지에 오신 것을 환영합니다!</h2> */}
         </p>
-
         <div className={styles.grid}>
           <Image
-            src="/images/IMG_2089.JPG"
+            src="/images/ye1.png"
             alt="Main Image"
-            width={300}
-            height={220}
+            width={400}
+            height={400}
           />
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
-        </div>
+        </div>{" "}
+        <br /> <br />
         <div className={styles.button}> Contact with me</div>
       </div>
-      <div className={styles.footer}>
-        Yeeunit's project is started.
-        <br /> Do not miss it!
+      <div>
+        <div className={styles.footer}>
+          Yeeunit's project is started.
+          <br /> Do not miss it!
+        </div>
       </div>
+
       <div className={styles.bottom}></div>
     </div>
   );
