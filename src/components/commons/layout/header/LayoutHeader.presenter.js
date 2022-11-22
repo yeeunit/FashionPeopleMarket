@@ -2,13 +2,18 @@ import Link from "next/link";
 import * as A from "./LayoutHeader.styles";
 
 export default function LayoutHeaderUI(props) {
+  const menuList = ["Board", "Market", "My Page", "Other"];
+
   return (
     <>
       <A.Wrapper>
         <A.LogoMenuWrap>
           <A.Logo>
             <Link href="/">
-              <a>LOGO</a>
+              <a>
+                <A.LogoImg src="/images/ye2.png" />
+                &nbsp;YeeunIT
+              </a>
             </Link>
           </A.Logo>
           <A.MenuWrap>

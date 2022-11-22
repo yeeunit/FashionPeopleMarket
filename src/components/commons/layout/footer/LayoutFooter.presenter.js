@@ -1,9 +1,25 @@
 import * as A from "./LayoutFooter.styles";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faHeart } from "@fortawesome/free-solid-svg-icons";
+
 export default function LayoutFooterUI() {
   return (
     <>
       <A.Footer>
         <div>
+          {/* <FontAwesomeIcon
+            icon={faHeart}
+            style={{
+              fontSize: "2.5em",
+              color: "#E53935",
+              cursor: "pointer",
+            }}
+          /> */}
+        </div>
+
+        <div>
+          <A.Star />
           <A.FooterText>Yeeun 소개</A.FooterText>
           <A.FooterText>Yeeun.site</A.FooterText>
           <A.FooterText>Contact with me</A.FooterText>
@@ -17,15 +33,7 @@ export default function LayoutFooterUI() {
         </A.FooterText2>
       </A.Footer>
 
-      <A.Wrapper>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Created by Yeeun 😃{" "}
-        </a>
-      </A.Wrapper>
+      <A.Wrapper>Created by Yeeun</A.Wrapper>
     </>
   );
 }

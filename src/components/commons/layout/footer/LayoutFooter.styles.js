@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../../styles/media";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+export const Star = styled(FontAwesomeIcon)`
+  color: yellow;
+  font-size: 3rem;
+`;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -26,8 +32,8 @@ export const Footer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 18rem;
-  background-color: #555;
+  height: 22rem;
+  background-color: #eee;
   @media ${breakPoints.mobile} {
     /* display: none; */
     flex-direction: row;
@@ -38,7 +44,7 @@ export const Footer = styled.div`
 
 export const FooterText = styled.span`
   display: inline-block;
-  color: white;
+  color: #555;
   font-size: 1rem;
   font-weight: 400;
   margin: 1.3rem;
@@ -52,7 +58,7 @@ export const FooterText = styled.span`
 export const FooterText2 = styled.span`
   display: inline-block;
   text-align: center;
-  color: white;
+  color: #555;
   margin-top: 1rem;
   font-size: 0.7rem;
   font-weight: 100;
