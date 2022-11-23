@@ -87,3 +87,29 @@ export const Button = styled.div`
     background-color: #333;
   }
 `;
+
+export const BottomWrapper = styled.div`
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* margin: 50px auto; */
+`;
+
+export const BtnBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  width: 15rem;
+  height: 26rem;
+`;
+
+export const Photo = styled.img`
+  width: 100%;
+  /* height: 16rem; */
+  /* object-fit: contain; */
+  /* src: url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=840&q=80"); */
+  /* background-color: gray; */
+`;
+
+export const Text = styled.div``;

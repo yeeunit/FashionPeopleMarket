@@ -83,6 +83,48 @@ export default function OtherUI(props) {
           </A.Title>
         </A.Box>
       </A.Wrapper>
+
+      <A.BottomWrapper>
+        <A.BtnBox>
+          <A.Photo src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=840&q=80" />
+          <A.Text>하이웨스트 진</A.Text>
+          <A.Text>39,000</A.Text>
+          <A.Text>39,000</A.Text>
+        </A.BtnBox>
+        <A.BtnBox>
+          <A.Photo src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=840&q=80" />
+          <A.Text>하이웨스트 진</A.Text>
+          <A.Text>39,000</A.Text>
+          <A.Text>39,000</A.Text>
+        </A.BtnBox>
+        <A.BtnBox>
+          <A.Photo src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=840&q=80" />
+          <A.Text>하이웨스트 진</A.Text>
+          <A.Text>39,000</A.Text>
+          <A.Text>39,000</A.Text>
+        </A.BtnBox>
+        <A.BtnBox>
+          <A.Photo src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=840&q=80" />
+          <A.Text>하이웨스트 진</A.Text>
+          <A.Text>39,000</A.Text>
+          <A.Text>39,000</A.Text>
+        </A.BtnBox>
+        <A.BtnBox>
+          <A.Photo src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=840&q=80" />
+          <A.Text>하이웨스트 진</A.Text>
+          <A.Text>39,000</A.Text>
+          <A.Text>39,000</A.Text>
+        </A.BtnBox>
+
+        {props.productList.map((item) => {
+          <A.BtnBox key={index}>
+            <A.Photo src={item?.image} />
+            <A.Text>{item?.title}</A.Text>
+            <A.Text>{item?.price}</A.Text>
+            <A.Text>{item?.new === true ? "신제품" : ""}</A.Text>
+          </A.BtnBox>;
+        })}
+      </A.BottomWrapper>
     </>
   );
 }

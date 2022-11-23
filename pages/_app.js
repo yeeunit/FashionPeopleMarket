@@ -1,20 +1,23 @@
 // import React from "react";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+// import { AppProps } from "next/app";
+
+import { ApolloClient, ApolloLink, ApolloProvider } from "@apollo/client";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
 import Layout from "../src/components/commons/layout";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-config.autoAddCss = false;
-// import { AppProps } from "next/app";
+import { RecoilRoot } from "recoil";
+import { createUploadLink } from "apollo-upload-client";
 import "../styles/globals.css";
 import "antd/dist/antd.css";
-import { RecoilRoot } from "recoil";
 
 function MyApp({ Component, pageProps }) {
-  const client = new ApolloClient({
+  const uplodLink = createUploadLink({
     uri: "https://backend08.codebootcamp.co.kr/graphql",
-    cache: new InMemoryCache(),
+  });
+
+  const client = new ApolloClient({
+    link: ApolloLink.from([uplodLink]),
+    cache: new inMemoryCache(),
   });
 
   return (

@@ -2,6 +2,7 @@ import { Footer } from "antd/lib/layout/layout";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { MainPageQuestionPresenter } from "../src/components/commons/mainPageQuestion/mainPageQuestion.container";
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
           Yeeunit's project is started.
           <br /> Do not miss it!
         </div>
+        {/* <MainPageQuestionPresenter /> */}
       </div>
 
       <div className={styles.bottom}></div>

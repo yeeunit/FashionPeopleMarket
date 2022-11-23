@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OtherUI from "./Other.presenter";
 
 export default function Other() {
@@ -37,6 +37,20 @@ export default function Other() {
     // console.log("randomSelect", randomSelect);
   };
 
+  const [productList, setProductList] = useState([]);
+
+  const getProducts = async () => {
+    let url = `http://localhost:5000/products`;
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data);
+    setProductList(data);
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <>
       <OtherUI
@@ -48,6 +62,7 @@ export default function Other() {
         onClickSelect={onClickSelect}
         randomSelect={randomSelect}
         onClickRandomSelect={onClickRandomSelect}
+        productList={productList}
       />
     </>
   );

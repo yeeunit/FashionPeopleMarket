@@ -1,11 +1,13 @@
 import * as A from "./LayoutFooter.styles";
-
+import MainPageQuestionPresenter from "../../../commons/mainPageQuestion/mainPageQuestion.container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function LayoutFooterUI() {
   return (
     <>
+      <MainPageQuestionPresenter />
+
       <A.Footer>
         <div>
           {/* <FontAwesomeIcon
@@ -19,7 +21,7 @@ export default function LayoutFooterUI() {
         </div>
 
         <div>
-          <A.Star />
+          {/* <A.Star /> */}
           <A.FooterText>Yeeun 소개</A.FooterText>
           <A.FooterText>Yeeun.site</A.FooterText>
           <A.FooterText>Contact with me</A.FooterText>
