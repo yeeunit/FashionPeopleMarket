@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import UploadUI01 from "./Upload.presenter";
 import { UPLOAD_FILE } from "./Upload.queries";
 
+// http://storage.goolgeapis.com/이미지url
+
 export default function Upload01(props) {
   const fileRef = useRef(null);
   const [imageUrl, setImageUrl] = useState("");
