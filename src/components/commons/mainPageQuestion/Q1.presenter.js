@@ -2,14 +2,17 @@ import * as S from "./mainPageQuestion.styles";
 
 export default function Q1Presenter(props) {
   return (
-    <S.QuestionBox1 onClick={props.onClickQuestion1} isAnswer1={props.isAnswer1}>
+    <S.QuestionBox1
+      onClick={props.onClickQuestion1}
+      isAnswer1={props.isAnswer1}
+    >
       <S.QuestionContents1 isAnswer1={props.isAnswer1}>
-        카페 예약하기 결제 후 환불이 가능한가요?
+        이 사이트는 어떤 목적으로 제작된 것인가요?
       </S.QuestionContents1>
       {props.isAnswer1 && (
         <S.AnswerContents>
-          가능합니다. <br />
-          예약 결제 후 예약 취소가 필요하시면 해당 카페에 연락해주세요.
+          개인 포트폴리오를 위해 만들어진 웹사이트입니다. <br />
+          즐겁게 둘러봐 주세요 ^^
         </S.AnswerContents>
       )}
     </S.QuestionBox1>

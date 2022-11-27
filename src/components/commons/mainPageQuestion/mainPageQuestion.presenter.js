@@ -7,7 +7,7 @@ import Q4Presenter from "./Q4.presenter";
 export default function MainPageQuestionPresenter(props) {
   return (
     <S.QuestionWrapper>
-      <S.QuestionTitle>자주 묻는 질문 (Q & A)</S.QuestionTitle>
+      <S.QuestionTitle>Q & A</S.QuestionTitle>
       <Q1Presenter
         onClickQuestion1={props.onClickQuestion1}
         isAnswer1={props.isAnswer1}

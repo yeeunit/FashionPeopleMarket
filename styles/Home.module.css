@@ -20,6 +20,7 @@
   justify-content: center;
   align-items: center;
   height: 50rem;
+  /* padding: 5rem; */
   border: 1px solid gray;
 }
 .button {
@@ -31,6 +32,7 @@
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
+  /* color: ${(props) => (props.isTrue ? "red" : "blue")}; */
 }
 
 .footer {
@@ -65,11 +67,11 @@
   background-image: url("https://images.unsplash.com/photo-1629426958003-35a5583b2977?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
   background-size: cover;
 }
-
+/* 
 .title a {
   color: #0070f3;
   text-decoration: none;
-}
+} */
 
 .title a:hover,
 .title a:focus,
@@ -78,7 +80,8 @@
 }
 
 .title {
-  margin: 0;
+  /* margin: 20rem; */
+  background-color: rebeccapurple;
   line-height: 1.15;
   font-size: 4rem;
 }

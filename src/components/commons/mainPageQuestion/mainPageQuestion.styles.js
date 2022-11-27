@@ -4,13 +4,12 @@ import { breakPoints } from "../../../../styles/media";
 export const QuestionWrapper = styled.div`
   /* height: 580px; */
   width: 100%;
-  background: #1e3932;
+  background: #333;
   padding: 50px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #1e3932;
-  font-family: "Cafe24Ohsquare";
+  color: #333;
   @media ${breakPoints.mobile} {
     display: none;
   }
@@ -18,7 +17,7 @@ export const QuestionWrapper = styled.div`
 
 export const QuestionTitle = styled.div`
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
   color: white;
   margin: 10px 0px 50px 0px;

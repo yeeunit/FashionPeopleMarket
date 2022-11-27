@@ -2,9 +2,13 @@ import { Footer } from "antd/lib/layout/layout";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { MainPageQuestionPresenter } from "../src/components/commons/mainPageQuestion/mainPageQuestion.container";
 
 export default function Home() {
+  // const [isTrue, setIsTrue] = useState(false);
+  // const handleOnClick = () => {
+  //   setIsTrue((prev) => !prev);
+  // };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,9 +20,7 @@ export default function Home() {
       <main className={styles.main}></main>
 
       <div className={styles.middle}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Yeeun's project!</a>
-        </h1>
+        <h1 className={styles.title}>Welcome to Yeeun's project!</h1>
         <p className={styles.description}>
           {/* <h2>예니의 페이지에 오신 것을 환영합니다!</h2> */}
         </p>
@@ -26,23 +28,27 @@ export default function Home() {
           <Image
             src="/images/ye1.png"
             alt="Main Image"
-            width={400}
-            height={400}
+            width={300}
+            height={300}
           />
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="/login" className={styles.card}>
+            <h2>로그인 하기 &rarr;</h2>
+            <p>로그인해서 더 많은 서비스를 누려보세요!</p>
           </a>
         </div>{" "}
         <br /> <br />
-        <div className={styles.button}> Contact with me</div>
+        <div
+          className={styles.button}
+          // isTrue={isTrue} onClick={handleOnClick}
+        >
+          Contact with me
+        </div>
       </div>
       <div>
         <div className={styles.footer}>
           Yeeunit's project is started.
           <br /> Do not miss it!
         </div>
-        {/* <MainPageQuestionPresenter /> */}
       </div>
 
       <div className={styles.bottom}></div>
