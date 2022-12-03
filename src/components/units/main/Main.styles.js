@@ -62,8 +62,8 @@ export const Bottom = styled.div`
   color: white;
   height: 55rem;
   font-size: 4rem;
-  background-image: url("https://images.unsplash.com/photo-1629426958003-35a5583b2977?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
-  background-size: cover;
+  /* background-image: url("https://images.unsplash.com/photo-1629426958003-35a5583b2977?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"); */
+  /* background-size: cover; */
 `;
 export const Title = styled.h1`
   background-color: rebeccapurple;

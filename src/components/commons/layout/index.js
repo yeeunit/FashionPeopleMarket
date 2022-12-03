@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 //   children: ReactNode;
 // }
 
-const HIDDEN_FOOTERS = ["/market", "/other", "/weather"];
+const HIDDEN_FOOTERS = ["/market", "/other", "/weather", "/login", "/boards"];
 
 export default function Layout(props) {
   const router = useRouter();

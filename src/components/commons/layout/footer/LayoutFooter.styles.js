@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   align-items: center;
   flex: 1;
   padding: 1rem 0;
-  border-top: 1px solid gray;
+  /* border-top: 1px solid gray; */
   height: 4rem;
 
   /* background-color: white; */

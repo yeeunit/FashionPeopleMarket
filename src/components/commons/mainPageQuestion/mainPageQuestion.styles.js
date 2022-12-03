@@ -10,9 +10,6 @@ export const QuestionWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   color: #333;
-  @media ${breakPoints.mobile} {
-    display: none;
-  }
 `;
 
 export const QuestionTitle = styled.div`

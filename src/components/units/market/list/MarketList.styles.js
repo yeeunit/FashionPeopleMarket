@@ -68,14 +68,23 @@ export const ImageBox = styled.div`
   height: 50%;
   background-color: #eee;
   font-size: 0.7rem;
-  /* object-fit: cover; */
+  object-fit: cover;
+`;
 
+export const Image = styled.div`
+  img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  :hover {
+    background: rgba(9, 9, 9, 0.5);
+    transform: translateY(0);
+    transform: scale(1.1);
+  }
   :hover::after {
-    :hover {
-      background: rgba(9, 9, 9, 0.5);
-      transform: translateY(0);
-      transform: scale(1.1);
-    }
     content: "예약하기";
     height: 100%;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
@@ -91,12 +100,11 @@ export const ImageBox = styled.div`
     transition: all 1s ease-in-out;
   }
 `;
-
-export const Image = styled.img`
-  width: 100%;
-  height: 100%;
+export const TextBox = styled.div`
+  padding: 1rem;
+  /* background-color: yellow; */
+  font-size: 0.8rem;
   object-fit: cover;
-  cursor: pointer;
 `;
 
 export const ColorChange = styled.div`

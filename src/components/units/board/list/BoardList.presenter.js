@@ -2,12 +2,13 @@ import { Link } from "@material-ui/core";
 import * as A from "./BoardList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
 import { v4 as uuidv4 } from "uuid";
+import Crsl from "../../carousel/Carousel.presenter";
 
 export default function BoardListUI(props) {
   return (
     <>
       <A.Wrapper>
-        <A.Title>Board LIST</A.Title>
+        <A.Title>자유게시판</A.Title>
         <A.ColorChange isTrue={props.isTrue} onClick={props.handleOnClick}>
           클릭하면 색변경!
         </A.ColorChange>
@@ -80,6 +81,7 @@ export default function BoardListUI(props) {
             </Link>
           </A.WriteBtn>
         </A.BottomWrap>
+        {/* <Crsl /> */}
       </A.Wrapper>
     </>
   );

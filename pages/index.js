@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.bottom}></div>
+      {/* <div className={styles.bottom}></div> */}
     </div>
   );
 }

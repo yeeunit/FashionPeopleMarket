@@ -1,8 +1,9 @@
 import * as A from "./Main.styles";
-import { Footer } from "antd/lib/layout/layout";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
+
 export default function MainUI(props) {
   return (
     <>
@@ -28,10 +29,12 @@ export default function MainUI(props) {
               height={300}
             />
             <A.Card>
-              <a href="/login">
-                <h2>로그인 하기 &rarr;</h2>
-                <p>로그인해서 더 많은 서비스를 누려보세요!</p>
-              </a>
+              <Link href="/login">
+                <a>
+                  <h2>로그인 하기 &rarr;</h2>
+                  <p>로그인해서 더 많은 서비스를 누려보세요!</p>
+                </a>
+              </Link>
             </A.Card>
           </A.Grid>{" "}
           <br /> <br />
@@ -48,7 +51,7 @@ export default function MainUI(props) {
           </div>
         </div>
 
-        <A.Bottom></A.Bottom>
+        {/* <A.Bottom></A.Bottom> */}
       </A.Container>
     </>
   );

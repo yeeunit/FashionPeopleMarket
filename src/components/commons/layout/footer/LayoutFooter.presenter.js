@@ -1,11 +1,14 @@
 import * as A from "./LayoutFooter.styles";
 import MainPageQuestionPresenter from "../../../commons/mainPageQuestion/mainPageQuestion.container";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Crsl from "../../../units/carousel/Carousel.presenter";
+
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function LayoutFooterUI() {
   return (
     <>
+      <Crsl />
       <MainPageQuestionPresenter />
 
       <A.Footer>
