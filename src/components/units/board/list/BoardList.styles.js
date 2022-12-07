@@ -143,6 +143,7 @@ export const WriteBtn = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: #f5f2fc;
+    /* color: gold; */
+    /* background-color: #f5f2fc; */
   }
 `;
