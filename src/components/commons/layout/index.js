@@ -8,17 +8,17 @@ import { useRouter } from "next/router";
 //   children: ReactNode;
 // }
 
-const HIDDEN_FOOTERS = ["/market", "/other", "/weather", "/login", "/boards"];
+// const HIDDEN_FOOTERS = ["/market", "/other", "/weather", "/login", "/boards"];
 
 export default function Layout(props) {
   const router = useRouter();
-  const isHiddenFooter = HIDDEN_FOOTERS.includes(router.asPath);
+  // const isHiddenFooter = HIDDEN_FOOTERS.includes(router.asPath);
 
   return (
     <>
       <LayoutHeader />
       <div>{props.children}</div>
-      {!isHiddenFooter && <LayoutFooter />}
+      {/* {!isHiddenFooter && <LayoutFooter />} */}
     </>
   );
 }

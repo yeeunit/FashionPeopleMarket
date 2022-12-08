@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../styles/media";
 
 export const QuestionWrapper = styled.div`
-  /* height: 580px; */
+  height: 600px;
   width: 100%;
   background: #333;
   padding: 50px 0px;

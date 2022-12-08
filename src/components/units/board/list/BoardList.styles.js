@@ -42,7 +42,7 @@ export const SearchBtn = styled.div`
   cursor: pointer;
 `;
 export const ColorChange = styled.div`
-  color: ${(props) => (props.isTrue ? "red" : "blue")};
+  color: ${(props) => (props.isTrue ? "black" : "purple")};
   cursor: pointer;
 `;
 

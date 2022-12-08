@@ -27,7 +27,7 @@ export const Middle = styled.div`
 
 export const Button = styled.div`
   background-color: #333;
-  color: white;
+  color: ${(props) => (props.isTrue ? "gold" : "white")};
   width: 11rem;
   height: 3.3rem;
   line-height: 3.3rem;
@@ -35,6 +35,7 @@ export const Button = styled.div`
   border-radius: 5px;
   cursor: pointer;
 `;
+
 export const Footer = styled.div`
   display: flex;
   justify-content: center;
@@ -66,9 +67,8 @@ export const Bottom = styled.div`
   /* background-size: cover; */
 `;
 export const Title = styled.h1`
-  background-color: rebeccapurple;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
   a:hover {
   }
   a:focus {
@@ -151,4 +151,9 @@ export const Logo = styled.div`
       filter: invert(1);
     }
   }
+`;
+
+export const Image = styled.img`
+  width: 300px;
+  height: 300px;
 `;

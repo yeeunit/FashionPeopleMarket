@@ -9,9 +9,7 @@ export default function BoardListUI(props) {
     <>
       <A.Wrapper>
         <A.Title>자유게시판</A.Title>
-        <A.ColorChange isTrue={props.isTrue} onClick={props.handleOnClick}>
-          클릭하면 색변경!
-        </A.ColorChange>
+
         <A.SearchBarWrap>
           <A.SearchBar
             type="text"
