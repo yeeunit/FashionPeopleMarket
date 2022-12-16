@@ -8,8 +8,8 @@ import Crsl from "../../../units/carousel/Carousel.presenter";
 export default function LayoutFooterUI() {
   return (
     <>
-      <Crsl />
-      <MainPageQuestionPresenter />
+      {/* <Crsl />
+      <MainPageQuestionPresenter /> */}
 
       <A.Footer>
         <div>

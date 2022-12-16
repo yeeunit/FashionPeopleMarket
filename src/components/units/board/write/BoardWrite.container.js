@@ -2,13 +2,16 @@ import { useMutation } from "@apollo/client";
 import { Modal } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
+import { useForm } from "react-hook-form";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { CREATE_BOARD } from "./BoardWrite.queries";
 
-const initialInputs = { writer: "", password: "", title: "", contents: "" };
-
 export default function BoardWrite(props) {
   const router = useRouter();
+
+  const { register, handleSubmit, setValue, trigger } = useForm({
+    mode: "onChange",
+  });
 
   const [isActive, setIsActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -25,24 +28,11 @@ export default function BoardWrite(props) {
 
   const [createBoard] = useMutation(CREATE_BOARD);
 
-  const onChangeInputs = (event) => {
-    const _inputs = {
-      ...inputs,
-      [event.target.id]: event.target.value,
-    };
-    setInputs(_inputs);
-    if (event.target.value !== "") {
-      setInputsError({
-        ...inputsError,
-        [event.target.id]: "",
-      });
-    }
+  const onChangeContents = (value) => {
+    console.log(value);
 
-    if (Object.values(_inputs).every((el) => el)) {
-      setInputs(true);
-    } else {
-      setIsActive(false);
-    }
+    setValue("contents", value === "<p><br></p>" ? "" : value);
+    trigger("contents");
   };
 
   const onChangeYoutubeUrl = (event) => {
@@ -69,60 +59,42 @@ export default function BoardWrite(props) {
     setFileUrls(newFileUrls);
   };
 
-  useEffect(() => {
-    if (props.data?.fetchBoard.images?.length) {
-      setFileUrls([...props.data?.fetchBoard.images]);
-    }
-  }, [props.data]);
+  // useEffect(() => {
+  //   if (props.data?.fetchBoard.images?.length) {
+  //     setFileUrls([...props.data?.fetchBoard.images]);
+  //   }
+  // }, [props.data]);
 
-  const onClickRegister = async () => {
-    const errors = {
-      writer: "작성자를 입력해주세요",
-      password: "비밀번호를 입력해주세요",
-      title: "제목을 입력해주세요",
-      contents: "내용을 입력해주세요",
-    };
-    Object.keys(inputs).forEach((el) => {
-      if (!inputs[el]) {
-        setInputsError({
-          ...inputsError,
-          [el]: errors[el],
-        });
-      }
-    });
-    if (Object.values(inputs).every((el) => el)) {
-      try {
-        const result = await createBoard({
-          variables: {
-            createBoardInput: {
-              ...inputs,
-              youtubeUrl,
-              boardAddress: {
-                zipcode,
-                address,
-                addressDetail,
-              },
-              images: [...fileUrls],
-            },
+  const onClickRegister = async (data) => {
+    const result = await createBoard({
+      variables: {
+        createBoardInput: {
+          writer: data.writer,
+          password: data.password,
+          contents: data.contents,
+          images: [...fileUrls],
+          youtubeUrl: data.youtubeUrl,
+          address: {
+            zipcode,
+            address,
+            addressDetail,
           },
-        });
-        console.log(result.data?.createBoard._id);
-        Modal.success({ content: "게시글 등록에 성공했습니다" });
-        router.push(`/boards/${result.data.createBoard._id}`);
-      } catch (error) {
-        console.log(error.message);
-        Modal.error({ content: "등록 실패!!" });
-      }
-    }
+        },
+      },
+      refetchQueries: [{ query: FETCH_BOARDS }],
+    });
+    alert("성공");
+    router.push(`/boards/${result.data?.createBoard._id}`);
   };
 
   return (
     <>
       <BoardWriteUI
+        data={props.data}
         isActive={isActive}
         isOpen={isOpen}
-        inputsError={inputsError}
-        onChangeInputs={onChangeInputs}
+        // inputsError={inputsError}
+        // onChangeInputs={onChangeInputs}
         zipcode={zipcode}
         address={address}
         addressDetail={addressDetail}
@@ -132,6 +104,7 @@ export default function BoardWrite(props) {
         onChangeYoutubeUrl={onChangeYoutubeUrl}
         onChangeFileUrls={onChangeFileUrls}
         onClickRegister={onClickRegister}
+        handleSubmit={handleSubmit}
         fileUrls={fileUrls}
       />
     </>

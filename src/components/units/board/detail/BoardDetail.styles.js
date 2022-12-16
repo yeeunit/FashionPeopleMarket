@@ -18,7 +18,7 @@ export const TopWrapper = styled.div`
   display: flex;
   width: 80rem;
   height: 40rem;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
 `;
 
 export const ImageWrapper = styled.div`
@@ -26,11 +26,11 @@ export const ImageWrapper = styled.div`
   flex-direction: column;
   width: 50%;
   /* height: 33rem; */
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
 `;
 
 export const BigImage = styled.img`
-  width: 33rem;
+  width: 35rem;
   height: 25rem;
   background-color: #eee;
   border-radius: 1rem;
@@ -56,20 +56,33 @@ export const ContentsWrapper = styled.div`
 
 export const InputWrap = styled.div`
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 3rem;
   margin: 1rem;
 `;
 
 export const Label = styled.div`
-  width: 7.7rem;
+  width: 7rem;
   font-size: 1.4rem;
   font-weight: bold;
-  background-color: pink;
+  /* background-color: pink; */
 `;
 
 export const TextBox = styled.div`
   font-size: 1.2rem;
+`;
+
+export const DateWrap = styled.div`
+  display: flex;
+  /* padding: 1rem; */
+`;
+export const Date = styled.div`
+  font-size: 0.6rem;
+  margin: 1rem;
+`;
+export const LikeBox = styled.div`
+  display: flex;
+  padding: 1rem;
 `;
 
 export const BtnWrap = styled.div`

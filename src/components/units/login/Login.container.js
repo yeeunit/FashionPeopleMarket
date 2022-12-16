@@ -14,22 +14,35 @@ export default function LoginWrite() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [emailError, setEmailError] = useState("");
+
   const [loginUser] = useMutation(LOGIN_USER);
 
   const onChangeEmail = (event) => {
+    console.log(event.target);
     setEmail(event.target.value);
   };
 
   const onChangePassword = (event) => {
+    console.log(event.target.value);
     setPassword(event.target.value);
   };
 
   const onClickLogin = async () => {
+    console.log("email", email);
+    console.log("password", password);
+
     const result = await loginUser({
       variables: { email, password },
     });
     const accessToken = result.data?.loginUser.accessToken;
     console.log(accessToken);
+
+    if (!email.includes("@")) {
+      // alert("이메일이 올바르지 않습니다!! @가 없음!!")
+      // document.getElementById("qqq").innerText = "이메일이 올바르지 않습니다!! @가 없음!!"
+      setEmailError("이메일 주소를 정확하게 입력해주세요");
+    }
 
     if (!accessToken) {
       alert("로그인 실패");
@@ -45,6 +58,7 @@ export default function LoginWrite() {
   return (
     <>
       <LoginWriteUI
+        emailError={emailError}
         onChangeEmail={onChangeEmail}
         onChangePassword={onChangePassword}
         onClickLogin={onClickLogin}

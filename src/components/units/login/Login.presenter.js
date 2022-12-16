@@ -10,7 +10,7 @@ export default function LoginWriteUI(props) {
           <A.Label>이메일</A.Label>{" "}
           <A.InputBox type="text" onChange={props.onChangeEmail} />{" "}
         </A.InputWrap>
-        <A.Error>이메일 주소를 정확하게 입력해주세요</A.Error>
+        <A.Error>{props.emailError}</A.Error>
 
         <A.InputWrap>
           <A.Label>비밀번호</A.Label>{" "}

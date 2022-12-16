@@ -17,16 +17,18 @@ export default function BoardDetailUI(props) {
               <A.SmallImage />
             </A.SmallImgWrap>
           </A.ImageWrapper>
+
           <A.ContentsWrapper>
+            <A.DateWrap>
+              <A.Date>
+                작성일 : {getDate(props.data?.fetchBoard?.createdAt)}
+              </A.Date>
+              {/* <A.Date>수정일 : {props.data?.fetchBoard?.updatedAt}</A.Date> */}
+            </A.DateWrap>
             <A.InputWrap>
               <A.Label>제목</A.Label>
               <A.TextBox>{props.data?.fetchBoard?.title}</A.TextBox>
             </A.InputWrap>
-
-            <A.TextBox>
-              작성일 {getDate(props.data?.fetchBoard?.createdAt)}
-            </A.TextBox>
-            <A.TextBox>수정일{props.data?.fetchBoard?.updatedAt}</A.TextBox>
 
             <A.InputWrap>
               <A.Label>작성자</A.Label>
@@ -48,10 +50,14 @@ export default function BoardDetailUI(props) {
             <A.InputWrap>
               <A.Label>유튜브</A.Label>
               <A.TextBox>{props.data?.fetchBoard?.youtubeUrl}</A.TextBox>
-              <ReactPlayer url="https://www.youtube.com/watch?v=hnanNlDbsE4"></ReactPlayer>
+              {/* <ReactPlayer url="https://www.youtube.com/watch?v=hnanNlDbsE4"></ReactPlayer> */}
             </A.InputWrap>
-            <A.TextBox>좋아요{props.data?.fetchBoard?.likeCount}</A.TextBox>
-            <A.TextBox>싫어요{props.data?.fetchBoard?.dislikeCount}</A.TextBox>
+            <A.LikeBox>
+              <A.TextBox>좋아요{props.data?.fetchBoard?.likeCount}</A.TextBox>
+              <A.TextBox>
+                싫어요{props.data?.fetchBoard?.dislikeCount}
+              </A.TextBox>
+            </A.LikeBox>
           </A.ContentsWrapper>
         </A.TopWrapper>
         <A.BtnWrap>
