@@ -55,6 +55,11 @@ export const AddressBtn = styled.button`
   cursor: pointer;
 `;
 
+export const ImageWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export const ImageUploadBtn = styled.div`
   width: 5rem;
   height: 5rem;

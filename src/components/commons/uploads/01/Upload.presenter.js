@@ -1,19 +1,23 @@
+import { UploadButton, UploadFileHidden, UploadImage } from "./Upload.styles";
+
 export default function UploadUI01(props) {
+  console.log(props.fileUrl);
   return (
     <>
-      <div
-        style={{ width: "50px", height: "50px", background: "grey" }}
-        onClick={props.onClickImage}
-      >
-        이미지 선택
-      </div>
-      <input
-        style={{ display: "none" }}
+      {props.fileUrl ? (
+        <UploadButton
+          onClick={props.onClickImageUpload}
+          src={`https://storage.googleapis.com/${props.fileUrl}`}
+        />
+      ) : (
+        <UploadImage onClick={props.onClickImageUpload}>+</UploadImage>
+      )}
+
+      <UploadFileHidden
         type="file"
-        onChange={props.onChangeFile}
         ref={props.fileRef}
+        onChange={props.onChangeFile}
       />
-      <img src={`https://storage.googleapis.com/${props.imageUrl}`} />
     </>
   );
 }

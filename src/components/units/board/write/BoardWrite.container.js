@@ -9,43 +9,49 @@ import { CREATE_BOARD } from "./BoardWrite.queries";
 export default function BoardWrite(props) {
   const router = useRouter();
 
-  const { register, handleSubmit, setValue, trigger } = useForm({
+  const { register, handleSubmit, setValue, trigger, formState } = useForm({
     mode: "onChange",
   });
 
   const [isActive, setIsActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const [inputs, setInputs] = useState(initialInputs);
-  const [inputsError, setInputsError] = useState(initialInputs);
+  // const [inputs, setInputs] = useState(initialInputs);
+  // const [inputsError, setInputsError] = useState(initialInputs);
 
-  const [zipcode, setZipcode] = useState("");
-  const [address, setAddress] = useState("");
-  const [addressDetail, setAddressDetail] = useState("");
+  // const [zipcode, setZipcode] = useState("");
+  // const [address, setAddress] = useState("");
+  // const [addressDetail, setAddressDetail] = useState("");
+  // const [youtubeUrl, setYoutubeUrl] = useState("");
 
-  const [youtubeUrl, setYoutubeUrl] = useState("");
   const [fileUrls, setFileUrls] = useState(["", "", ""]);
 
   const [createBoard] = useMutation(CREATE_BOARD);
+  // const [updateBoard] = useMutation(UPDATE_BOARD);
 
-  const onChangeContents = (value) => {
-    console.log(value);
+  // const onChangeContents = (value) => {
+  //   console.log(value);
 
-    setValue("contents", value === "<p><br></p>" ? "" : value);
-    trigger("contents");
-  };
+  //   setValue("contents", value === "<p><br></p>" ? "" : value);
+  //   trigger("contents");
+  // };
 
-  const onChangeYoutubeUrl = (event) => {
-    setYoutubeUrl(event.target.value);
-  };
+  // const onChangeYoutubeUrl = (event) => {
+  //   setYoutubeUrl(event.target.value);
+  // };
 
   const onClickAddressSearch = () => {
     setIsOpen(true);
   };
 
   const onCompleteAddressSearch = (data) => {
-    setAddress(data.address);
-    setZipcode(data.zonecode);
+    setValue("zipcode", data.zonecode);
+    setValue("address", data.address);
+
+    trigger("zipcode");
+    trigger("address");
+    // setAddress(data.address);
+    // setZipcode(data.zonecode);
     setIsOpen(false);
   };
 
@@ -66,25 +72,34 @@ export default function BoardWrite(props) {
   // }, [props.data]);
 
   const onClickRegister = async (data) => {
-    const result = await createBoard({
-      variables: {
-        createBoardInput: {
-          writer: data.writer,
-          password: data.password,
-          contents: data.contents,
-          images: [...fileUrls],
-          youtubeUrl: data.youtubeUrl,
-          address: {
-            zipcode,
-            address,
-            addressDetail,
+    try {
+      const result = await createBoard({
+        variables: {
+          createBoardInput: {
+            writer: data.writer,
+            password: data.password,
+            contents: data.contents,
+            zipcode: data.zipcode,
+            address: data.address,
+            addressDetail: data.addressDetail,
+            images: [...fileUrls],
+            youtubeUrl: data.youtubeUrl,
+            // address: {
+            //   zipcode,
+            //   address,
+            //   addressDetail,
+            // },
           },
         },
-      },
-      refetchQueries: [{ query: FETCH_BOARDS }],
-    });
-    alert("성공");
-    router.push(`/boards/${result.data?.createBoard._id}`);
+        // refetchQueries: [{ query: FETCH_BOARDS }],
+      });
+      alert("성공", result);
+      message.success("등록 성공");
+      router.push(`/boards/${result.data?.createBoard._id}`);
+    } catch (error) {
+      console.log("실패", error);
+      Modal.error({ content: error.message });
+    }
   };
 
   return (
@@ -93,19 +108,22 @@ export default function BoardWrite(props) {
         data={props.data}
         isActive={isActive}
         isOpen={isOpen}
+        isEdit={props.isEdit}
         // inputsError={inputsError}
         // onChangeInputs={onChangeInputs}
-        zipcode={zipcode}
-        address={address}
-        addressDetail={addressDetail}
+        // zipcode={zipcode}
+        // address={address}
+        // addressDetail={addressDetail}
         onChangeAddressDetail={onChangeAddressDetail}
         onClickAddressSearch={onClickAddressSearch}
         onCompleteAddressSearch={onCompleteAddressSearch}
-        onChangeYoutubeUrl={onChangeYoutubeUrl}
-        onChangeFileUrls={onChangeFileUrls}
-        onClickRegister={onClickRegister}
-        handleSubmit={handleSubmit}
+        // onChangeYoutubeUrl={onChangeYoutubeUrl}
         fileUrls={fileUrls}
+        onChangeFileUrls={onChangeFileUrls}
+        register={register}
+        handleSubmit={handleSubmit}
+        formState={formState}
+        onClickRegister={onClickRegister}
       />
     </>
   );

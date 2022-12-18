@@ -28,8 +28,8 @@ export default function BoardDetail() {
     }
   };
 
-  const onClickTestBtn = () => {
-    Modal.success({ content: "게시글 등록에 성공했습니다!!" });
+  const onClickModifyBtn = () => {
+    Modal.success({ content: "수정에 성공했습니다!!" });
   };
 
   return (
@@ -37,7 +37,7 @@ export default function BoardDetail() {
       <BoardDetailUI
         data={data}
         onClickDelete={onClickDelete}
-        onClickTestBtn={onClickTestBtn}
+        onClickModifyBtn={onClickModifyBtn}
       />
     </>
   );
