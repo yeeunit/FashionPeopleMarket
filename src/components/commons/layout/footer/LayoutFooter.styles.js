@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../../styles/media";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Star = styled(FontAwesomeIcon)`
   color: yellow;

@@ -11,9 +11,11 @@ export default function LayoutHeaderUI(props) {
           <A.Logo>
             <Link href="/">
               <a>
-                <A.LogoImg src="/images/ye2.png" />
-                &nbsp;YeeunIT
+                <A.LogoImg src="/images/ye2.png" alt="logo" />
               </a>
+            </Link>
+            <Link href="/">
+              <a>YeeunIT</a>
             </Link>
           </A.Logo>
           <A.MenuWrap>
@@ -35,6 +37,11 @@ export default function LayoutHeaderUI(props) {
             <A.Menu>
               <Link href="/other">
                 <a>Other</a>
+              </Link>
+            </A.Menu>
+            <A.Menu>
+              <Link href="/todolist">
+                <a>To Do List</a>
               </Link>
             </A.Menu>
           </A.MenuWrap>

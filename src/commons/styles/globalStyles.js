@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
-
 import { breakPoints } from "./media";
+import "antd/dist/antd.css";
 
 export const globalStyles = css`
   html,
@@ -14,6 +14,8 @@ export const globalStyles = css`
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   }
   * {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
   }
 

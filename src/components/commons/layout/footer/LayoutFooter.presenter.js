@@ -1,28 +1,9 @@
 import * as A from "./LayoutFooter.styles";
-import MainPageQuestionPresenter from "../../../commons/mainPageQuestion/mainPageQuestion.container";
-import Crsl from "../../../units/carousel/Carousel.presenter";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function LayoutFooterUI() {
   return (
     <>
-      {/* <Crsl />
-      <MainPageQuestionPresenter /> */}
-
       <A.Footer>
-        <div>
-          {/* <FontAwesomeIcon
-            icon={faHeart}
-            style={{
-              fontSize: "2.5em",
-              color: "#E53935",
-              cursor: "pointer",
-            }}
-          /> */}
-        </div>
-
         <div>
           {/* <A.Star /> */}
           <A.FooterText>Who Is Yeeun?</A.FooterText>

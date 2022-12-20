@@ -8,7 +8,14 @@ export const CREATE_BOARD = gql`
       title
       contents
       youtubeUrl
+      likeCount
+      dislikeCount
       images
+      boardAddress {
+        zipcode
+        address
+        addressDetail
+      }
       createdAt
     }
   }

@@ -2,7 +2,6 @@ import { Link } from "@material-ui/core";
 import * as A from "./BoardList.styles";
 import { getDate } from "../../../../commons/libraries/utils";
 import { v4 as uuidv4 } from "uuid";
-import Crsl from "../../carousel/Carousel.presenter";
 
 export default function BoardListUI(props) {
   return (
@@ -79,7 +78,6 @@ export default function BoardListUI(props) {
             </Link>
           </A.WriteBtn>
         </A.BottomWrap>
-        {/* <Crsl /> */}
       </A.Wrapper>
     </>
   );

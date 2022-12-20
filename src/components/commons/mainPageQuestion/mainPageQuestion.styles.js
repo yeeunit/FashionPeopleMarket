@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../styles/media";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const QuestionWrapper = styled.div`
-  height: 600px;
+  /* height: 600px; */
   width: 100%;
-  background: #333;
-  padding: 50px 0px;
+  background: #444;
+  padding: 90px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,7 +173,7 @@ export const AnswerContents = styled.div`
   font-weight: 400;
   font-size: 20px;
   line-height: 29px;
-  color: #555555;
+  color: #444;
   @media ${breakPoints.mobile} {
     font-size: 0.8rem;
     line-height: 1.2rem;

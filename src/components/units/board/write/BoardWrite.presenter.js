@@ -96,7 +96,7 @@ export default function BoardWriteUI(props) {
           <A.InputWrap>
             <A.Label>사진 첨부</A.Label>
 
-            <A.ImageWrap>
+            {/* <A.ImageWrap>
               {props.fileUrls.map((el, index) => (
                 <Upload01
                   key={uuidv4()}
@@ -105,11 +105,12 @@ export default function BoardWriteUI(props) {
                   onChangeFileUrls={props.onChangeFileUrls}
                 />
               ))}
-            </A.ImageWrap>
+            </A.ImageWrap> */}
           </A.InputWrap>
 
           <A.BtnWrap>
-            <A.RegisterBtn onClick={props.onClickRegister}>
+            <A.RegisterBtn type="submit">
+              {/* <A.RegisterBtn onClick={props.onClickRegister}> */}
               등록하기
             </A.RegisterBtn>
             <A.CancelBtn>

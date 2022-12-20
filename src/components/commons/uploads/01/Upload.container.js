@@ -21,6 +21,8 @@ export default function Upload01(props) {
       const result = await uploadFile({
         variables: { file },
       });
+      console.log("업로드결과", result);
+
       props.onChangeFileUrls(result.data.uploadFile[0], props.index);
       console.log(result.data?.uploadFile.url);
       // setImageUrl(result.data?.uploadFile.url || "");

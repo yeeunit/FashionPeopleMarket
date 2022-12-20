@@ -28,9 +28,10 @@ export const Label = styled.div`
 `;
 
 export const Input = styled.input`
-  width: 55rem;
+  width: 44rem;
   height: 2rem;
   font-size: 1rem;
+  text-indent: 0.6rem;
   border: none;
   border-bottom: 1px solid gray;
   /* background-color: yellow; */
@@ -40,6 +41,7 @@ export const Zipcode = styled.input`
   width: 8rem;
   height: 2.5rem;
   font-size: 1rem;
+  text-indent: 0.6rem;
   /* border: none; */
   /* border-bottom: 1px solid gray; */
   /* background-color: #eee; */
@@ -78,7 +80,7 @@ export const BtnWrap = styled.div`
   justify-content: center;
 `;
 
-export const RegisterBtn = styled.div`
+export const RegisterBtn = styled.button`
   width: 6rem;
   height: 2.2rem;
   line-height: 2.2rem;

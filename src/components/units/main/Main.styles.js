@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  padding: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Main = styled.div`
@@ -42,7 +43,7 @@ export const Footer = styled.div`
   align-items: center;
   text-align: center;
   /* flex: 1; */
-  background-color: #333;
+  background-color: #222;
   color: white;
   height: 44rem;
   font-size: 4rem;

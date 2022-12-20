@@ -16,32 +16,36 @@ export const Wrapper = styled.div`
 
 export const LogoMenuWrap = styled.div`
   display: flex;
+  /* flex-direction: row; */
+  /* align-items: flex-start; */
   width: 75%;
   /* background-color: rebeccapurple; */
 `;
 
-export const Logo = styled.h1`
+export const Logo = styled.div`
   display: flex;
-  width: 14rem;
+  width: 15rem;
   margin-left: 5rem;
-  height: 3.3rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 900;
+  line-height: 4.4rem;
   cursor: pointer;
   /* background-color: yellow; */
+
   @media ${breakPoints.mobile} {
+    margin-left: 0;
   }
 `;
 
 export const LogoImg = styled.img`
   width: 3.8rem;
-  padding-bottom: 0.5rem;
+  margin-right: 0.5rem;
   /* background-color: rebeccapurple; */
 `;
 
 export const MenuWrap = styled.div`
   display: flex;
-  width: 50%;
+  width: 60%;
   /* background-color: aliceblue; */
   @media ${breakPoints.mobile} {
     display: none;
@@ -50,7 +54,7 @@ export const MenuWrap = styled.div`
 
 export const Menu = styled.div`
   font-size: 1rem;
-  margin-right: 1.5rem;
+  margin-right: 1.3rem;
   :hover {
     cursor: pointer;
     color: #0070f3;
@@ -63,7 +67,8 @@ export const Menu = styled.div`
 export const LoginWrap = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 25%;
+  width: 20%;
+  /* margin-right: 2rem; */
   /* background-color: pink; */
   @media ${breakPoints.mobile} {
     display: none;
@@ -73,7 +78,7 @@ export const LoginWrap = styled.div`
 export const Login = styled.div`
   font-size: 0.6rem;
   font-weight: 200;
-  margin-right: 0.8rem;
+  margin-right: 0.6rem;
   line-height: 4rem;
   cursor: pointer;
 `;

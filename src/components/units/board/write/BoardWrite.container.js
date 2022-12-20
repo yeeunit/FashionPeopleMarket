@@ -1,11 +1,11 @@
 import { useMutation } from "@apollo/client";
-import { Modal } from "antd";
+import { message, Modal } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { CREATE_BOARD } from "./BoardWrite.queries";
-
+import { FETCH_BOARD } from "../detail/BoardDetail.queries";
 export default function BoardWrite(props) {
   const router = useRouter();
 
@@ -55,9 +55,9 @@ export default function BoardWrite(props) {
     setIsOpen(false);
   };
 
-  const onChangeAddressDetail = (event) => {
-    setAddressDetail(event.target.value);
-  };
+  // const onChangeAddressDetail = (event) => {
+  //   setAddressDetail(event.target.value);
+  // };
 
   const onChangeFileUrls = (fileUrl, index) => {
     const newFileUrls = [...fileUrls];
@@ -78,11 +78,12 @@ export default function BoardWrite(props) {
           createBoardInput: {
             writer: data.writer,
             password: data.password,
+            title: data.title,
             contents: data.contents,
-            zipcode: data.zipcode,
-            address: data.address,
-            addressDetail: data.addressDetail,
-            images: [...fileUrls],
+            // zipcode: data.zipcode,
+            // address: data.address,
+            // addressDetail: data.addressDetail,
+            // images: [...fileUrls],
             youtubeUrl: data.youtubeUrl,
             // address: {
             //   zipcode,
@@ -91,7 +92,14 @@ export default function BoardWrite(props) {
             // },
           },
         },
-        // refetchQueries: [{ query: FETCH_BOARDS }],
+        // refetchQueries: [
+        //   {
+        //     query: FETCH_BOARD,
+        //     variables: {
+        //       boardId: router.query._id,
+        //     },
+        //   },
+        // ],
       });
       alert("성공", result);
       message.success("등록 성공");
@@ -114,12 +122,12 @@ export default function BoardWrite(props) {
         // zipcode={zipcode}
         // address={address}
         // addressDetail={addressDetail}
-        onChangeAddressDetail={onChangeAddressDetail}
+        // onChangeAddressDetail={onChangeAddressDetail}
         onClickAddressSearch={onClickAddressSearch}
         onCompleteAddressSearch={onCompleteAddressSearch}
         // onChangeYoutubeUrl={onChangeYoutubeUrl}
-        fileUrls={fileUrls}
-        onChangeFileUrls={onChangeFileUrls}
+        // fileUrls={fileUrls}
+        // onChangeFileUrls={onChangeFileUrls}
         register={register}
         handleSubmit={handleSubmit}
         formState={formState}
