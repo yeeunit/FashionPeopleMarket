@@ -3,6 +3,8 @@ import { getDate } from "../../../../commons/libraries/utils";
 import * as A from "./BoardDetail.styles";
 import ReactPlayer from "react-player";
 import { DislikeOutlined, LikeOutlined } from "@ant-design/icons";
+import BoardCommentWrite from "../../boardComment/write/BoardCommentWrite.containter";
+import BoardCommentList from "../../boardComment/list/BoardCommentList.containter";
 
 export default function BoardDetailUI(props) {
   return (
@@ -90,6 +92,8 @@ export default function BoardDetailUI(props) {
             </Link>
           </A.CancelBtn>
         </A.BtnWrap>
+        <BoardCommentWrite />
+        <BoardCommentList />
       </A.Wrapper>
     </>
   );

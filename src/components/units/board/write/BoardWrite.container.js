@@ -8,7 +8,7 @@ import { CREATE_BOARD } from "./BoardWrite.queries";
 import { FETCH_BOARD } from "../detail/BoardDetail.queries";
 export default function BoardWrite(props) {
   const router = useRouter();
-
+  message;
   const { register, handleSubmit, setValue, trigger, formState } = useForm({
     mode: "onChange",
   });
