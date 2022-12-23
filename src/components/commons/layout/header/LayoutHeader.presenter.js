@@ -58,21 +58,21 @@ export default function LayoutHeaderUI(props) {
               <a>로그인</a>
             </Link>
           </A.Login>
-          <A.Login onClick={props.onClickLogOut}>
+          {/* <A.Login onClick={props.onClickLogOut}>
             <Link href="/login">
               <a>로그아웃</a>
             </Link>
-          </A.Login>
-          <A.Login>
+          </A.Login> */}
+          {/* <A.Login>
             <Link href="/mypage">
               <a>충전</a>
             </Link>
-          </A.Login>
-          <A.Login>
+          </A.Login> */}
+          {/* <A.Login>
             <Link href="/mypage">
               <a>장바구니</a>
             </Link>
-          </A.Login>
+          </A.Login> */}
           {/* <A.Login>Logout</A.Login> */}
         </A.LoginWrap>
       </A.Wrapper>

@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: bold;
 `;
 
@@ -49,7 +49,7 @@ export const ColorChange = styled.div`
 export const ListWrap = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  width: 1100px;
   /* width: 90%; */
 `;
 
@@ -74,11 +74,14 @@ export const RowHeader = styled.div`
 export const Column = styled.div`
   width: 25%;
   text-align: center;
+  overflow: hidden;
 `;
 
 export const ColumnTitle = styled.div`
-  width: 45%;
+  width: 40%;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const ColumnDate = styled.div`
@@ -87,7 +90,7 @@ export const ColumnDate = styled.div`
 `;
 
 export const ColumnLike = styled.div`
-  width: 10%;
+  width: 15%;
   text-align: center;
 `;
 

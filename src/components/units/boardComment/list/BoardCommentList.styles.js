@@ -6,56 +6,56 @@ export const Wrapper = styled.div`
   /* background-color: pink; */
 `;
 
-export const Title = styled.div`
-  font-size: 1.2rem;
-  padding-bottom: 1rem;
+export const ItemWrapper = styled.div`
+  width: 1200px;
+  margin: 0px 100px;
+  padding-top: 20px;
+  height: 128px;
+  border-bottom: 1px solid lightgray;
 `;
 
-export const WriterWrap = styled.div`
+export const FlexWrapper = styled.div`
   display: flex;
-  padding-bottom: 0.6rem;
+  flex-direction: row;
 `;
 
-export const Writer = styled.input`
-  width: 9rem;
-  height: 2.2rem;
-  text-indent: 0.6rem;
-  margin-right: 0.4rem;
-  border: 1px solid gray;
+export const Avatar = styled.img`
+  width: 48px;
+  height: 48px;
 `;
 
-export const Password = styled.input`
-  width: 9rem;
-  height: 2.2rem;
-  text-indent: 0.6rem;
-  margin-right: 100px;
-  border: 1px solid gray;
+export const MainWrapper = styled.div`
+  width: 100%;
+  padding-left: 10px;
 `;
-
-export const Star = styled.div``;
-
-export const Comment = styled.input`
-  text-indent: 0.6rem;
-  height: 12rem;
-  margin-bottom: 0.8rem;
-`;
-export const ButtonBox = styled.div`
+export const WriterWrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
 `;
-export const Numbers = styled.div`
-  width: 5rem;
-  font-size: 0.8rem;
-  color: #333;
-  text-align: center;
-  line-height: 2.2rem;
-  /* background-color: cadetblue; */
+export const Writer = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+`;
+export const Contents = styled.div``;
+
+export const OptionWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+export const UpdateIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+`;
+export const DeleteIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 `;
 
-export const Button = styled.button`
-  width: 7rem;
-  height: 2.2rem;
-  background-color: #444;
-  color: white;
-  border: none;
+export const DateString = styled.div`
+  color: lightgray;
+  padding-top: 15px;
+  padding-left: 60px;
 `;

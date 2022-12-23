@@ -7,7 +7,11 @@ export const Wrapper = styled.div`
   margin: 50px auto;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  width: 25rem;
+  margin: 2rem;
+  /* background-color: aliceblue; */
+`;
 
 export const InputWrap = styled.div`
   padding-top: 1rem;
@@ -16,7 +20,9 @@ export const InputWrap = styled.div`
 `;
 
 export const Label = styled.div`
-  width: 6.6rem;
+  width: 5.5rem;
+  font-size: medium;
+  line-height: 2.2rem;
 `;
 
 export const InputBox = styled.input`
@@ -24,10 +30,11 @@ export const InputBox = styled.input`
   height: 2.2rem;
   padding-left: 1rem;
   font-size: 0.7rem;
+  border: 1px solid grey;
 `;
 
 export const Error = styled.span`
-  color: tomato;
+  color: purple;
   width: 20rem;
   padding-left: 3.3rem;
   padding-top: 0.3rem;

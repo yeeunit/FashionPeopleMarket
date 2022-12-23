@@ -15,6 +15,7 @@ export default function LoginWrite() {
   const [password, setPassword] = useState("");
 
   const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const [loginUser] = useMutation(LOGIN_USER);
 

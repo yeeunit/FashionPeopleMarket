@@ -19,9 +19,7 @@ export default function BoardCommentWriteUI(props) {
           />
 
           <A.Star>
-            <Rate
-            // onChange={onChangeStar}
-            />
+            <Rate onChange={props.setStar} />
           </A.Star>
         </A.WriterWrap>
         <A.Comment

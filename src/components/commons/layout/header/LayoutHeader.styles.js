@@ -45,7 +45,7 @@ export const LogoImg = styled.img`
 
 export const MenuWrap = styled.div`
   display: flex;
-  width: 60%;
+  width: 70%;
   /* background-color: aliceblue; */
   @media ${breakPoints.mobile} {
     display: none;
@@ -67,7 +67,7 @@ export const Menu = styled.div`
 export const LoginWrap = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 20%;
+  width: 12%;
   /* margin-right: 2rem; */
   /* background-color: pink; */
   @media ${breakPoints.mobile} {

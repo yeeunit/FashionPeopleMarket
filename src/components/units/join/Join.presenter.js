@@ -9,26 +9,21 @@ export default function JoinUI(props) {
           {/* <span>Sign Up</span> */}
         </A.Title>
         <A.InputWrap>
-          <A.Label>이름 </A.Label>
-          <A.InputBox type="text" id="name" onChange={props.onChangeInputs} />
+          <A.Label> 이름 </A.Label>
+          <A.InputBox type="text" onChange={props.onChangeName} />
         </A.InputWrap>
         <A.Error>이름을 입력하세요</A.Error>
         <A.InputWrap>
           <A.Label>이메일</A.Label>
-          <A.InputBox
-            type="text"
-            id="email"
-            onChange={props.onChangeInputs}
-          />{" "}
+          <A.InputBox type="text" onChange={props.onChangeEmail} />{" "}
         </A.InputWrap>
         <A.Error>이메일 주소를 정확하게 입력하세요</A.Error>
         <A.InputWrap>
           <A.Label>비밀번호</A.Label>
           <A.InputBox
             type="password"
-            id="password"
             placeholder="영문+숫자 조합 8-16자리를 입력해주세요."
-            onChange={props.onChangeInputs}
+            onChange={props.onChangePassword}
           />{" "}
         </A.InputWrap>
         <A.Error>비밀번호를 정확하게 입력하세요</A.Error>

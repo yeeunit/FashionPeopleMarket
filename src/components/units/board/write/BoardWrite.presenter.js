@@ -9,9 +9,13 @@ export default function BoardWriteUI(props) {
   return (
     <>
       <A.Wrapper>
-        <A.Title>글쓰기</A.Title>
+        <A.Title>{props.isEdit ? "수정하기" : "글쓰기"}</A.Title>
 
-        <form onSubmit={props.handleSubmit(props.onClickRegister)}>
+        <form
+          onSubmit={props.handleSubmit(
+            props.isEdit ? props.onClickUpdate : props.onClickRegister
+          )}
+        >
           <A.InputWrap>
             <A.Label>작성자</A.Label>
             <A.Input
@@ -111,7 +115,7 @@ export default function BoardWriteUI(props) {
           <A.BtnWrap>
             <A.RegisterBtn type="submit">
               {/* <A.RegisterBtn onClick={props.onClickRegister}> */}
-              등록하기
+              {props.isEdit ? "수정하기" : "등록하기"}
             </A.RegisterBtn>
             <A.CancelBtn>
               <Link href="/boards">

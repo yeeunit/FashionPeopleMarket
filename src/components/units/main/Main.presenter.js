@@ -15,9 +15,8 @@ export default function MainUI(props) {
             <A.Card>
               <Link href="/login">
                 <a>
-                  <h2>로그인 하기 &rarr;</h2>
-                  <br />
-                  <p>로그인해서 더 많은 서비스를 누려보세요!</p>
+                  <div>로그인 하기 &rarr;</div>
+                  <span>로그인해서 더 많은 서비스를 누려보세요!</span>
                 </a>
               </Link>
             </A.Card>

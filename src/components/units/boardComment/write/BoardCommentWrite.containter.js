@@ -25,9 +25,7 @@ export default function BoardCommentWrite() {
   const onChangeContents = (event) => {
     setContents(event.target.value);
   };
-  // const onChangeStar = () => {
-  //     setStar
-  // }
+
   const onClickSubmitComment = async () => {
     console.log(writer, password, contents);
     if (!contents) return;
@@ -39,35 +37,36 @@ export default function BoardCommentWrite() {
             writer,
             password,
             contents,
-            boardId: router.query.boardId,
-
-            //     },
-            //   },
-            // refetchQueries: [
-            //     {
-            //       query: FETCH_COMMENTS,
-            //       variables: { boardId: String(router.query.boardId) },
-            //     },
-            //   ],
+            rating: star,
           },
+          boardId: router.query.boardId,
         },
+        refetchQueries: [
+          {
+            query: FETCH_COMMENTS,
+            variables: { boardId: router.query.boardId },
+          },
+        ],
       });
-      console.log("result", result);
-      Modal.success({ title: "등록완료" });
+      console.log("댓글성공", result);
+      Modal.success({ title: "등록 완료" });
     } catch (error) {
-      Modal.error({ title: "등록완료" });
-
+      console.log("댓글 실패");
+      Modal.error({ title: "등록 실패" });
       // alert("등록완료");
     }
+    setWriter("");
+    setPassword("");
+    setContents("");
   };
 
   return (
     <>
       <BoardCommentWriteUI
+        setStar={setStar}
         onChangeWriter={onChangeWriter}
         onChangePassword={onChangePassword}
         onChangeContents={onChangeContents}
-        //   onChangeStar={onChangeStar}
         onClickSubmitComment={onClickSubmitComment}
       />
     </>

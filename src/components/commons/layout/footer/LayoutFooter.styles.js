@@ -32,7 +32,7 @@ export const Footer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 22rem;
+  height: 20rem;
   background-color: #eee;
   @media ${breakPoints.mobile} {
     /* display: none; */
