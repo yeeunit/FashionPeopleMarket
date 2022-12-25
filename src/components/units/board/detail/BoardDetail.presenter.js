@@ -3,6 +3,8 @@ import { getDate } from "../../../../commons/libraries/utils";
 import * as A from "./BoardDetail.styles";
 import ReactPlayer from "react-player";
 import { DislikeOutlined, LikeOutlined } from "@ant-design/icons";
+import { PersonIcon, WatchLaterIcon } from "@mui/icons-material";
+
 import BoardCommentWrite from "../../boardComment/write/BoardCommentWrite.containter";
 import BoardCommentList from "../../boardComment/list/BoardCommentList.containter";
 
@@ -11,6 +13,16 @@ export default function BoardDetailUI(props) {
     <>
       <A.Wrapper>
         <A.Title>상세보기</A.Title>
+
+        <A.TitleWrapper>
+          <A.TextBox> 제목: {props.data?.fetchBoard?.title}</A.TextBox>{" "}
+          <A.Date>
+            <PersonIcon /> {props.data?.fetchBoard?.writer} &nbsp; &nbsp; &nbsp;
+            &nbsp; <WatchLaterIcon />{" "}
+            {getDate(props.data?.fetchBoard?.createdAt)}
+          </A.Date>
+        </A.TitleWrapper>
+
         <A.TopWrapper>
           <A.ImageWrapper>
             {props.data ? (
@@ -32,22 +44,10 @@ export default function BoardDetailUI(props) {
 
           <A.ContentsWrapper>
             <A.DateWrap>
-              <A.Date>
-                작성일 : {getDate(props.data?.fetchBoard?.createdAt)}
-              </A.Date>
-
               {/* <A.Date>수정일 : {props.data?.fetchBoard?.updatedAt}</A.Date> */}
             </A.DateWrap>
-            <A.InputWrap>
-              <A.Label>제목</A.Label>
-              <A.TextBox>{props.data?.fetchBoard?.title}</A.TextBox>
-            </A.InputWrap>
 
-            <A.InputWrap>
-              <A.Label>작성자</A.Label>
-              <A.TextBox>{props.data?.fetchBoard?.writer}</A.TextBox>
-            </A.InputWrap>
-            <A.InputWrap>
+            <A.InputWrap style={{ height: "10rem" }}>
               <A.Label>내용</A.Label>
               <A.TextBox>{props.data?.fetchBoard?.contents}</A.TextBox>
             </A.InputWrap>

@@ -48,6 +48,9 @@ export const QuestionBox1 = styled.div`
 `;
 
 export const QuestionContents1 = styled.div`
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
   padding-bottom: 10px;
   font-weight: 400;
   font-size: 1.6rem;
@@ -85,6 +88,8 @@ export const QuestionBox2 = styled.div`
 `;
 
 export const QuestionContents2 = styled.div`
+  display: flex;
+  justify-content: space-between;
   padding-bottom: 10px;
   font-weight: 400;
   font-size: 1.6rem;
@@ -121,6 +126,8 @@ export const QuestionBox3 = styled.div`
 `;
 
 export const QuestionContents3 = styled.div`
+  display: flex;
+  justify-content: space-between;
   padding-bottom: 10px;
   font-weight: 400;
   font-size: 1.6rem;
@@ -157,6 +164,8 @@ export const QuestionBox4 = styled.div`
 `;
 
 export const QuestionContents4 = styled.div`
+  display: flex;
+  justify-content: space-between;
   padding-bottom: 10px;
   font-weight: 400;
   font-size: 1.6rem;

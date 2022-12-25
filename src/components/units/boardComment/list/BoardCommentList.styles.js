@@ -3,15 +3,16 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* background-color: pink; */
+  background-color: pink;
 `;
 
 export const ItemWrapper = styled.div`
-  width: 1200px;
-  margin: 0px 100px;
-  padding-top: 20px;
-  height: 128px;
-  border-bottom: 1px solid lightgray;
+  width: 80%;
+  margin: 2rem 0;
+  padding-top: 1rem;
+  height: 7rem;
+  /* background-color: pink; */
+  border-top: 1px solid lightgray;
 `;
 
 export const FlexWrapper = styled.div`
@@ -20,8 +21,9 @@ export const FlexWrapper = styled.div`
 `;
 
 export const Avatar = styled.img`
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
 `;
 
 export const MainWrapper = styled.div`
@@ -34,7 +36,7 @@ export const WriterWrapper = styled.div`
   align-items: center;
 `;
 export const Writer = styled.div`
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: bold;
 `;
 export const Contents = styled.div``;
@@ -43,12 +45,12 @@ export const OptionWrapper = styled.div`
   display: flex;
   flex-direction: row;
 `;
-export const UpdateIcon = styled.img`
+export const Update = styled.div`
   width: 24px;
   height: 24px;
   cursor: pointer;
 `;
-export const DeleteIcon = styled.img`
+export const Delete = styled.div`
   width: 24px;
   height: 24px;
   cursor: pointer;

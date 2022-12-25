@@ -116,6 +116,7 @@ export default function BoardWriteUI(props) {
             <A.RegisterBtn type="submit">
               {/* <A.RegisterBtn onClick={props.onClickRegister}> */}
               {props.isEdit ? "수정하기" : "등록하기"}
+
             </A.RegisterBtn>
             <A.CancelBtn>
               <Link href="/boards">

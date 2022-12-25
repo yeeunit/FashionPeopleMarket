@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 80%;
   /* background-color: pink; */
   padding-top: 5rem;
 `;
@@ -36,9 +37,9 @@ export const Password = styled.input`
 
 export const Star = styled.div``;
 
-export const Comment = styled.input`
-  text-indent: 0.6rem;
-  height: 12rem;
+export const Comment = styled.textarea`
+  padding: 1rem;
+  height: 8rem;
   margin-bottom: 0.8rem;
   border: 1px solid gray;
 `;

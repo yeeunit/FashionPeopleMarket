@@ -1,4 +1,5 @@
 import * as S from "./mainPageQuestion.styles";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function Q2Presenter(props) {
   return (
@@ -7,7 +8,8 @@ export default function Q2Presenter(props) {
       isAnswer2={props.isAnswer2}
     >
       <S.QuestionContents2 isAnswer2={props.isAnswer2}>
-        모두 혼자 만든 것인가요?
+        혼자 개발하신 것인가요?
+        <ExpandMoreIcon fontSize="large" />
       </S.QuestionContents2>
       {props.isAnswer2 && (
         <S.AnswerContents>

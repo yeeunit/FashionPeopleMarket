@@ -1,4 +1,5 @@
 import * as S from "./mainPageQuestion.styles";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function Q1Presenter(props) {
   return (
@@ -6,8 +7,11 @@ export default function Q1Presenter(props) {
       onClick={props.onClickQuestion1}
       isAnswer1={props.isAnswer1}
     >
+      {/* <AddIcon /> */}
       <S.QuestionContents1 isAnswer1={props.isAnswer1}>
         이 사이트는 어떤 목적으로 제작된 것인가요?
+        <ExpandMoreIcon fontSize="large" />
+        {/* <AddIcon /> */}
       </S.QuestionContents1>
       {props.isAnswer1 && (
         <S.AnswerContents>

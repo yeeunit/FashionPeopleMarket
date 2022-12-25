@@ -8,6 +8,15 @@ export const Wrapper = styled.div`
   padding: 5% 10%;
 `;
 
+export const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 66rem;
+  height: 5rem;
+  /* border: 1px solid gray; */
+`;
+
 export const Title = styled.div`
   font-size: 2rem;
   font-weight: bold;
@@ -69,7 +78,7 @@ export const Label = styled.div`
 `;
 
 export const TextBox = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 `;
 
 export const DateWrap = styled.div`
@@ -77,7 +86,7 @@ export const DateWrap = styled.div`
   /* padding: 1rem; */
 `;
 export const Date = styled.div`
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   margin: 1rem;
 `;
 export const LikeBox = styled.div`

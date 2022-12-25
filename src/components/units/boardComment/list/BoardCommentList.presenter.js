@@ -1,5 +1,10 @@
 import * as A from "./BoardCommentList.styles";
 
+import { EditIcon, AccountCircleIcon, ClearIcon } from "@mui/icons-material";
+
+// import EditIcon from "@mui/icons-material/Edit";
+// import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+// import ClearIcon from "@mui/icons-material/Clear";
 export default function BoardCommentListUI(props) {
   return (
     <>
@@ -9,7 +14,7 @@ export default function BoardCommentListUI(props) {
         {props.data?.fetchBoardComments.map((el) => (
           <A.ItemWrapper key={el._id}>
             <A.FlexWrapper>
-              <A.Avatar src="/images/avatar.png" />
+              <AccountCircleIcon fontSize="large" color="action" />
               <A.MainWrapper>
                 <A.WriterWrapper>
                   <A.Writer>{el.writer}</A.Writer>
@@ -17,12 +22,13 @@ export default function BoardCommentListUI(props) {
                 <A.Contents>{el.contents}</A.Contents>
               </A.MainWrapper>
               <A.OptionWrapper>
-                <A.UpdateIcon src="/images/boardComment/list/option_update_icon.png/" />
-                <A.DeleteIcon
-                // id={el._id}
-                // src="/images/boardComment/list/option_delete_icon.png/"
-                // onClick={props.onClickDelete}
-                />
+                <A.Update>
+                  {" "}
+                  <EditIcon color="action" />{" "}
+                </A.Update>
+                <A.Delete>
+                  <ClearIcon color="action" onClick={props.onClickDelete} />{" "}
+                </A.Delete>
               </A.OptionWrapper>
             </A.FlexWrapper>
             {/* <A.DateString>{getDate(el?.createdAt)}</A.DateString> */}

@@ -63,6 +63,7 @@ export default function BoardCommentWrite() {
   return (
     <>
       <BoardCommentWriteUI
+        contents={contents}
         setStar={setStar}
         onChangeWriter={onChangeWriter}
         onChangePassword={onChangePassword}

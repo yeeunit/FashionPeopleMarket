@@ -1,7 +1,10 @@
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import BoardCommentListUI from "./BoardCommentList.presenter";
-import { FETCH_BOARD_COMMENTS } from "./BoardCommentList.queries";
+import {
+  DELETE_BOARD_COMMENT,
+  FETCH_BOARD_COMMENTS,
+} from "./BoardCommentList.queries";
 
 export default function BoardCommentList() {
   const router = useRouter();
@@ -16,9 +19,20 @@ export default function BoardCommentList() {
 
   console.log("댓글data", data);
 
+  const [deleteBoardComment] = useMutation(DELETE_BOARD_COMMENT);
+
+  const onClickDelete = () => {
+    deleteBoardComment({
+      variables: {
+        boardCommentId,
+        password,
+      },
+    });
+  };
+
   return (
     <>
-      <BoardCommentListUI data={data} />
+      <BoardCommentListUI data={data} onClickDelete={onClickDelete} />
     </>
   );
 }
