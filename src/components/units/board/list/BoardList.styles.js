@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   margin-top: 4rem;
   margin-left: 8rem;
+  /* width: 77rem; */
+  /* background-color: aliceblue; */
 `;
 
 export const Title = styled.div`
@@ -49,7 +51,7 @@ export const ColorChange = styled.div`
 export const ListWrap = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1100px;
+  width: 1200px;
   /* width: 90%; */
 `;
 

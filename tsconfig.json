@@ -31,7 +31,9 @@
     "src/components/units/payment/index.js",
     "src/components/commons/question/Question.styles.js",
     "src/components/commons/question/Question.presenter.js",
-    "src/components/units/boardComment/write/write/BoardCommentWrite.styles.js"
+    "src/components/units/boardComment/write/write/BoardCommentWrite.styles.js",
+, "src/components/commons/map/index.js", "src/commons/store/index.js"    "src/commons/styles/commonColor.js",
+    "src/commons/styles/resetStyles.js"
   ],
   "exclude": ["node_modules"]
 }

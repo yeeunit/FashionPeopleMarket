@@ -1,103 +1,209 @@
 import styled from "@emotion/styled";
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 1500px;
-  padding: 5% 10%;
+export const DetailWrapper = styled.div`
+  width: 100%;
 `;
 
-export const Title = styled.div`
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 4rem;
+export const DetailHeader = styled.div`
+  width: 100%;
+  display: flex;
+  padding-top: 70px;
 `;
 
-export const TopWrapper = styled.div`
-  display: flex;
-  width: 80rem;
-  height: 40rem;
-  border: 1px solid gray;
+export const HeaderLeftBox = styled.div`
+  width: 40%;
+  div.default-img {
+    width: 100%;
+    height: 100%;
+    background-color: #c4c4c4;
+  }
 `;
 
-export const ImageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+export const HeaderRightBox = styled.div`
   width: 50%;
-  /* height: 33rem; */
-  border: 1px solid gray;
+  height: 480px;
+  padding-left: 70px;
 `;
 
-export const BigImage = styled.img`
-  width: 33rem;
-  height: 25rem;
-  background-color: #eee;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-`;
-
-export const SmallImgWrap = styled.div`
+export const HeaderRightTitle = styled.div`
   display: flex;
-`;
-export const SmallImage = styled.img`
-  width: 9rem;
-  height: 6rem;
-  margin-right: 1rem;
-  background-color: #eee;
-  border-radius: 1rem;
-`;
-
-export const ContentsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+  justify-content: space-between;
+  p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  span {
+    font-size: 24px;
+    color: #bdbdbd;
+    padding-left: 20px;
+    cursor: pointer;
+  }
 `;
 
-export const InputWrap = styled.div`
-  display: flex;
-  border: 1px solid red;
-  height: 3rem;
-  margin: 1rem;
-`;
-
-export const Label = styled.div`
-  width: 7.7rem;
-  font-size: 1.4rem;
+export const HeaderRightPrice = styled.div`
+  padding-top: 50px;
+  font-size: 40px;
   font-weight: bold;
-  background-color: pink;
+  span {
+    font-size: 20px;
+    font-weight: normal;
+    padding-left: 10px;
+  }
 `;
 
-export const TextBox = styled.div`
-  font-size: 1.2rem;
+export const HeaderRightContents = styled.div`
+  padding: 25px;
+  border-top: 3px solid #555555;
+  border-bottom: 1px solid #c0c0c0;
+  p {
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+  div.tag {
+    display: inline-block;
+    background-color: gold;
+    padding: 5px 20px;
+    margin-right: 15px;
+    border-radius: 20px;
+  }
 `;
 
-export const BtnWrap = styled.div`
+export const HeaderRightBtnWrap = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  padding-top: 25px;
+  button {
+    width: 100%;
+    height: 100px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    margin: 0 10px;
+  }
+  button.bucket {
+    background-color: #a0a0a0;
+  }
+  button.purchase {
+    background-color: #000000;
+  }
 `;
 
-export const RegisterBtn = styled.div`
-  width: 6rem;
-  height: 2.2rem;
-  line-height: 2.2rem;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  margin: 0.5rem;
-  border-radius: 10px;
+export const BtnPick = styled.button`
+  width: 100%;
+  height: 100px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #ffffff;
+  border: none;
+  margin: 0 10px;
+  background-color: ${(props) =>
+    props.pickCount === 1 ? "#000000" : "#c9c9c9"};
+  span {
+    color: ${(props) => (props.pickCount === 1 ? "gold" : "#ffffff")};
+  }
+`;
+
+export const DetailBody = styled.div`
+  display: flex;
+  padding-bottom: 150px;
+`;
+
+export const BodyLeft = styled.div`
+  width: 70%;
+  margin-top: 100px;
+  border-right: 1px solid #555555;
+  padding-right: 20px;
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    border-bottom: 3px solid #555555;
+    padding-bottom: 30px;
+  }
+`;
+
+export const BodyLeftContentsBox = styled.div`
+  padding-top: 30px;
+  font-size: 20px;
+`;
+
+export const BodyLeftMapBox = styled.div`
+  padding-top: 40px;
+  div.title {
+    padding-bottom: 30px;
+    span {
+      &:first-of-type {
+        color: #bdbdbd;
+        margin-right: 10px;
+      }
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+`;
+
+export const BodyRight = styled.div`
+  width: 30%;
+  margin-top: 100px;
+  padding-left: 20px;
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    border-bottom: 3px solid #555555;
+    padding-bottom: 30px;
+  }
+`;
+
+export const BodyRightProfile = styled.div`
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #555555;
+  padding: 20px 0;
+  div.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    margin: 0 20px;
+  }
+  p {
+    font-size: 24px;
+  }
+`;
+
+export const BodyRightCommentBox = styled.div`
+  margin-top: 50px;
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    border-bottom: 3px solid #555555;
+    padding-bottom: 30px;
+  }
+`;
+
+export const BodyRightCommentWriteBox = styled.div`
+  padding-top: 30px;
+`;
+
+export const BodyRightCommentWrite = styled.textarea`
+  width: 100%;
+  height: 100px;
+`;
+
+export const BodyRightBtnWrap = styled.div`
+  margin-top: 20px;
+  text-align: right;
+`;
+
+export const BodyRightBtn = styled.button`
+  width: 110px;
+  height: 40px;
+  background-color: gold;
+  border: none;
+  font-weight: bold;
   cursor: pointer;
 `;
 
-export const CancelBtn = styled.div`
-  width: 6rem;
-  height: 2.2rem;
-  line-height: 2.2rem;
-  background-color: #aaa;
-  color: white;
-  text-align: center;
-  margin: 0.5rem;
-  border-radius: 10px;
-  cursor: pointer;
+export const BodyRightCommentListBox = styled.div`
+  margin-top: 50px;
 `;
