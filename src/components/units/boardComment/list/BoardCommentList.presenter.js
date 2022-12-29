@@ -1,6 +1,6 @@
 import * as A from "./BoardCommentList.styles";
 
-import { EditIcon, AccountCircleIcon, ClearIcon } from "@mui/icons-material";
+// import { EditIcon, AccountCircleIcon, ClearIcon } from "@mui/icons-material";
 
 // import EditIcon from "@mui/icons-material/Edit";
 // import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -14,7 +14,7 @@ export default function BoardCommentListUI(props) {
         {props.data?.fetchBoardComments.map((el) => (
           <A.ItemWrapper key={el._id}>
             <A.FlexWrapper>
-              <AccountCircleIcon fontSize="large" color="action" />
+              {/* <AccountCircleIcon fontSize="large" color="action" /> */}
               <A.MainWrapper>
                 <A.WriterWrapper>
                   <A.Writer>{el.writer}</A.Writer>
@@ -22,12 +22,9 @@ export default function BoardCommentListUI(props) {
                 <A.Contents>{el.contents}</A.Contents>
               </A.MainWrapper>
               <A.OptionWrapper>
-                <A.Update>
-                  {" "}
-                  <EditIcon color="action" />{" "}
-                </A.Update>
+                <A.Update> {/* <EditIcon color="action" />{" "} */}</A.Update>
                 <A.Delete>
-                  <ClearIcon color="action" onClick={props.onClickDelete} />{" "}
+                  {/* <ClearIcon color="action" onClick={props.onClickDelete} />{" "} */}
                 </A.Delete>
               </A.OptionWrapper>
             </A.FlexWrapper>

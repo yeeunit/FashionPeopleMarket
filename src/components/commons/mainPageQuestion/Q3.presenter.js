@@ -8,13 +8,13 @@ export default function Q3Presenter(props) {
       isAnswer3={props.isAnswer3}
     >
       <S.QuestionContents3 isAnswer3={props.isAnswer3}>
-        카페 사장님으로 등록하려면 어떻게 해야하나요?
+        이 사이트는 어떤 목적으로 제작된 것이지요?
         <ExpandMoreIcon fontSize="large" />
       </S.QuestionContents3>
       {props.isAnswer3 && (
         <S.AnswerContents>
-          카페 사징님이신 경우에는 회원가입 페이지에서 일반 회원이 아닌 카페
-          사장님 버튼을 클릭하여 가입하시면 됩니다.
+          개인 포트폴리오를 위해 만들어진 웹사이트입니다. <br />
+          즐겁게 둘러봐 주세요 ^^
         </S.AnswerContents>
       )}
     </S.QuestionBox3>

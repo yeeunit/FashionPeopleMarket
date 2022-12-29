@@ -1,4 +1,5 @@
 import * as A from "./LayoutFooter.styles";
+import TopButton from "../../topButton/index";
 
 export default function LayoutFooterUI() {
   return (
@@ -7,7 +8,7 @@ export default function LayoutFooterUI() {
         <div>
           {/* <A.Star /> */}
           <A.FooterText>Who Is Yeeun?</A.FooterText>
-          <A.FooterText>Yeeunit.site</A.FooterText>
+          <A.FooterText>What is Yeeunit.site</A.FooterText>
           <A.FooterText>Contact with me</A.FooterText>
           <A.FooterText>(000) 1234 - 56789</A.FooterText>
         </div>
@@ -17,6 +18,7 @@ export default function LayoutFooterUI() {
           (주)YeeunIT Made by yeeunit22.
           <br /> © 2022 YEEUNUT by Yeeun CHUNG |
         </A.FooterText2>
+        <TopButton />
       </A.Footer>
 
       <A.Wrapper>Created by Yeeun</A.Wrapper>

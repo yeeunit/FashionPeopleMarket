@@ -90,8 +90,6 @@ export const Code = styled.div`
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
 `;
 
 export const Grid = styled.div`
@@ -111,8 +109,9 @@ export const Card = styled.div`
   /* transition: color 0.15s ease, border-color 0.15s ease; */
   /* max-width: 300px; */
   :hover {
-    /* color: #0070f3; */
-    border-color: #0070f3;
+    background-color: #333;
+    color: white;
+    /* border-color: #0070f3; */
     cursor: pointer;
   }
 `;

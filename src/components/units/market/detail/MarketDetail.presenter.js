@@ -29,7 +29,7 @@ export default function DetailUI(props) {
         </A.HeaderLeftBox>
         <A.HeaderRightBox>
           <A.HeaderRightTitle>
-            <p>{props.data?.fetchUseditem.name}</p>
+            <div>{props.data?.fetchUseditem.name}</div>
             {props.userInfo?._id === props.data?.fetchUseditem.seller?._id && (
               <div>
                 <EditFilled onClick={props.onClickUpdate} />
@@ -42,7 +42,7 @@ export default function DetailUI(props) {
             <span>원</span>
           </A.HeaderRightPrice>
           <A.HeaderRightContents>
-            <p>{props.data?.fetchUseditem.remarks}</p>
+            <div>{props.data?.fetchUseditem.remarks}</div>
             {props.data?.fetchUseditem.tags?.map((el, index) => (
               <div key={uuidv4()} className="tag">
                 # {el}
@@ -110,7 +110,7 @@ export default function DetailUI(props) {
           <h1>상점정보</h1>
           <A.BodyRightProfile>
             <div className="circle"></div>
-            <p>{props.data?.fetchUseditem.seller?.name}</p>
+            <div>{props.data?.fetchUseditem.seller?.name}</div>
           </A.BodyRightProfile>
           <A.BodyRightCommentBox>
             <h1>댓글</h1>

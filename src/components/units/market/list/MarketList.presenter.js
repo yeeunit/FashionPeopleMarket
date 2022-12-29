@@ -16,7 +16,7 @@ export default function MarketListUI(props) {
   return (
     <>
       <A.Wrapper>
-        <A.Title>Market LIST</A.Title>
+        <A.Title>중고마켓</A.Title>
 
         <A.ButtonWrap>
           <ToggleButtonGroup
@@ -61,7 +61,7 @@ export default function MarketListUI(props) {
               >
                 <A.ImageBox>
                   <A.Image>
-                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80" />
+                    <image src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80" />
                   </A.Image>
                   <A.TextBox>
                     {el.images}

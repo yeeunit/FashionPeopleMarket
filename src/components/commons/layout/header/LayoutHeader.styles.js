@@ -33,13 +33,14 @@ export const Logo = styled.div`
   /* background-color: yellow; */
 
   @media ${breakPoints.mobile} {
-    margin-left: 0;
+    margin-left: 2rem;
   }
 `;
 
 export const LogoImg = styled.img`
   width: 3.8rem;
-  margin-right: 0.5rem;
+  /* margin-right: 0.3rem; */
+  margin-bottom: 1rem;
   /* background-color: rebeccapurple; */
 `;
 

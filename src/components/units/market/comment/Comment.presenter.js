@@ -33,8 +33,8 @@ export default function CommentUI(props) {
             <div className="circle"></div>
             <CommentListHeaderInfo>
               <div>
-                <p>{props.el.user.name}</p>
-                <p>{getDate(props.el.createdAt)}</p>
+                <div>{props.el.user.name}</div>
+                <div>{getDate(props.el.createdAt)}</div>
               </div>
               <div>
                 {props.userInfoId === props.el.user._id && (
@@ -50,7 +50,7 @@ export default function CommentUI(props) {
             </CommentListHeaderInfo>
           </CommentListHeader>
           <CommentListBody>
-            <p>{props.el.contents}</p>
+            <div>{props.el.contents}</div>
           </CommentListBody>
         </>
       )}

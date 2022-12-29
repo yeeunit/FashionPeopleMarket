@@ -13,10 +13,10 @@ export default function MainUI(props) {
           <A.Grid>
             <A.Image src="/images/ye1.png" />
             <A.Card>
-              <Link href="/login">
+              <Link href="/weather">
                 <a>
-                  <div>로그인 하기 &rarr;</div>
-                  <span>로그인해서 더 많은 서비스를 누려보세요!</span>
+                  <div>☀️현재 날씨 확인하기 &rarr;</div>
+                  <span>날씨에 맞는 옷을 구입하세요!</span>
                 </a>
               </Link>
             </A.Card>

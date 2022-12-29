@@ -23,10 +23,9 @@ export const CommentListHeaderInfo = styled.div`
   display: flex;
   justify-content: space-between;
   div {
-    p {
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
+    font-size: 20px;
+    margin-bottom: 5px;
+
     span {
       color: #bdbdbd;
       margin-left: 10px;

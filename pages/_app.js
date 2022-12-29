@@ -1,5 +1,8 @@
 // import React from "react";
 // import { AppProps } from "next/app";
+import { Global } from "@emotion/react";
+import { globalStyles } from "../src/commons/styles/globalStyles";
+import "antd/dist/antd.css";
 
 import {
   ApolloClient,
@@ -7,8 +10,6 @@ import {
   ApolloProvider,
   InMemoryCache,
 } from "@apollo/client";
-import { Global } from "@emotion/react";
-import { globalStyles } from "../src/commons/styles/globalStyles";
 import Layout from "../src/components/commons/layout";
 import { RecoilRoot } from "recoil";
 import { createUploadLink } from "apollo-upload-client";

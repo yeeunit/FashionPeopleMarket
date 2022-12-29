@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 1500px;
-  padding: 5% 10%;
+  padding: 5rem 7rem;
 `;
 
 export const TitleWrapper = styled.div`
@@ -20,7 +20,7 @@ export const TitleWrapper = styled.div`
 export const Title = styled.div`
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 `;
 
 export const TopWrapper = styled.div`
@@ -28,6 +28,13 @@ export const TopWrapper = styled.div`
   width: 80rem;
   height: 40rem;
   /* border: 1px solid gray; */
+`;
+
+export const TitleBox = styled.div`
+  height: 3rem;
+  padding: 0.3rem;
+  font-size: 1.6rem;
+  /* background-color: lightgray; */
 `;
 
 export const ImageWrapper = styled.div`
@@ -79,6 +86,9 @@ export const Label = styled.div`
 
 export const TextBox = styled.div`
   font-size: 1.4rem;
+  span {
+    font-size: 1rem;
+  }
 `;
 
 export const DateWrap = styled.div`

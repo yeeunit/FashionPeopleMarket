@@ -41,15 +41,15 @@ export default function Other() {
 
   const getProducts = async () => {
     let url = `http://localhost:5000/products`;
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log(data);
-    setProductList(data);
+    // let response = await fetch(url);
+    // let data = await response.json();
+    // console.log(data);
+    // setProductList(data);
   };
 
-  useEffect(() => {
-    getProducts();
-  }, []);
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
 
   return (
     <>

@@ -10,8 +10,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
+  width: 14rem;
   font-size: 2.2rem;
   font-weight: bold;
+  /* background-color: pink; */
 `;
 
 export const SearchBarWrap = styled.div`

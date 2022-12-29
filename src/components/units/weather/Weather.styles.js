@@ -27,7 +27,7 @@ export const BoxWrap = styled.div`
   width: 44rem;
   height: 22rem;
   background-color: rgba(0.9, 0.9, 0.9, 0.4);
-  border: 1px solid white;
+  /* border: 1px solid white; */
 `;
 export const ContentsBox = styled.div`
   display: flex;

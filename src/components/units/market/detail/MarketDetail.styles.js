@@ -28,10 +28,10 @@ export const HeaderRightBox = styled.div`
 export const HeaderRightTitle = styled.div`
   display: flex;
   justify-content: space-between;
-  p {
-    font-size: 24px;
-    font-weight: bold;
-  }
+
+  font-size: 24px;
+  font-weight: bold;
+
   span {
     font-size: 24px;
     color: #bdbdbd;
