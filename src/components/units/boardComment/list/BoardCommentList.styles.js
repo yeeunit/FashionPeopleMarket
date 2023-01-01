@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ItemWrapper = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 2rem 0;
   padding-top: 1rem;
   height: 7rem;

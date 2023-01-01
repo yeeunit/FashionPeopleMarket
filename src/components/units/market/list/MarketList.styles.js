@@ -64,27 +64,26 @@ export const OneBoxWrap = styled.div`
   overflow: hidden;
 `;
 export const ImageBox = styled.div`
-  /* width: 12rem; */
-  height: 50%;
-  background-color: #eee;
-  font-size: 0.7rem;
-  object-fit: cover;
+  width: 14rem;
+  height: 20rem;
+  cursor: pointer;
+
+  /* background-color: pink; */
+  /* object-fit: cover; */
 `;
 
-export const Image = styled.div`
-  img {
-    width: 100%;
-    height: 10rem;
-    object-fit: cover;
-    cursor: pointer;
-  }
+export const Image = styled.img`
+  width: 100%;
+  height: 50%;
+  background-color: yellow;
+  object-fit: cover;
 
   :hover {
-    background: rgba(9, 9, 9, 0.5);
+    /* background: rgba(9, 9, 9, 0.5); */
     transform: translateY(0);
     transform: scale(1.1);
   }
-  :hover::after {
+  /* :hover::after {
     content: "예약하기";
     height: 100%;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
@@ -97,14 +96,18 @@ export const Image = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 1s ease-in-out;
-  }
+    transition: all 1s ease-in-out; 
+   } */
 `;
 export const TextBox = styled.div`
   padding: 1rem;
   /* background-color: yellow; */
   font-size: 0.8rem;
   object-fit: cover;
+  div:first-child {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
 `;
 
 export const ColorChange = styled.div`

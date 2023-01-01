@@ -9,7 +9,7 @@ import Comment from "../comment/Comment.containter";
 import * as A from "./MarketDetail.styles";
 import Dompurify from "dompurify";
 
-export default function DetailUI(props) {
+export default function MarketDetailUI(props) {
   return (
     <A.DetailWrapper>
       <A.DetailHeader>
@@ -98,12 +98,12 @@ export default function DetailUI(props) {
               <EnvironmentFilled />
               <span>거래지역</span>
             </div>
-            <KaKaoMap
+            {/* <KaKaoMap
               data={props.data?.fetchUseditem}
               address={props.data?.fetchUseditem.useditemAddress?.address}
               width="100%"
               height="448px"
-            />
+            /> */}
           </A.BodyLeftMapBox>
         </A.BodyLeft>
         <A.BodyRight>
@@ -125,8 +125,8 @@ export default function DetailUI(props) {
               </A.BodyRightBtnWrap>
             </A.BodyRightCommentWriteBox>
             <A.BodyRightCommentListBox>
-              {props.dataUsedItemQuestions?.fetchUseditemQuestions.map(
-                (el, index) => (
+              {/* {props.dataUsedItemQuestions?.fetchUseditemQuestions.map(
+                (el) => (
                   <Comment
                     key={uuidv4()}
                     userInfoId={props.userInfo?._id}
@@ -134,7 +134,7 @@ export default function DetailUI(props) {
                     useditemId={props.useditemId}
                   />
                 )
-              )}
+              )} */}
             </A.BodyRightCommentListBox>
           </A.BodyRightCommentBox>
         </A.BodyRight>

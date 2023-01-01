@@ -4,6 +4,8 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
+import { ImageFiles } from "../../../../commons/libraries/imageFiles";
+import { getDate } from "../../../../commons/libraries/utils";
 
 export default function MarketListUI(props) {
   const [alignment, setAlignment] = useState("left");
@@ -53,27 +55,29 @@ export default function MarketListUI(props) {
           hasMore={true}
         >
           <A.ContentsWrap>
-            {props.data?.fetchUseditems.map((el) => (
+            {props.data?.fetchUseditems.map((el, index) => (
               <A.OneBoxWrap
                 key={el._id}
                 id={el._id}
                 onClick={props.onClickMoveToBoardDetail}
               >
-                <A.ImageBox>
-                  <A.Image>
-                    <image src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80" />
-                  </A.Image>
+                {/* {[...ImageFiles].map((el, index) => ( */}
+                <A.ImageBox key={index}>
+                  <A.Image src={ImageFiles[index % 15]} />
+
+                  {/* <A.Image src="https://images.unsplash.com/photo-1619166719123-471cee9ce91e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" /> */}
                   <A.TextBox>
-                    {el.images}
-                    {el.name}
-                    {el.remakrs}
-                    {el.contents}
-                    {el.price}
-                    {el.tags}
-                    {el.createdAt}
-                    {el.seller}
+                    {/* {el.images} */}
+                    {/* <div>{el.remarks}</div> */}
+                    {/* <div>{el.contents}</div> */}
+                    <div>{el.name}</div>
+                    <div>{el.price}</div>
+                    <div>{el.tags}</div>
+                    <div>{getDate(el.createdAt)}</div>
+                    <div>{el.seller}</div>
                   </A.TextBox>
                 </A.ImageBox>
+                {/* ))} */}
               </A.OneBoxWrap>
             )) || ""}
 

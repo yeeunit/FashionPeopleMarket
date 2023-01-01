@@ -2,7 +2,6 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import MarketDetailUI from "./MarketDetail.presenter";
 import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
   CREATE_USED_ITEM_QUESTION,
@@ -13,6 +12,7 @@ import {
 } from "./MarketDetail.queries";
 import { isBucketActiveState } from "../../../../commons/store/index";
 import { useForm } from "react-hook-form";
+import MarketDetailUI from "./MarketDetail.presenter";
 
 export default function MarketDetail() {
   const router = useRouter();

@@ -23,7 +23,8 @@ export default function MarketList() {
         return {
           fetchUseditems: [
             ...prev.fetchUseditems,
-            fetchMoreResult.fetchUseditems,
+            ...fetchMoreResult.fetchUseditems,
+            // 기존꺼랑 추가로 받은 10개 스프레드 합치기
           ],
         };
       },
