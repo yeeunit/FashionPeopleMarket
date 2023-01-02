@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* width: 1920px; */
+  width: 1380px;
   /* background-color: aliceblue; */
   margin-top: 4rem;
   margin-left: 8rem;
@@ -33,14 +33,15 @@ export const ButtonWrap = styled.div`
 export const WriteBtn = styled.button`
   width: 6.6rem;
   height: 2.2rem;
-  background-color: #f5f2fc;
+  background-color: #333;
+  color: white;
   border: 1px solid gray;
   border-radius: 10px;
   cursor: pointer;
 
   :hover {
-    background-color: #333;
-    color: white;
+    background-color: gold;
+    color: #222;
   }
 `;
 
@@ -64,6 +65,8 @@ export const OneBoxWrap = styled.div`
   overflow: hidden;
 `;
 export const ImageBox = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 14rem;
   height: 20rem;
   cursor: pointer;
@@ -72,34 +75,42 @@ export const ImageBox = styled.div`
   /* object-fit: cover; */
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
   width: 100%;
   height: 50%;
-  background-color: yellow;
-  object-fit: cover;
+  /* overflow: hidden; */
+  background-color: rgba(0, 0, 0, 0.3);
+  img {
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    object-fit: cover;
+  }
 
   :hover {
     /* background: rgba(9, 9, 9, 0.5); */
     transform: translateY(0);
     transform: scale(1.1);
   }
-  /* :hover::after {
-    content: "예약하기";
+  :hover::after {
+    content: "상세보기";
     height: 100%;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
-    line-height: 9rem;
+    line-height: 10rem;
     color: #fff;
     background: rgba(9, 9, 9, 0.5);
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 1s ease-in-out; 
-   } */
+    transition: all 1s ease-in-out;
+  }
 `;
 export const TextBox = styled.div`
+  width: 100%;
+  height: 50%;
   padding: 1rem;
   /* background-color: yellow; */
   font-size: 0.8rem;

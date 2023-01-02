@@ -1,5 +1,16 @@
 import { useEffect } from "react";
 
+// declare const window: typeof globalThis & {
+//     kakao: any;
+// };
+
+// interface IKaKaoMapProps {
+//     data: any
+//     address: string,
+//     width: string,
+//     height: string,
+// }
+
 export default function KaKaoMap(props) {
   useEffect(() => {
     const script = document.createElement("script");
@@ -26,7 +37,7 @@ export default function KaKaoMap(props) {
                 result[0].y,
                 result[0].x
               );
-              const imageSrc = "/image/map.png"; // 마커이미지의 주소입니다
+              const imageSrc = "/images/map.png"; // 마커이미지의 주소입니다
               const imageSize = new window.kakao.maps.Size(55, 55); // 마커이미지의 크기입니다
               const imageOption = {
                 offset: new window.kakao.maps.Point(27, 69),

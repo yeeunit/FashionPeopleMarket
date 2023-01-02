@@ -1,23 +1,25 @@
 import {
   ApolloClient,
   ApolloLink,
-  ApolloProvider,
   fromPromise,
+  ApolloProvider,
   InMemoryCache,
 } from "@apollo/client";
-
 import { onError } from "@apollo/client/link/error";
 import { createUploadLink } from "apollo-upload-client";
 import { ReactNode, useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { accessTokenState, userInfoState } from "../../../commons/store";
 import { getAccessToken } from "../../../commons/libraries/getAccessToken";
+import { accessTokenState } from "../../../commons/store";
 
 const APOLLO_CACHE = new InMemoryCache();
 
+// interface IApolloSettingProps {
+//     children: ReactNode
+// }
+
 export default function ApolloSetting(props) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
-  const [userInfo, setUserInfo] = useRecoilState(userInfoState);
 
   useEffect(() => {
     getAccessToken().then((newAccessToken) => {
@@ -55,7 +57,6 @@ export default function ApolloSetting(props) {
   const client = new ApolloClient({
     link: ApolloLink.from([errorLink, uploadLink]),
     cache: APOLLO_CACHE,
-    connectToDevTools: true,
   });
 
   return <ApolloProvider client={client}>{props.children}</ApolloProvider>;
