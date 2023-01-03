@@ -8,17 +8,27 @@ export default function LoginWriteUI(props) {
 
         <A.InputWrap>
           <A.Label>이메일</A.Label>{" "}
-          <A.InputBox type="text" onChange={props.onChangeEmail} />{" "}
+          <A.InputBox
+            id="id"
+            type="text"
+            placeholder="아이디"
+            onChange={props.onChangeEmail}
+          />{" "}
         </A.InputWrap>
         <A.Error>{props.emailError}</A.Error>
 
         <A.InputWrap>
           <A.Label>비밀번호</A.Label>{" "}
-          <A.InputBox type="password" onChange={props.onChangePassword} />{" "}
+          <A.InputBox
+            id="password"
+            type="password"
+            placeholder="비밀번호"
+            onChange={props.onChangePassword}
+          />{" "}
         </A.InputWrap>
-        <A.Error>비밀번호를 정확하게 입력해주세요</A.Error>
+        <A.Error>{props.emailError}</A.Error>
 
-        <A.LoginBtn onClick={props.onClickLogin}>로그인하기</A.LoginBtn>
+        <A.LoginBtn onClick={props.onClickLogin}>로그인</A.LoginBtn>
       </A.Wrapper>
     </>
   );

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import * as A from "./Join.styles";
 
 export default function JoinUI(props) {
@@ -10,23 +11,31 @@ export default function JoinUI(props) {
         </A.Title>
         <A.InputWrap>
           <A.Label> 이름 </A.Label>
-          <A.InputBox type="text" onChange={props.onChangeName} />
+          <A.InputBox
+            type="text"
+            placeholder="Ex) 홍길동"
+            {...props.register("name")}
+          />
         </A.InputWrap>
-        <A.Error>이름을 입력하세요</A.Error>
+        <A.Error>{props.formState.errors.name?.message}</A.Error>
         <A.InputWrap>
           <A.Label>이메일</A.Label>
-          <A.InputBox type="text" onChange={props.onChangeEmail} />{" "}
+          <A.InputBox
+            type="text"
+            placeholder="이메일 아이디를 @까지 정확하게 입력하세요"
+            {...props.register("email")}
+          />{" "}
         </A.InputWrap>
-        <A.Error>이메일 주소를 정확하게 입력하세요</A.Error>
+        <A.Error>{props.formState.errors.email?.message}</A.Error>
         <A.InputWrap>
           <A.Label>비밀번호</A.Label>
           <A.InputBox
             type="password"
             placeholder="영문+숫자 조합 8-16자리를 입력해주세요."
-            onChange={props.onChangePassword}
+            {...props.register("password")}
           />{" "}
         </A.InputWrap>
-        <A.Error>비밀번호를 정확하게 입력하세요</A.Error>
+        <A.Error>{props.formState.errors.password?.message}</A.Error>
         {/* <A.InputWrap>
           <A.Label>비밀번호 확인</A.Label>
           <A.InputBox
@@ -37,7 +46,21 @@ export default function JoinUI(props) {
           />{" "}
         </A.InputWrap>
         <A.Error>비밀번호를 정확하게 입력하세요</A.Error> */}
-        <A.JoinBtn onClick={props.onClickSignUp}>회원가입</A.JoinBtn>
+        <A.JoinBtn
+          type="button"
+          onClick={props.handleSubmit(props.onClickSignUp)}
+        >
+          회원가입
+        </A.JoinBtn>
+        <A.LoginWrap>
+          <div>이미 아이디가 있으신가요?</div>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <Link href="/login">
+            <a>
+              <A.LoginBtn>로그인하기</A.LoginBtn>
+            </a>
+          </Link>
+        </A.LoginWrap>
       </A.Wrapper>
     </>
   );

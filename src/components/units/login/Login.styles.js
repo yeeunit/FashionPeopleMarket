@@ -23,6 +23,7 @@ export const Label = styled.div`
 `;
 
 export const InputBox = styled.input`
+  text-indent: 0.6rem;
   width: 15rem;
   height: 2rem;
   border: 1px solid grey;
@@ -37,11 +38,12 @@ export const Error = styled.span`
 `;
 
 export const LoginBtn = styled.div`
-  background-color: #eee;
+  background-color: #222;
+  color: white;
   text-align: center;
-  width: 7rem;
-  height: 2rem;
-  line-height: 2rem;
+  width: 6rem;
+  height: 2.2rem;
+  line-height: 2.2rem;
   border-radius: 5px;
   cursor: pointer;
   margin: 2rem;

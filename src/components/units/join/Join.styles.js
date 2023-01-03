@@ -41,13 +41,29 @@ export const Error = styled.span`
   font-size: 0.7rem;
 `;
 
-export const JoinBtn = styled.div`
-  background-color: #eee;
+export const JoinBtn = styled.button`
+  background-color: #222;
+  color: white;
   text-align: center;
   width: 7rem;
   height: 2rem;
   line-height: 2rem;
   border-radius: 5px;
+  border: none;
   cursor: pointer;
   margin: 2rem;
+`;
+
+export const LoginWrap = styled.div`
+  display: flex;
+`;
+export const LoginBtn = styled.div`
+  /* background-color: #222; */
+  color: #222;
+
+  cursor: pointer;
+  border-bottom: 1px solid #222;
+
+  :hover {
+  }
 `;

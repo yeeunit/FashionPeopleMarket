@@ -78,13 +78,13 @@ export default function BoardDetailUI(props) {
             </A.InputWrap>
             <A.LikeBox>
               <A.TextBox>
-                {/* <LikeOutlined /> */}
+                <LikeOutlined />
                 &nbsp;
                 {props.data?.fetchBoard?.likeCount}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </A.TextBox>
               <A.TextBox>
-                {/* <DislikeOutlined /> */}
+                <DislikeOutlined />
                 &nbsp;
                 {props.data?.fetchBoard?.dislikeCount}
               </A.TextBox>

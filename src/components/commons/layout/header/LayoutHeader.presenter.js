@@ -15,7 +15,8 @@ export default function LayoutHeaderUI(props) {
               </a>
             </Link>
             <Link href="/">
-              <a>YeeunIT</a>
+              {/* <a>YeeunIT</a> */}
+              YeeunIT
             </Link>
           </A.Logo>
           <A.MenuWrap>

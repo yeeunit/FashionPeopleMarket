@@ -70,14 +70,14 @@ export default function MypageUI(props) {
     // console.log("result", result);
     // console.log(result.data.writer);
 
-    console.log(result.data.createBoard.message);
+    // console.log(result.data.createBoard.message);
     // console.log(writer, contents, password, title);
   };
 
   const { data } = useQuery(FETCH_BOARD, {
     variables: { boardId: router.query._id },
   });
-  console.log("data", data);
+  // console.log("data", data);
 
   return (
     <>
@@ -92,15 +92,6 @@ export default function MypageUI(props) {
         </A.LeftWrap>
         <A.RightWrap>
           <A.Title>My page</A.Title>
-          <div>연습</div>
-          writer <input type="text" onChange={onChangeWriter} />
-          password
-          <input type="password" onChange={onChangePassword} />
-          title
-          <input type="text" onChange={onChangeTitle} />
-          contents
-          <input type="text" onChange={onChangeContents} />
-          <button onClick={onClickRegister}>클릭</button>
         </A.RightWrap>
         {/* <A.TopWrapper>
           <A.box1>

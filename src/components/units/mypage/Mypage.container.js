@@ -1,14 +1,14 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { FETCH_USER_LOGGEDIN } from "../login/Login.queries";
+import { FETCH_USER_LOGGED_IN } from "../login/Login.queries";
 import MypageUI from "./Mypage.presenter";
 
 export default function Mypage(props) {
   const router = useRouter();
-  const { data } = useQuery(FETCH_USER_LOGGEDIN);
-  console.log("data", data);
-  console.log("fetchUserLoggedIn", props.fetchUserLoggedIn);
+  const { data } = useQuery(FETCH_USER_LOGGED_IN);
+  // console.log("data", data);
+  // console.log("fetchUserLoggedIn", props.fetchUserLoggedIn);
 
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {

@@ -1,69 +1,69 @@
-import { useMutation } from "@apollo/client";
-import { Modal } from "antd";
+import { useApolloClient, useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import JoinUI from "./Join.presenter";
 import { CREATE_USER } from "./Join.queries";
+import { useForm } from "react-hook-form";
+import { message } from "antd";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schemaLogin = yup.object({
+  email: yup
+    .string()
+    .email("이메일 아이디를 @까지 정확하게 입력해주세요")
+    .required("이메일을 입력해주세요"),
+  password: yup
+    .string()
+    .matches(
+      /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,16}$/,
+      "영문 + 숫자 조합 8~16자리의 비밀번호를 입력해주세요"
+    )
+    .required("비밀번호를 입력해주세요"),
+  passwordRe: yup
+    .string()
+    .oneOf([yup.ref("password")], "비밀번호가 일치하지 않습니다.")
+    .required("비밀번호를 다시 입력해주세요"),
+  name: yup.string().required("ex)홍길동"),
+});
 
 export default function Join() {
   const router = useRouter();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const client = useApolloClient();
+
+  const { register, handleSubmit, formState } = useForm({
+    resolver: yupResolver(schemaLogin),
+    mode: "onChange",
+  });
 
   const [createUser] = useMutation(CREATE_USER);
 
-  const onChangeName = (event) => {
-    setName(event.target.value);
-  };
-
-  const onChangeEmail = (event) => setEmail(event.target.value);
-  const onChangePassword = (event) => {
-    setPassword(event.target.value);
-  };
-
-  // const initialInputs = { name: "", email: "", password: "" };
-  // const [inputs, setInputs] = useState(initialInputs);
-
-  // const onChangePassword2 = (event) => {
-  //   setPassword2(event.target.value);
-  // };
-  // const onChangeInputs = (event) => {
-  //   const _inputs = {
-  //     ...inputs,
-  //     [event.target.id]: event.target.value,
-  //   };
-  //   setInputs(_inputs);
-  // };
-
-  const onClickSignUp = async () => {
+  const onClickSignUp = async (data) => {
     try {
-      const result = await createUser({
+      await createUser({
         variables: {
           createUserInput: {
-            name,
-            email,
-            password,
+            email: data.email,
+            password: data.password,
+            name: data.name,
           },
         },
       });
-      console.log(result);
-      Modal.success({ content: "회원가입 성공" });
+      console.log("성공");
+      alert("회원가입을 축하합니다!!!");
       router.push("/login");
+      message.success("회원가입에 성공하셨습니다!! 로그인을 해주세요");
     } catch (error) {
-      console.log(error.message);
-      Modal.error({ content: error.message });
-      // alert(error.message);
+      alert("실패!");
+      message.error("회원가입 실패");
     }
   };
-
   return (
     <>
       <JoinUI
-        onChangeName={onChangeName}
-        onChangeEmail={onChangeEmail}
-        onChangePassword={onChangePassword}
         onClickSignUp={onClickSignUp}
+        handleSubmit={handleSubmit}
+        register={register}
+        formState={formState}
       />
     </>
   );

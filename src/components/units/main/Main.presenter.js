@@ -15,8 +15,9 @@ export default function MainUI(props) {
             <A.Card>
               <Link href="/weather">
                 <a>
-                  <div>☀️현재 날씨 확인하기 &rarr;</div>
-                  <span>날씨에 맞는 옷을 구입하세요!</span>
+                  현재 날씨 확인하기
+                  {/* <div>☀️현재 날씨 확인하기 &rarr;</div>
+                  <span>날씨에 맞는 옷을 구입하세요!</span> */}
                 </a>
               </Link>
             </A.Card>
