@@ -2,7 +2,7 @@
 // import { AppProps } from "next/app";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 
 import ApolloSetting from "../src/components/commons/apollo/index";
 import useMounted from "../src/commons/libraries/useMounted";

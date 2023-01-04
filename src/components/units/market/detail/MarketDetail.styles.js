@@ -1,35 +1,39 @@
 import styled from "@emotion/styled";
 
 export const DetailWrapper = styled.div`
-  width: 100%;
-`;
-
-export const DetailHeader = styled.div`
-  width: 100%;
+  width: 1300px;
+  height: 25rem;
   display: flex;
-  padding-top: 70px;
 `;
 
 export const HeaderLeftBox = styled.div`
-  width: 40%;
-  div.default-img {
+  width: 33rem;
+  height: 100%;
+  .default-img {
     width: 100%;
     height: 100%;
     background-color: #c4c4c4;
   }
 `;
 
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 1px solid lightgray;
+  /* background-color: #eee; */
+`;
+
 export const HeaderRightBox = styled.div`
   width: 50%;
-  height: 480px;
-  padding-left: 70px;
+  height: 100%;
+  padding-left: 4rem;
 `;
 
 export const HeaderRightTitle = styled.div`
   display: flex;
-  justify-content: space-between;
-
-  font-size: 24px;
+  /* justify-content: space-between; */
+  font-size: 2rem;
   font-weight: bold;
 
   span {
@@ -75,7 +79,7 @@ export const HeaderRightBtnWrap = styled.div`
   button {
     width: 100%;
     height: 100px;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
     color: #ffffff;
     border: none;
@@ -92,7 +96,7 @@ export const HeaderRightBtnWrap = styled.div`
 export const BtnPick = styled.button`
   width: 100%;
   height: 100px;
-  font-size: 30px;
+  font-size: 2rem;
   cursor: pointer;
   color: #ffffff;
   border: none;
@@ -115,7 +119,7 @@ export const BodyLeft = styled.div`
   border-right: 1px solid #555555;
   padding-right: 20px;
   h1 {
-    font-size: 32px;
+    font-size: 22px;
     font-weight: bold;
     border-bottom: 3px solid #555555;
     padding-bottom: 30px;
@@ -136,7 +140,7 @@ export const BodyLeftMapBox = styled.div`
         color: #bdbdbd;
         margin-right: 10px;
       }
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
     }
   }
@@ -167,7 +171,7 @@ export const BodyRightProfile = styled.div`
     margin: 0 20px;
   }
   p {
-    font-size: 24px;
+    font-size: 20px;
   }
 `;
 

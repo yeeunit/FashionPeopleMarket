@@ -7,7 +7,7 @@ export default function MarketList() {
   const router = useRouter();
 
   const { data, refetch } = useQuery(FETCH_USED_ITEMS);
-  console.log("data: ", data);
+  // console.log("data: ", data);
 
   const { data: data2, fetchMore } = useQuery(FETCH_USED_ITEMS);
 

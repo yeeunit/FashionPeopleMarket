@@ -39,19 +39,17 @@ export const Button = styled.div`
 
 export const Footer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* flex: 1; */
   background-color: #222;
   color: white;
   height: 44rem;
   font-size: 4rem;
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+  span {
+    color: white;
+    font-size: medium;
   }
 `;
 export const Bottom = styled.div`
@@ -94,14 +92,15 @@ export const Code = styled.div`
 
 export const Grid = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
+  /* max-width: 800px; */
 `;
 
 export const Card = styled.div`
   margin: 2rem;
+  height: 5rem;
   padding: 1.6rem;
   text-align: left;
   border: 1px solid #eaeaea;
@@ -120,7 +119,7 @@ export const Logo = styled.div`
   height: 1em;
   margin-left: 0.5rem;
 
-  @media (max-width: 600px) {
+  /* @media (max-width: 600px) {
     .grid {
       width: 100%;
       flex-direction: column;
@@ -138,10 +137,11 @@ export const Logo = styled.div`
     .logo img {
       filter: invert(1);
     }
-  }
+  } */
 `;
 
 export const Image = styled.img`
   width: 300px;
   height: 300px;
+  max-width: 600px;
 `;

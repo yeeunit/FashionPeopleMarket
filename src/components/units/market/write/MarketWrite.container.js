@@ -96,7 +96,7 @@ export default function MarketWrite(props) {
 
   const onClickCreate = async (data) => {
     try {
-      await createUsedItem({
+      const result = await createUsedItem({
         variables: {
           createUseditemInput: {
             name: data.name,
@@ -118,7 +118,7 @@ export default function MarketWrite(props) {
           },
         ],
       });
-      router.push("/");
+      router.push(`/market/${result.data?.createUsedItem.marketId}`);
       message.success("등록에 성공하였습니다!!");
     } catch (error) {}
   };

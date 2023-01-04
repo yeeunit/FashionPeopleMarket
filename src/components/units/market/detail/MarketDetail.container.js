@@ -10,6 +10,7 @@ import {
   FETCH_USED_ITEM_QUESTION,
   TOGGLE_USED_ITEM_PICK,
 } from "./MarketDetail.queries";
+import FETCH_USED_ITEMS from "../list/MarketList.queries";
 import { isBucketActiveState } from "../../../../commons/store/index";
 import { useForm } from "react-hook-form";
 import MarketDetailUI from "./MarketDetail.presenter";
@@ -33,13 +34,13 @@ export default function MarketDetail() {
   const [createUseditemQuestion] = useMutation(CREATE_USED_ITEM_QUESTION);
 
   const { data } = useQuery(FETCH_USED_ITEM, {
-    variables: { useditemId: router.query.id },
+    variables: { useditemId: router.query.marketId },
   });
-  console.log(data);
+  // console.log(data);
 
   const { data: dataUsedItemQuestions } = useQuery(FETCH_USED_ITEM_QUESTION, {
     variables: {
-      useditemId: router.query.id,
+      useditemId: router.query.marketId,
     },
   });
 
@@ -48,14 +49,14 @@ export default function MarketDetail() {
   }, []);
 
   const onClickUpdate = () => {
-    router.push(`/product/${router.query.detail}/edit`);
+    router.push(`/product/${router.query.marketId}/edit`);
   };
 
   const onClickDelete = async () => {
     try {
       await deleteUsedItem({
         variables: {
-          useditemId: router.query.id,
+          useditemId: router.query.marketId,
         },
         refetchQueries: [
           {
@@ -74,13 +75,13 @@ export default function MarketDetail() {
     try {
       await toggleUsedItemPick({
         variables: {
-          useditemId: router.query.id,
+          useditemId: router.query.marketId,
         },
         refetchQueries: [
           {
             query: FETCH_USED_ITEM,
             variables: {
-              useditemId: router.query.id,
+              useditemId: router.query.marketId,
             },
           },
         ],
@@ -108,7 +109,7 @@ export default function MarketDetail() {
     try {
       await createPointTransactionOfBuyingAndSelling({
         variables: {
-          useritemId: id,
+          useritemId: _id,
         },
         refetchQueries: [
           {
@@ -124,7 +125,7 @@ export default function MarketDetail() {
     try {
       await createUseditemQuestion({
         variables: {
-          useditemId: router.query.id,
+          useditemId: router.query.marketId,
           createUseditemQuestionInput: {
             contents: data.contents,
           },
@@ -133,7 +134,7 @@ export default function MarketDetail() {
           {
             query: FETCH_USED_ITEM_QUESTION,
             variables: {
-              useditemId: router.query.id,
+              useditemId: router.query.marketId,
             },
           },
         ],
@@ -149,7 +150,7 @@ export default function MarketDetail() {
       <MarketDetailUI
         data={data}
         dataUsedItemQuestions={dataUsedItemQuestions}
-        useditemId={router.query.id}
+        useditemId={router.query.marketId}
         pickCount={pickCount}
         userInfo={userInfo}
         onClickBucket={onClickBucket}

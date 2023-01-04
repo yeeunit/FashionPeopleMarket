@@ -8,6 +8,7 @@ import { KaKaoMap } from "../../../commons/map/index";
 import Comment from "../comment/Comment.containter";
 import * as A from "./MarketDetail.styles";
 import Dompurify from "dompurify";
+import { v4 as uuidv4 } from "uuid";
 
 export default function MarketDetailUI(props) {
   return (
@@ -16,7 +17,7 @@ export default function MarketDetailUI(props) {
         <A.HeaderLeftBox>
           {props.data?.fetchUseditem.images?.[0] !== "" ? (
             <>
-              <image
+              <A.Image
                 src={`https://storage.googleapis.com/${props.data?.fetchUseditem.images?.[0]}`}
                 alt="이미지"
               />
@@ -37,6 +38,7 @@ export default function MarketDetailUI(props) {
               </div>
             )}
           </A.HeaderRightTitle>
+
           <A.HeaderRightPrice>
             {props.data?.fetchUseditem.price}
             <span>원</span>
@@ -55,7 +57,7 @@ export default function MarketDetailUI(props) {
               className="zzim"
               onClick={props.onClickPick}
             >
-              <HeartFilled /> 찜 {props.data?.fetchUseditem.pickedCount}
+              <HeartFilled />찜 {props.data?.fetchUseditem.pickedCount}
             </A.BtnPick>
             <button
               className="bucket"
@@ -72,6 +74,7 @@ export default function MarketDetailUI(props) {
           </A.HeaderRightBtnWrap>
         </A.HeaderRightBox>
       </A.DetailHeader>
+
       <A.DetailBody>
         <A.BodyLeft>
           <h1>상품정보</h1>
@@ -98,12 +101,12 @@ export default function MarketDetailUI(props) {
               <EnvironmentFilled />
               <span>거래지역</span>
             </div>
-            {/* <KaKaoMap
+            <KaKaoMap
               data={props.data?.fetchUseditem}
               address={props.data?.fetchUseditem.useditemAddress?.address}
               width="100%"
               height="448px"
-            /> */}
+            />
           </A.BodyLeftMapBox>
         </A.BodyLeft>
         <A.BodyRight>
@@ -112,9 +115,11 @@ export default function MarketDetailUI(props) {
             <div className="circle"></div>
             <div>{props.data?.fetchUseditem.seller?.name}</div>
           </A.BodyRightProfile>
+
           <A.BodyRightCommentBox>
             <h1>댓글</h1>
-            <A.BodyRightCommentWriteBox>
+
+            {/* <A.BodyRightCommentWriteBox>
               <A.BodyRightCommentWrite {...props.register("contents")} />
               <A.BodyRightBtnWrap>
                 <A.BodyRightBtn
@@ -123,7 +128,8 @@ export default function MarketDetailUI(props) {
                   작성하기
                 </A.BodyRightBtn>
               </A.BodyRightBtnWrap>
-            </A.BodyRightCommentWriteBox>
+            </A.BodyRightCommentWriteBox> */}
+
             <A.BodyRightCommentListBox>
               {/* {props.dataUsedItemQuestions?.fetchUseditemQuestions.map(
                 (el) => (

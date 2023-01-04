@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import { breakPoints } from "./media";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
+import "antd/dist/reset.css";
 
 export const globalStyles = css`
   /* html,

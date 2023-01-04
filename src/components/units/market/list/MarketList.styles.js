@@ -56,7 +56,7 @@ export const OneBoxWrap = styled.div`
   display: flex;
   flex-direction: column;
   width: 14rem;
-  height: 19rem;
+  height: 18rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
   border-radius: 1rem;
@@ -68,7 +68,7 @@ export const ImageBox = styled.div`
   display: flex;
   flex-direction: column;
   width: 14rem;
-  height: 20rem;
+  height: 100%;
   cursor: pointer;
 
   /* background-color: pink; */
@@ -117,6 +117,8 @@ export const TextBox = styled.div`
   object-fit: cover;
   div:first-child {
     font-size: 1.2rem;
+    margin: 0.6rem 0;
+
     font-weight: 600;
   }
 `;
