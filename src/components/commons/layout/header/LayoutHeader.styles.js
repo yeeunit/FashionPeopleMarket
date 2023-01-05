@@ -82,4 +82,31 @@ export const Login = styled.div`
   margin-right: 0.6rem;
   line-height: 4rem;
   cursor: pointer;
+  span {
+    color: hotpink;
+  }
+`;
+
+export const UserWrap = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 33%;
+  margin-right: 2rem;
+  /* background-color: pink; */
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+`;
+
+export const MenuItem = styled.li`
+  margin-left: 65px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  span {
+    background-color: gold;
+    padding: 5px 10px;
+    color: #ffffff;
+    border-radius: 50%;
+  }
 `;

@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-
-import { Button, Modal, Space } from "antd";
+import { message, Modal } from "antd";
 import React from "react";
 
 // const App = () => (
@@ -24,7 +23,7 @@ export const withAuth = (Component) => (props) => {
 
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
-      alert("로그인 후 이용 가능합니다!!!");
+      message.error("로그인 후 이용 가능합니다!!!");
       router.push("/products/login");
     }
   }, []);

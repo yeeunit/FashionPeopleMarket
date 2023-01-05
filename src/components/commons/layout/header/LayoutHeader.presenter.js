@@ -48,17 +48,35 @@ export default function LayoutHeaderUI(props) {
           </A.MenuWrap>
         </A.LogoMenuWrap>
 
-        <A.LoginWrap>
-          <A.Login>
-            <Link href="/join">
-              <a>회원가입</a>
-            </Link>
-          </A.Login>
-          <A.Login>
-            <Link href="/login">
-              <a>로그인</a>
-            </Link>
-          </A.Login>
+        <A.UserWrap>
+          {props.isLogin ? (
+            <>
+              <A.Login>
+                <span>😃 {props.userInfo?.name}</span> 님 포인트{" "}
+                {props.userInfo.userPoint?.amount} P
+              </A.Login>
+              <A.Login onClick={props.onClickOpenPointModal}>충전</A.Login>
+              <A.Login onClick={props.onClickLogOut}>로그아웃</A.Login>
+              <A.Login>
+                장바구니{" "}
+                <span className="yellow-circle">{props.bucketList.length}</span>
+              </A.Login>
+            </>
+          ) : (
+            <>
+              <A.Login>
+                <Link href="/join">
+                  <a>회원가입</a>
+                </Link>
+              </A.Login>
+              <A.Login>
+                <Link href="/login">
+                  <a>로그인</a>
+                </Link>
+              </A.Login>
+            </>
+          )}
+
           {/* <A.Login onClick={props.onClickLogOut}>
             <Link href="/login">
               <a>로그아웃</a>
@@ -75,7 +93,7 @@ export default function LayoutHeaderUI(props) {
             </Link>
           </A.Login> */}
           {/* <A.Login>Logout</A.Login> */}
-        </A.LoginWrap>
+        </A.UserWrap>
       </A.Wrapper>
     </>
   );

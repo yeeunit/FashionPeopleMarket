@@ -27,7 +27,6 @@ export default function Upload01(props) {
       console.log(result.data?.uploadFile.url);
       // setImageUrl(result.data?.uploadFile.url || "");
     } catch (error) {
-      console.log("실패");
       Modal.error({ content: "에러!" });
     }
   };

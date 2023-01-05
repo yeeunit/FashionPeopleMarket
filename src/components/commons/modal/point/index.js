@@ -43,7 +43,6 @@ export default function PointModalPage(props) {
   };
 
   const onChangePrice = (event) => {
-    console.log(event.target.value);
     setPrice(Number(event.target.value));
   };
 

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import * as A from "./Mypage.styles";
 
-// logo@gmail.com / logo@333
+// playground@gmail.com / playground@09
 
 export default function MypageUI(props) {
   const router = useRouter();

@@ -100,7 +100,7 @@ export const Grid = styled.div`
 
 export const Card = styled.div`
   margin: 2rem;
-  height: 5rem;
+  height: 7rem;
   padding: 1.6rem;
   text-align: left;
   border: 1px solid #eaeaea;

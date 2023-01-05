@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1380px;
+  width: 1100px;
   /* background-color: aliceblue; */
   margin-top: 4rem;
   margin-left: 8rem;

@@ -6,6 +6,7 @@ import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import { ImageFiles } from "../../../../commons/libraries/imageFiles";
 import { getDate } from "../../../../commons/libraries/utils";
+import LayoutSidebar from "../../../commons/layout/sidebar/LayoutSidebar.container";
 
 export default function MarketListUI(props) {
   const [alignment, setAlignment] = useState("left");
@@ -18,6 +19,7 @@ export default function MarketListUI(props) {
   return (
     <>
       <A.Wrapper>
+        <LayoutSidebar />
         <A.Title>중고마켓</A.Title>
 
         <A.ButtonWrap>

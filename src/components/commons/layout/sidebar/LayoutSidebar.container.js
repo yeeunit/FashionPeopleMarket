@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { isWatchActiveState } from "../../../../commons/store/index";
 import LayoutSidebarUI from "./LayoutSidebar.presenter";
 
 export default function LayoutSidebar() {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useRecoilState(isWatchActiveState);
   const [watchList, setWatchList] = useState([]);
 
   useEffect(() => {
