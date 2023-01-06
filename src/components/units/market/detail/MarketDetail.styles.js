@@ -1,9 +1,19 @@
 import styled from "@emotion/styled";
 
 export const DetailWrapper = styled.div`
-  width: 1300px;
-  height: 25rem;
   display: flex;
+  flex-direction: column;
+  width: 1300px;
+  height: 40rem;
+  padding: 7rem;
+  /* background-color: cadetblue; */
+`;
+
+export const DetailHeader = styled.div`
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  /* background-color: aliceblue; */
 `;
 
 export const HeaderLeftBox = styled.div`
@@ -25,17 +35,21 @@ export const Image = styled.img`
 `;
 
 export const HeaderRightBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 50%;
   height: 100%;
   padding-left: 4rem;
+  /* background-color: aliceblue; */
 `;
 
 export const HeaderRightTitle = styled.div`
   display: flex;
-  /* justify-content: space-between; */
-  font-size: 2rem;
+  justify-content: space-between;
+  height: 4rem;
+  font-size: 2.2rem;
   font-weight: bold;
-
   span {
     font-size: 24px;
     color: #bdbdbd;
@@ -45,9 +59,12 @@ export const HeaderRightTitle = styled.div`
 `;
 
 export const HeaderRightPrice = styled.div`
-  padding-top: 50px;
-  font-size: 40px;
+  height: 5.5rem;
+  line-height: 5.5rem;
+  font-size: 3rem;
   font-weight: bold;
+  /* background-color: red; */
+
   span {
     font-size: 20px;
     font-weight: normal;
@@ -56,8 +73,9 @@ export const HeaderRightPrice = styled.div`
 `;
 
 export const HeaderRightContents = styled.div`
+  height: 12rem;
   padding: 25px;
-  border-top: 3px solid #555555;
+  border-top: 2px solid #555555;
   border-bottom: 1px solid #c0c0c0;
   p {
     font-size: 20px;
@@ -75,10 +93,10 @@ export const HeaderRightContents = styled.div`
 export const HeaderRightBtnWrap = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 25px;
+  padding-top: 1rem;
   button {
     width: 100%;
-    height: 100px;
+    height: 4rem;
     font-size: 20px;
     cursor: pointer;
     color: #ffffff;
@@ -119,7 +137,7 @@ export const BodyLeft = styled.div`
   border-right: 1px solid #555555;
   padding-right: 20px;
   h1 {
-    font-size: 22px;
+    font-size: 1.6rem;
     font-weight: bold;
     border-bottom: 3px solid #555555;
     padding-bottom: 30px;
@@ -151,7 +169,7 @@ export const BodyRight = styled.div`
   margin-top: 100px;
   padding-left: 20px;
   h1 {
-    font-size: 32px;
+    font-size: 1.6rem;
     font-weight: bold;
     border-bottom: 3px solid #555555;
     padding-bottom: 30px;
@@ -169,9 +187,6 @@ export const BodyRightProfile = styled.div`
     border-radius: 50%;
     background-color: #c4c4c4;
     margin: 0 20px;
-  }
-  p {
-    font-size: 20px;
   }
 `;
 

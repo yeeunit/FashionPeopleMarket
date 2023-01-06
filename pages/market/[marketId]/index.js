@@ -1,4 +1,4 @@
-import { withAuth } from "../../../src/commons/hooks/withAuth";
+import { withAuth } from "../../../src/components/commons/hocs/withAuth";
 import MarketDetail from "../../../src/components/units/market/detail/MarketDetail.container";
 
 function MarketDetailPage() {

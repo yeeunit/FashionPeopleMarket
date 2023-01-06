@@ -1,10 +1,11 @@
-import { withAuth } from "../../../src/commons/hooks/withAuth";
 import MarketWrite from "../../../src/components/units/market/write/MarketWrite.container";
-
+import { withAuth } from "../../../src/components/commons/hocs/withAuth";
 function MarketWritePage() {
+  const [isEdit, setEdit] = useState(false);
+
   return (
     <>
-      <MarketWrite isEdit={false} />
+      <MarketWrite isEdit={isEdit} />
     </>
   );
 }

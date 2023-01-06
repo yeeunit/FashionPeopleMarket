@@ -1,12 +1,26 @@
+import { gql, useMutation } from "@apollo/client";
 import { message } from "antd";
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import * as P from "./Payment.styles";
+import * as A from "./Payment.styles";
 
 // declare const window: typeof globalThis & {IMP}
 
-export default function PaymentUI(props) {
+const CREATE_POINT_TRANSACTION_OF_LOADING = gql`
+  mutation createPointTransactionOfLoading($impUid: ID!) {
+    createPointTransactionOfLoading(impUid: $impUid) {
+      _id
+      impUid
+      amount
+      status
+      statusDetail
+    }
+  }
+`;
+
+export default function Payment(props) {
   const router = useRouter();
   const [isPointOpen, setIsPointOpen] = useState(false);
 
@@ -62,7 +76,7 @@ export default function PaymentUI(props) {
             },
           });
           setIsPointOpen(false);
-          message.success("결제에 성공하셨습니다");
+          message.success("결제 성공");
 
           // 백엔드에 결제관련 데이터 넘겨주기 => 즉, 뮤테이션 실행하기
           // const paymentDate = new Date();
@@ -70,7 +84,7 @@ export default function PaymentUI(props) {
           // router.push("/payment.success.tsx");
         } else {
           // 결제 실패 시 로직,
-          message.error("결제에 실패했습니다. 다시 시도해주세여!");
+          message.error("결제에 실패했습니다.");
         }
       }
     );
@@ -78,35 +92,43 @@ export default function PaymentUI(props) {
 
   return (
     <>
-      <P.Wrapper>
-        <h1>결제하기</h1>
-        <br />
-
-        <div>
-          <Head>
-            <script
-              type="text/javascript"
-              src="https://code.jquery.com/jquery-1.12.4.min.js"
-            ></script>
-
-            <script
-              type="text/javascript"
-              src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
-            ></script>
-          </Head>
-
-          <select onChange={onChangePrice}>
-            {/* <select name = 'price' value={optionsState}> */}
-            <option value={100}> 100원 </option>
-            <option value={500}> 500원 </option>
-            <option value={1000}> 1000원 </option>
-            <option value={2000}> 2000원 </option>
-          </select>
+      <A.Background>
+        <A.Wrapper>
+          <A.Title>포인트 충전하기</A.Title>
           <br />
 
-          <button onClick={onClickPayment}>결제하기</button>
-        </div>
-      </P.Wrapper>
+          <div>
+            <Head>
+              <script
+                type="text/javascript"
+                src="https://code.jquery.com/jquery-1.12.4.min.js"
+              ></script>
+
+              <script
+                type="text/javascript"
+                src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
+              ></script>
+            </Head>
+
+            <A.OptionWrap>
+              <select onChange={onChangePrice}>
+                {/* <select name = 'price' value={optionsState}> */}
+                <option value={100}> 100원 </option>
+                <option value={500}> 500원 </option>
+                <option value={1000}> 1000원 </option>
+                <option value={2000}> 2000원 </option>
+              </select>
+            </A.OptionWrap>
+            <br />
+            <A.BtnWrap>
+              <A.Button onClick={onClickPayment}>결제하기</A.Button>
+              <A.Button>
+                <Link href="/mypage"> 닫기</Link>
+              </A.Button>
+            </A.BtnWrap>
+          </div>
+        </A.Wrapper>
+      </A.Background>
     </>
   );
 }

@@ -1,15 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { message, Modal } from "antd";
-import React from "react";
-
-// const App = () => (
-//   <Space wrap>
-//     <Button onClick={warning}>Warning</Button>
-//   </Space>
-// );
-
-// export default App;
 
 export const withAuth = (Component) => (props) => {
   const router = useRouter();

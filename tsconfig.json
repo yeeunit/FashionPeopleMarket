@@ -28,7 +28,7 @@
     "src/components/units/upload/upload.styles.js",
     "src/components/units/payment/payment.success.js",
     "src/components/units/payment/Payment.styles.js",
-    "src/components/units/payment/index.js",
+    "src/components/units/payment/Payment.js",
     "src/components/commons/question/Question.styles.js",
     "src/components/commons/question/Question.presenter.js",
     "src/components/units/boardComment/write/write/BoardCommentWrite.styles.js",

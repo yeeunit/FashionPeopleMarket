@@ -1,18 +1,29 @@
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { errorModalStatus } from "../store";
+// import { useRouter } from "next/router";
+// import { useEffect } from "react";
+// import { Modal } from 'antd';
+// import React from 'react';
 
-export const withAuth = (Component) => (props) => {
-  const router = useRouter();
-  const [isErrorModalStatus, setIsErrorModalStatus] =
-    useRecoilState(errorModalStatus);
+// export const withAuth = (Component) => (props) => {
+//   const router = useRouter();
 
-  useEffect(() => {
-    if (!localStorage.getItem("accessToken")) {
-      setIsErrorModalStatus(true);
-    }
-  }, [setIsErrorModalStatus]);
+//   const warning = () => {
+//     Modal.warning({
+//       title: 'This is a warning message',
+//       content: 'some messages...some messages...',
+//     });
+//   };
 
-  return <Component {...props} />;
-};
+//   useEffect(() => {
+//     if (!localStorage.getItem("accessToken")) {
+
+//       alert("로그인 후 이용 가능합니다!!!");
+//       router.push("/products/login");
+//     }
+//   }, []);
+
+//   return (
+//     <>
+//     <Component {...props} />;
+//     </>
+//   )
+// };

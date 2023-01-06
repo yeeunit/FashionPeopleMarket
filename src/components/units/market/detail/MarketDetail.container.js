@@ -2,6 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
+import { message } from "antd";
 import {
   CREATE_POINT_TRANSACTION_OF_BUYING_AND_SELLING,
   CREATE_USED_ITEM_QUESTION,
@@ -87,7 +88,7 @@ export default function MarketDetail() {
         ],
       });
     } catch (error) {
-      message.success("찜 실패!!!!");
+      message.error("찜 실패!!!!");
     }
   };
 
@@ -103,6 +104,7 @@ export default function MarketDetail() {
     setIsActive((prev) => !prev);
     bucketList.push(el);
     localStorage.setItem("bucketList", JSON.stringify(bucketList));
+    message.success("장바구니 넣기 성공");
   };
 
   const onClickBuy = (id) => async (event) => {
@@ -118,7 +120,9 @@ export default function MarketDetail() {
         ],
       });
       router.push("/");
-    } catch (error) {}
+    } catch (error) {
+      message.error("구매 실패!");
+    }
   };
 
   const onClickCommentCreate = async (data) => {

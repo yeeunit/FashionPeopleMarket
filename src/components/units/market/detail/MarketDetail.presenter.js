@@ -4,6 +4,8 @@ import {
   EnvironmentFilled,
   HeartFilled,
 } from "@ant-design/icons";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import "antd/dist/antd";
 import { KaKaoMap } from "../../../commons/map/index";
 import Comment from "../comment/Comment.containter";
 import * as A from "./MarketDetail.styles";
@@ -24,7 +26,7 @@ export default function MarketDetailUI(props) {
             </>
           ) : (
             <>
-              <div className="default-img"></div>
+              <div className="default-img">dd</div>
             </>
           )}
         </A.HeaderLeftBox>
@@ -44,7 +46,7 @@ export default function MarketDetailUI(props) {
             <span>원</span>
           </A.HeaderRightPrice>
           <A.HeaderRightContents>
-            <div>{props.data?.fetchUseditem.remarks}</div>
+            <div>{props.data?.fetchUseditem.remarks}</div> <br />
             {props.data?.fetchUseditem.tags?.map((el, index) => (
               <div key={uuidv4()} className="tag">
                 # {el}
@@ -97,7 +99,7 @@ export default function MarketDetailUI(props) {
             ></A.BodyLeftContentsBox>
           )}
           <A.BodyLeftMapBox>
-            <div className="title">
+            {/* <div className="title">
               <EnvironmentFilled />
               <span>거래지역</span>
             </div>
@@ -106,20 +108,23 @@ export default function MarketDetailUI(props) {
               address={props.data?.fetchUseditem.useditemAddress?.address}
               width="100%"
               height="448px"
-            />
+            /> */}
           </A.BodyLeftMapBox>
         </A.BodyLeft>
         <A.BodyRight>
-          <h1>상점정보</h1>
+          <h1>판매자 정보</h1>
           <A.BodyRightProfile>
-            <div className="circle"></div>
+            <AccountCircleIcon
+              style={{ color: "grey", fontSize: "3.3rem", marginRight: "1rem" }}
+            />
+            {/* <div className="circle"> </div> */}
             <div>{props.data?.fetchUseditem.seller?.name}</div>
           </A.BodyRightProfile>
 
           <A.BodyRightCommentBox>
             <h1>댓글</h1>
 
-            {/* <A.BodyRightCommentWriteBox>
+            <A.BodyRightCommentWriteBox>
               <A.BodyRightCommentWrite {...props.register("contents")} />
               <A.BodyRightBtnWrap>
                 <A.BodyRightBtn
@@ -128,19 +133,17 @@ export default function MarketDetailUI(props) {
                   작성하기
                 </A.BodyRightBtn>
               </A.BodyRightBtnWrap>
-            </A.BodyRightCommentWriteBox> */}
+            </A.BodyRightCommentWriteBox>
 
             <A.BodyRightCommentListBox>
-              {/* {props.dataUsedItemQuestions?.fetchUseditemQuestions.map(
-                (el) => (
-                  <Comment
-                    key={uuidv4()}
-                    userInfoId={props.userInfo?._id}
-                    el={el}
-                    useditemId={props.useditemId}
-                  />
-                )
-              )} */}
+              {props.dataUsedItemQuestions?.fetchUseditemQuestions.map((el) => (
+                <Comment
+                  key={uuidv4()}
+                  userInfoId={props.userInfo?._id}
+                  el={el}
+                  useditemId={props.useditemId}
+                />
+              ))}
             </A.BodyRightCommentListBox>
           </A.BodyRightCommentBox>
         </A.BodyRight>

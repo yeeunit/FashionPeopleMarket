@@ -8,6 +8,7 @@ import { message, Modal } from "antd";
 export default function Mypage(props) {
   const router = useRouter();
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
+
   // console.log("data", data);
   // console.log("fetchUserLoggedIn", props.fetchUserLoggedIn);
 

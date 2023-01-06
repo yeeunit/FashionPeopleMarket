@@ -2,19 +2,20 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  margin: 50px auto;
+  width: 1500px;
 `;
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  height: 10rem;
+`;
 
 export const LeftWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 2rem;
-  width: 25rem;
-  height: 70rem;
+  padding: 3rem;
+  width: 20rem;
+  height: 66rem;
+  /* background-color: darkblue; */
   border-right: 1px solid #555;
 `;
 
@@ -47,16 +48,16 @@ export const Tabs = styled.div`
 export const RightWrap = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: cadetblue;
+  /* width: 100%; */
+  padding: 3rem;
 `;
 
 export const TopWrapper = styled.div`
   display: flex;
   width: 66rem;
   height: 16rem;
-  background-color: #eee;
+  background-color: darksalmon;
+  /* background-color: #eee; */
   border-radius: 10px;
   text-align: center;
   padding: 3rem;
