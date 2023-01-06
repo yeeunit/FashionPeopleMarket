@@ -15,7 +15,7 @@ export default function BoardDetailUI(props) {
         <A.Title>상세보기</A.Title>
 
         <A.TitleWrapper>
-          <A.TitleBox> ★ 제목 {props.data?.fetchBoard?.title}</A.TitleBox>{" "}
+          <A.TitleBox>{props.data?.fetchBoard?.title}</A.TitleBox>{" "}
           <A.Date>
             {/* <PersonIcon /> {props.data?.fetchBoard?.writer} &nbsp; &nbsp; &nbsp; */}
             {/* &nbsp; <WatchLaterIcon />{" "} */}

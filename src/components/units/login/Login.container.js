@@ -1,4 +1,5 @@
 import { useApolloClient, useMutation, useQuery } from "@apollo/client";
+import { message } from "antd";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
@@ -20,7 +21,8 @@ export default function LoginWrite() {
   const [passwordError, setPasswordError] = useState("");
 
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
-  // console.log(data);
+  // console.log(FETCH_USER_LOGGED_IN);
+  // console.log("login", data);
 
   const [loginUser] = useMutation(LOGIN_USER);
 
@@ -32,45 +34,39 @@ export default function LoginWrite() {
     setPassword(event.target.value);
   };
 
-  const onClickLogin = async () => {
-    const result = await loginUser({
-      variables: { email, password },
-    });
+  const onClickLogin = async (data) => {
+    try {
+      const result = await loginUser({
+        variables: { email, password },
+      });
 
-    if (email.includes("@") === false) {
-      // alert("이메일이 올바르지 않습니다!! @가 없음!!")
-      setEmailError("이메일 아이디를 @까지 정확하게 입력해주세요");
-    }
+      if (email.includes("@") === false) {
+        setEmailError("이메일 아이디를 @까지 정확하게 입력해주세요");
+      }
 
-    if (!password) {
-      setPasswordError("영문+숫자 조합 8-16자리의 비밀번호를 입력해주세요.");
-    }
+      if (!password) {
+        setPasswordError("영문+숫자 조합 8-16자리의 비밀번호를 입력해주세요.");
+      }
 
-    const accessToken = result.data?.loginUser.accessToken;
-    console.log(accessToken);
-    if (!accessToken) {
-      alert("로그인 실패");
-      return;
-    }
-
-    const resultUserInfo = await client.query({
-      query: FETCH_USER_LOGGED_IN,
-      context: {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
+      const getAccessToken = result.data?.loginUser.accessToken;
+      const resultUserInfo = await client.query({
+        query: FETCH_USER_LOGGED_IN,
+        context: {
+          headers: {
+            Authorization: `Bearer ${getAccessToken}`,
+          },
         },
-      },
-    });
-    const userInfo = resultUserInfo.data?.fetchUserLoggedIn; // { name: 철수, email: a@a.com }
-
-    setAccessToken(accessToken);
-    setUserInfo(userInfo);
-
-    localStorage.setItem("accessToken", accessToken);
-    localStorage.setItem("userInfo", JSON.stringify(userInfo));
-
-    alert(`${data?.fetchUserLoggedIn.name}님 환영합니다!`);
-    router.push("../../../../../market/new");
+      });
+      const getUserInfo = resultUserInfo.data.fetchUserLoggedIn;
+      localStorage.setItem("accessToken", getAccessToken);
+      localStorage.setItem("userInfo", JSON.stringify(getUserInfo));
+      setIsLogin(true);
+      router.push("/");
+      message.success(`${data?.fetchUserLoggedIn.name}님 환영합니다!`);
+      router.push("/market");
+    } catch (error) {
+      message.error("로그인에 실패하셨습니다");
+    }
   };
 
   return (

@@ -26,7 +26,7 @@ export const QuestionTitle = styled.div`
 
 export const QuestionBox1 = styled.div`
   width: 85%;
-  height: ${(props) => (props.isAnswer1 ? "160px" : "60px")};
+  height: ${(props) => (props.isAnswer1 ? "140px" : "60px")};
   display: flex;
   transition: 0.3s;
   flex-direction: column;
@@ -65,7 +65,7 @@ export const QuestionContents1 = styled.div`
 
 export const QuestionBox2 = styled.div`
   width: 85%;
-  height: ${(props) => (props.isAnswer2 ? "160px" : "60px")};
+  height: ${(props) => (props.isAnswer2 ? "180px" : "60px")};
   display: flex;
   transition: 0.3s;
   flex-direction: column;
@@ -141,7 +141,7 @@ export const QuestionContents3 = styled.div`
 
 export const QuestionBox4 = styled.div`
   width: 85%;
-  height: ${(props) => (props.isAnswer4 ? "140px" : "60px")};
+  height: ${(props) => (props.isAnswer4 ? "120px" : "60px")};
   display: flex;
   transition: 0.3s;
   flex-direction: column;

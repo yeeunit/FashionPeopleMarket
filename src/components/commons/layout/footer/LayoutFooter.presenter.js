@@ -15,13 +15,13 @@ export default function LayoutFooterUI() {
         <A.FooterText2>
           평일 09:00~18:00 | 점심시간 12:00~13:00 | 주말 및 공휴일 휴무
           <br /> <br />
-          (주)YeeunIT Made by yeeunit22.
-          <br /> © 2022 YEEUNUT by Yeeun CHUNG |
         </A.FooterText2>
         <TopButton />
       </A.Footer>
 
-      <A.Wrapper>Created by Yeeun</A.Wrapper>
+      <A.Wrapper>
+        <span> © 2022 YEEUNUT | Created by yeeunit22.</span>
+      </A.Wrapper>
     </>
   );
 }

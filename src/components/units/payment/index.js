@@ -1,3 +1,4 @@
+import { message } from "antd";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -5,16 +6,34 @@ import * as P from "./Payment.styles";
 
 // declare const window: typeof globalThis & {IMP}
 
-export default function PaymentUI() {
+export default function PaymentUI(props) {
   const router = useRouter();
+  const [isPointOpen, setIsPointOpen] = useState(false);
+
   const [price, setPrice] = useState(100);
+
+  const [createPointTransactionOfLoading] = useMutation(
+    CREATE_POINT_TRANSACTION_OF_LOADING
+  );
+
+  const onChangePointPrice = () => {
+    setIsBtnActive(true);
+  };
+
+  const onClickOpenPointModal = () => {
+    setIsPointOpen(true);
+  };
+
+  const onClickClosePointModal = () => {
+    setIsPointOpen(false);
+  };
 
   const onChangePrice = (event) => {
     setPrice(event.target.value);
   };
 
-  const onClickPayment = () => {
-    const IMP = window.IMP;
+  const onClickPayment = (data) => {
+    const IMP = window.IMP; // 생략 가능
     IMP.init("imp18058468");
 
     IMP.request_pay(
@@ -23,29 +42,35 @@ export default function PaymentUI() {
         pg: "nice",
         pay_method: "card",
         // merchant_uid: "ORD20180131-0000011", // 주문번호, 중복 안됨. 없애면 자동 생성
-        name: "포트폴리오",
-        amount: price,
-
-        buyer_email: "000@000.com",
-        buyer_name: "000",
+        name: "포인트 충전",
+        amount: data.price,
+        buyer_email: "xxx@000.com",
+        buyer_name: "xxx",
         buyer_tel: "010-0000-0000",
-        buyer_addr: "서울특별시 강남구 신사동",
+        buyer_addr: "서울특별시 영등포구",
         buyer_postcode: "01181",
         // m_redirect_url: "http://localhost:3000/boards/payment",
         // 모바일
       },
-      (rsp) => {
+      async (rsp) => {
         if (rsp.success) {
           console.log(rsp);
 
+          await createPointTransactionOfLoading({
+            variables: {
+              impUid: rsp.imp_uid,
+            },
+          });
+          setIsPointOpen(false);
+          message.success("결제에 성공하셨습니다");
+
           // 백엔드에 결제관련 데이터 넘겨주기 => 즉, 뮤테이션 실행하기
-          const paymentDate = new Date();
+          // const paymentDate = new Date();
           // ex, createPointTransactionOfLoading
-          router.push("/payment.success.tsx");
+          // router.push("/payment.success.tsx");
         } else {
-          console.log(rsp);
           // 결제 실패 시 로직,
-          alert("결제에 실패했습니다. 다시 시도해주세여!");
+          message.error("결제에 실패했습니다. 다시 시도해주세여!");
         }
       }
     );

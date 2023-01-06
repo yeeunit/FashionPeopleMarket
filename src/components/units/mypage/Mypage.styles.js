@@ -12,7 +12,8 @@ export const LeftWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 22rem;
+  padding-left: 2rem;
+  width: 25rem;
   height: 70rem;
   border-right: 1px solid #555;
 `;
@@ -23,6 +24,10 @@ export const Profile = styled.div`
   margin-top: 5rem;
   background-color: #eee;
   border-radius: 999px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
 `;
 
 export const Name = styled.div`

@@ -12,11 +12,8 @@ export default function LayoutHeaderUI(props) {
             <Link href="/">
               <a>
                 <A.LogoImg src="/images/ye2.png" alt="logo" />
+                YeeunIT
               </a>
-            </Link>
-            <Link href="/">
-              {/* <a>YeeunIT</a> */}
-              YeeunIT
             </Link>
           </A.Logo>
           <A.MenuWrap>
@@ -35,16 +32,6 @@ export default function LayoutHeaderUI(props) {
                 <a>My Page</a>
               </Link>
             </A.Menu>
-            {/* <A.Menu>
-              <Link href="/other">
-                <a>Other</a>
-              </Link>
-            </A.Menu> */}
-            {/* <A.Menu>
-              <Link href="/todolist">
-                <a>To Do List</a>
-              </Link>
-            </A.Menu> */}
           </A.MenuWrap>
         </A.LogoMenuWrap>
 
@@ -53,14 +40,18 @@ export default function LayoutHeaderUI(props) {
             <>
               <A.Login>
                 <span>😃 {props.userInfo?.name}</span> 님 포인트{" "}
-                {props.userInfo.userPoint?.amount} P
+                {props.userInfo.userPoint ? (
+                  `${props.userInfo.userPoint?.amount}`
+                ) : (
+                  <span>0</span>
+                )}
+                P
               </A.Login>
-              <A.Login onClick={props.onClickOpenPointModal}>충전</A.Login>
-              <A.Login onClick={props.onClickLogOut}>로그아웃</A.Login>
               <A.Login>
                 장바구니{" "}
                 <span className="yellow-circle">{props.bucketList.length}</span>
               </A.Login>
+              <A.Login onClick={props.onClickLogOut}>로그아웃</A.Login>
             </>
           ) : (
             <>

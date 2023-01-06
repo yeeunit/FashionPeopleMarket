@@ -12,7 +12,7 @@ export default function BoardListUI(props) {
         <A.SearchBarWrap>
           <A.SearchBar
             type="text"
-            placeholder="검색어를 입력해 주세요"
+            placeholder="제목을 검색 해주세요"
             onChange={props.onChangeSearch}
           />
           {/* <A.SearchBtn onClick={props.onClickSearch}>검색</A.SearchBtn> */}

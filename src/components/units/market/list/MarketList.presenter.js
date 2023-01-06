@@ -73,7 +73,7 @@ export default function MarketListUI(props) {
                     {/* {el.images} */}
                     {/* <div>{el.remarks}</div> */}
                     {/* <div>{el.contents}</div> */}
-                    <div>{el.name}</div>
+                    <div className="name">{el.name}</div>
                     <div>{el.price}</div>
                     <div>{el.tags}</div>
                     <div>{getDate(el.createdAt)}</div>

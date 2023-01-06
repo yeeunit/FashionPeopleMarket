@@ -8,13 +8,15 @@ export default function Q2Presenter(props) {
       isAnswer2={props.isAnswer2}
     >
       <S.QuestionContents2 isAnswer2={props.isAnswer2}>
-        이 사이트는 어떤 목적으로 제작된 것일까요?
+        쇼핑몰인가요?
         <ExpandMoreIcon fontSize="large" />
       </S.QuestionContents2>
       {props.isAnswer2 && (
         <S.AnswerContents>
-          개인 포트폴리오를 위해 만들어진 웹사이트입니다. <br />
-          즐겁게 둘러봐 주세요 ^^
+          쇼핑몰이라기보다는 리액트를 사용한 다양한 기능들을 구현해보고자 하는
+          <br />
+          페이지입니다. 옷과 관련된 자유게시판(CRUD)과 중고마켓(결제) <br />
+          서비스를 제공하고자 합니다.
         </S.AnswerContents>
       )}
     </S.QuestionBox2>

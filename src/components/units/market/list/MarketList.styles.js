@@ -115,7 +115,7 @@ export const TextBox = styled.div`
   /* background-color: yellow; */
   font-size: 0.8rem;
   object-fit: cover;
-  div:first-child {
+  .name {
     font-size: 1.2rem;
     margin: 0.6rem 0;
 

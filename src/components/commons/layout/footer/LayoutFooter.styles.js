@@ -11,19 +11,9 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
   padding: 1rem 0;
-  /* border-top: 1px solid gray; */
   height: 4rem;
-
-  /* background-color: white; */
-
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-  }
+  font-size: 0.8rem;
 `;
 
 export const Footer = styled.div`
@@ -32,7 +22,7 @@ export const Footer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 20rem;
+  height: 16rem;
   background-color: #eee;
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -46,8 +36,8 @@ export const FooterText = styled.span`
   display: inline-block;
   color: #555;
   font-size: 1rem;
-  font-weight: 400;
-  margin: 1.3rem;
+  font-weight: 300;
+  margin: 1.1rem;
   cursor: pointer;
   @media ${breakPoints.mobile} {
     font-size: 0.6rem;
@@ -60,8 +50,9 @@ export const FooterText2 = styled.span`
   text-align: center;
   color: #555;
   margin-top: 1rem;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 100;
+
   @media ${breakPoints.mobile} {
     font-size: 0.6rem;
   }

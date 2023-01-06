@@ -16,6 +16,10 @@ export const globalStyles = css`
     font-family: "One";
   }
 
+  Link {
+    color: inherit;
+    text-decoration: none;
+  }
   a {
     color: inherit;
     text-decoration: none;
@@ -23,10 +27,7 @@ export const globalStyles = css`
       color: inherit;
       text-decoration: none;
     }
-    :link {
-      color: inherit;
-      text-decoration: none;
-    }
+
     :visited {
       color: inherit;
       text-decoration: none;

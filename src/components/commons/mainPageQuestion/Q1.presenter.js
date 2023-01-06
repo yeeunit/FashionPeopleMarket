@@ -16,7 +16,7 @@ export default function Q1Presenter(props) {
       {props.isAnswer1 && (
         <S.AnswerContents>
           개인 포트폴리오를 위해 만들어진 웹사이트입니다. <br />
-          즐겁게 둘러봐 주세요 ^^
+          즐겁게 둘러봐 주세요.
         </S.AnswerContents>
       )}
     </S.QuestionBox1>

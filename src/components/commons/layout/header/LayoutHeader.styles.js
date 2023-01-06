@@ -1,34 +1,28 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
-
+import * as A from "../../../../commons/styles/commonStyles";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 5rem;
   line-height: 4rem;
   padding-top: 0.5rem;
   border-bottom: 1px solid gray;
   /* background-color: yellow; */
-
-  @media ${breakPoints.mobile} {
-  }
 `;
 
 export const LogoMenuWrap = styled.div`
   display: flex;
-  /* flex-direction: row; */
-  /* align-items: flex-start; */
-  width: 75%;
-  /* background-color: rebeccapurple; */
 `;
 
 export const Logo = styled.div`
   display: flex;
-  width: 15rem;
+  width: 12.8rem;
   margin-left: 5rem;
-  font-size: 1.8rem;
-  font-weight: 900;
-  line-height: 4.4rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  /* line-height: 4rem; */
   cursor: pointer;
   /* background-color: yellow; */
 
@@ -39,36 +33,32 @@ export const Logo = styled.div`
 
 export const LogoImg = styled.img`
   width: 3.8rem;
-  /* margin-right: 0.3rem; */
-  margin-bottom: 1rem;
-  /* background-color: rebeccapurple; */
+  margin-bottom: 0.4rem;
 `;
 
 export const MenuWrap = styled.div`
   display: flex;
-  width: 70%;
-  /* background-color: aliceblue; */
+  width: 14rem;
+  /* background-color: pink; */
   @media ${breakPoints.mobile} {
-    display: none;
+    /* display: none; */
   }
 `;
 
 export const Menu = styled.div`
-  font-size: 1rem;
-  margin-right: 1.3rem;
+  font-size: 0.8rem;
+  margin-right: 1.2rem;
   :hover {
     cursor: pointer;
-    color: #0070f3;
-  }
-  @media ${breakPoints.mobile} {
-    display: none;
+    font-size: 1rem;
+    color: ${A.BlueColor};
   }
 `;
 
 export const LoginWrap = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 12%;
+  /* width: 12%; */
   /* margin-right: 2rem; */
   /* background-color: pink; */
   @media ${breakPoints.mobile} {
@@ -83,7 +73,13 @@ export const Login = styled.div`
   line-height: 4rem;
   cursor: pointer;
   span {
-    color: hotpink;
+    color: ${A.BlueColor};
+  }
+  .yellow-circle {
+    /* width: 10px;
+    height: 10px;
+    background-color: gold;
+    border-radius: 50px; */
   }
 `;
 
