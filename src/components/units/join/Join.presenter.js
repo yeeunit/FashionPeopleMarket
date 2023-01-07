@@ -2,7 +2,6 @@ import Link from "next/link";
 import * as A from "./Join.styles";
 
 export default function JoinUI(props) {
-  // console.log(props.onClickSignUp);
   return (
     <>
       <A.Wrapper>
