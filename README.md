@@ -13,13 +13,13 @@
 
 ### 자유게시판
 - 자유롭게 패션 관련 게시글, 이미지, 유튜브링크를 업로드할 수 있습니다. 
-<br/><br/><br/>
+<br/><br/>
 
-> 주니어 개발자로서, 지속적으로 새로운 기능을 추가하고 오류 부분을 업데이트하고 있습니다. 
-> 현재는 서비스 기획보다 기능 구현에 집중하고 있지만, 추후 서비스가 상용화될 수 있도록 열심히 보완해 나가겠습니다.
-> 감사합니다. 
+> 주니어 개발자로서, 지속적으로 새로운 기능을 추가하고 오류 부분을 업데이트하고 있습니다. <br/>
+> 현재는 서비스 기획보다 기능 구현에 집중하고 있지만, 추후 서비스가 상용화될 수 있도록 열심히 보완해 나가겠습니다. <br/>
+> 감사합니다.🙏
 
-
+<br/><br/>
 # 기술 스택
 
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>          <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/>
