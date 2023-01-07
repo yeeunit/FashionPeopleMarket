@@ -44,6 +44,8 @@
 # 서비스 시연
 
 - 랜딩페이지
+<img src="https://user-images.githubusercontent.com/107978408/211136489-1cfaeff1-0270-410c-8fbc-1a9c35452cfd.gif" width="100%" alt="랜딩 페이지"/>
+
 - 자유게시판 
 - 중고마켓 
 - 댓글
