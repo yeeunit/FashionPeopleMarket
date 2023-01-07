@@ -15,11 +15,13 @@ export default function BoardDetailUI(props) {
         <A.Title>상세보기</A.Title>
 
         <A.TitleWrapper>
-          <A.TitleBox>{props.data?.fetchBoard?.title}</A.TitleBox>{" "}
+          <A.TitleBox>
+            TITLE &nbsp; l &nbsp; {props.data?.fetchBoard?.title}
+          </A.TitleBox>{" "}
           <A.Date>
             {/* <PersonIcon /> {props.data?.fetchBoard?.writer} &nbsp; &nbsp; &nbsp; */}
             {/* &nbsp; <WatchLaterIcon />{" "} */}
-            {getDate(props.data?.fetchBoard?.createdAt)}
+            게시일 : {getDate(props.data?.fetchBoard?.createdAt)}
           </A.Date>
         </A.TitleWrapper>
 
@@ -33,20 +35,23 @@ export default function BoardDetailUI(props) {
             )}
 
             <A.SmallImgWrap>
-              {props.data?.fetchBoard?.images.map((el, index) =>
+              {/* {props.data?.fetchBoard?.images.map((el, index) =>
                 props.data?.fetchBoard?.images[index] ? (
                   <A.SmallImage key={el._id} id={el._id} src={`${el[index]}`} />
-                ) : (
-                  <A.SmallImage src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
-                )
-              )}
+                ) : ( */}
+              <A.SmallImage src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
+              <A.SmallImage src="https://images.unsplash.com/photo-1604176354204-9268737828e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" />
+              <A.SmallImage src="https://images.unsplash.com/photo-1567113463300-102a7eb3cb26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80" />
+
+              {/* )
+              )} */}
             </A.SmallImgWrap>
           </A.ImageWrapper>
 
           <A.ContentsWrapper>
-            <A.DateWrap>
+            {/* <A.DateWrap>
               <A.Date>수정일 : {props.data?.fetchBoard?.updatedAt}</A.Date>
-            </A.DateWrap>
+            </A.DateWrap> */}
 
             <A.InputWrap style={{ height: "10rem" }}>
               <A.Label>내용</A.Label>
@@ -54,31 +59,38 @@ export default function BoardDetailUI(props) {
                 {props.data?.fetchBoard?.contents}
                 <br />
                 <span>
-                  부드러우면서도 깔끔한 인상을 주는 엑스트라 화인 메리노 크루넥
+                  · 부드러우면서도 깔끔한 인상을 주는 엑스트라 크루넥
                   스웨터입니다. <br />
-                  · 세탁기로 간편히 세탁이 가능한 머신워셔블 기능.(물세탁,
-                  세탁기 사용 가능)
-                  <br />· 다양한 코디가 가능한 아이템. <br />· 크루넥 타입.
+                  · 세탁기로 간편히 세탁이 가능한 머신워셔블 기능
+                  <br />· 다양한 코디가 가능한 아이템 <br />· 크루넥 타입
                 </span>
               </A.TextBox>
             </A.InputWrap>
 
-            <A.InputWrap>
+            {/* <A.InputWrap>
               <A.Label>주소</A.Label>
               <A.TextBox>
                 {props.data?.fetchBoard?.address}
                 {props.data?.fetchBoard?.addressDetail}
               </A.TextBox>
-            </A.InputWrap>
+            </A.InputWrap> */}
 
             <A.InputWrap>
               <A.Label>유튜브</A.Label>
-              <A.TextBox>{props.data?.fetchBoard?.youtubeUrl}</A.TextBox>
-              {/* <ReactPlayer url="https://www.youtube.com/watch?v=hnanNlDbsE4"></ReactPlayer> */}
+              <A.YoutubeBox>
+                <ReactPlayer
+                  url={props.data?.fetchBoard?.youtubeUrl}
+                  width="100%"
+                  height="100%"
+                />
+              </A.YoutubeBox>
             </A.InputWrap>
+
             <A.LikeBox>
+              {" "}
+              <A.Label>좋아요</A.Label>
               <A.TextBox>
-                <LikeOutlined />
+                <LikeOutlined onClick={props.onClickLike} />
                 &nbsp;
                 {props.data?.fetchBoard?.likeCount}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

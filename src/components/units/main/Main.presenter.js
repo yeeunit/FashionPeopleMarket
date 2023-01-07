@@ -14,22 +14,32 @@ export default function MainUI(props) {
         <A.Main />
 
         <A.Middle>
-          <A.Title>Welcome to Yeeun&apos;s project!</A.Title>
+          <A.Title>
+            Welcome to <br />
+            <div className="FaPe">Fashoin People Market!</div>
+          </A.Title>
           {/* <A.Description></A.Description> */}
           <A.Grid>
             <A.Image src="/images/ye1.png" />
+
             <A.Card>
-              <Link href="/weather">
+              <Link href="/join">
                 <a>
-                  ☀️ 현재 날씨 확인하기
+                  <span>패피마켓</span>에 오신 것을 환영합니다. <br />
                   <br />
-                  <br />
-                  {/* <div>현재 날씨 확인하기 &rarr;</div> */}
-                  <span>날씨에 맞는 옷을 구입하세요!</span>
+                  <div>회원가입 후 더 많은 서비스를 누려보세요!</div>
                 </a>
               </Link>
             </A.Card>
           </A.Grid>{" "}
+          <A.WeatherBox>
+            <Link href="/weather">
+              <a>
+                ☀️ 현재 날씨 확인하기 <br />
+                <span>날씨에 맞는 옷을 구입하세요!</span>
+              </a>
+            </Link>
+          </A.WeatherBox>
           <br /> <br />
           <A.Button isTrue={props.isTrue} onClick={props.handleOnClick}>
             Contact with me

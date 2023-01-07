@@ -68,12 +68,11 @@ export const Bottom = styled.div`
 export const Title = styled.h1`
   line-height: 1.15;
   font-size: 3rem;
-  a:hover {
-  }
-  a:focus {
-  }
-  a:active {
-    text-decoration: underline;
+  .FaPe {
+    font-size: 4.4rem;
+    font-weight: 900;
+    line-height: 9rem;
+    /* background-color: #eee; */
   }
 `;
 export const Description = styled.div`
@@ -100,7 +99,7 @@ export const Grid = styled.div`
 
 export const Card = styled.div`
   margin: 2rem;
-  height: 7rem;
+  height: 8rem;
   padding: 1.6rem;
   text-align: left;
   border: 1px solid #eaeaea;
@@ -113,35 +112,35 @@ export const Card = styled.div`
     /* border-color: #0070f3; */
     cursor: pointer;
   }
+  span {
+    color: #0070f3;
+    font-size: 1.4rem;
+  }
 `;
 
 export const Logo = styled.div`
   height: 1em;
   margin-left: 0.5rem;
-
-  /* @media (max-width: 600px) {
-    .grid {
-      width: 100%;
-      flex-direction: column;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .card,
-    .footer {
-      border-color: #222;
-    }
-    .code {
-      background: #111;
-    }
-    .logo img {
-      filter: invert(1);
-    }
-  } */
 `;
 
 export const Image = styled.img`
   width: 300px;
   height: 300px;
   max-width: 600px;
+`;
+
+export const WeatherBox = styled.div`
+  height: 6.6rem;
+  padding: 1.6rem;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+
+  :hover {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+  }
+  span {
+    color: #0070f3;
+  }
 `;

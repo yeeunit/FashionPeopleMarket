@@ -12,7 +12,7 @@ export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 66rem;
+  /* width: 66rem; */
   height: 5rem;
   /* border: 1px solid gray; */
 `;
@@ -73,7 +73,7 @@ export const ContentsWrapper = styled.div`
 export const InputWrap = styled.div`
   display: flex;
   /* border: 1px solid red; */
-  height: 3rem;
+  /* height: 3rem; */
   margin: 1rem;
 `;
 
@@ -86,9 +86,16 @@ export const Label = styled.div`
 
 export const TextBox = styled.div`
   font-size: 1.4rem;
+  line-height: 2rem;
   span {
     font-size: 1rem;
   }
+`;
+
+export const YoutubeBox = styled.div`
+  width: 26rem;
+  height: 14rem;
+  background-color: #eee;
 `;
 
 export const DateWrap = styled.div`

@@ -4,6 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import PointPage from "../../../../pages/mypage/point";
 import * as A from "./Payment.styles";
 
 // declare const window: typeof globalThis & {IMP}
@@ -46,9 +47,13 @@ export default function Payment(props) {
     setPrice(event.target.value);
   };
 
+  const onClickClose = () => {
+    return <Payment isTrue={false} />;
+  };
+
   const onClickPayment = (data) => {
     const IMP = window.IMP; // 생략 가능
-    IMP.init("imp18058468");
+    IMP.init("imp49910675");
 
     IMP.request_pay(
       {
@@ -123,7 +128,8 @@ export default function Payment(props) {
             <A.BtnWrap>
               <A.Button onClick={onClickPayment}>결제하기</A.Button>
               <A.Button>
-                <Link href="/mypage"> 닫기</Link>
+                {/* <Link href="/mypage"> 닫기</Link> */}
+                <div onClick={onClickClose}> 닫기</div>
               </A.Button>
             </A.BtnWrap>
           </div>

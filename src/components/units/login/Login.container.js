@@ -6,6 +6,7 @@ import { useRecoilState } from "recoil";
 import { accessTokenState, userInfoState } from "../../../../src/commons/store";
 import LoginWriteUI from "./Login.presenter";
 import { FETCH_USER_LOGGED_IN, LOGIN_USER } from "./Login.queries";
+import { Modal } from "antd";
 
 export default function LoginWrite() {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
@@ -22,7 +23,7 @@ export default function LoginWrite() {
 
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
   // console.log(FETCH_USER_LOGGED_IN);
-  // console.log("login", data);
+  console.log("login", data);
 
   const [loginUser] = useMutation(LOGIN_USER);
 
@@ -48,24 +49,33 @@ export default function LoginWrite() {
         setPasswordError("영문+숫자 조합 8-16자리의 비밀번호를 입력해주세요.");
       }
 
-      const getAccessToken = result.data?.loginUser.accessToken;
+      const accessToken = result.data?.loginUser.accessToken;
+      console.log(accessToken);
+      if (!accessToken) {
+        alert("로그인 실패");
+        return;
+      }
       const resultUserInfo = await client.query({
         query: FETCH_USER_LOGGED_IN,
         context: {
           headers: {
-            Authorization: `Bearer ${getAccessToken}`,
+            Authorization: `Bearer ${accessToken}`,
           },
         },
       });
-      const getUserInfo = resultUserInfo.data.fetchUserLoggedIn;
-      localStorage.setItem("accessToken", getAccessToken);
-      localStorage.setItem("userInfo", JSON.stringify(getUserInfo));
-      setIsLogin(true);
-      router.push("/");
-      message.success(`${data?.fetchUserLoggedIn.name}님 환영합니다!`);
+      const userInfo = resultUserInfo.data.fetchUserLoggedIn;
+
+      setAccessToken(accessToken);
+      setUserInfo(userInfo);
+
+      localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+      // message.success(`${data?.fetchUserLoggedIn.name}님 환영합니다!`);
       router.push("/market");
     } catch (error) {
-      message.error("로그인에 실패하셨습니다");
+      console.log("실패", error);
+      Modal.error({ content: error.message });
     }
   };
 

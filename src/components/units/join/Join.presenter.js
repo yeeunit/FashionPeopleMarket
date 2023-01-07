@@ -2,6 +2,7 @@ import Link from "next/link";
 import * as A from "./Join.styles";
 
 export default function JoinUI(props) {
+  // console.log(props.onClickSignUp);
   return (
     <>
       <A.Wrapper>
@@ -14,28 +15,32 @@ export default function JoinUI(props) {
           <A.InputBox
             type="text"
             placeholder="Ex) 홍길동"
-            {...props.register("name")}
+            onChange={props.onChangeName}
+            // {...props.register("name")}
           />
         </A.InputWrap>
-        <A.Error>{props.formState.errors.name?.message}</A.Error>
+        {/* <A.Error>{props.formState.errors.name?.message}</A.Error> */}
+
         <A.InputWrap>
           <A.Label>이메일</A.Label>
           <A.InputBox
             type="text"
             placeholder="이메일 아이디를 @까지 정확하게 입력하세요"
-            {...props.register("email")}
+            onChange={props.onChangeEmail}
+            // {...props.register("email")}
           />{" "}
         </A.InputWrap>
-        <A.Error>{props.formState.errors.email?.message}</A.Error>
+        {/* <A.Error>{props.formState.errors.email?.message}</A.Error> */}
         <A.InputWrap>
           <A.Label>비밀번호</A.Label>
           <A.InputBox
             type="password"
             placeholder="영문+숫자 조합 8-16자리를 입력해주세요."
-            {...props.register("password")}
+            // {...props.register("password")}
+            onChange={props.onChangePassword}
           />{" "}
         </A.InputWrap>
-        <A.Error>{props.formState.errors.password?.message}</A.Error>
+        {/* <A.Error>{props.formState.errors.password?.message}</A.Error> */}
         {/* <A.InputWrap>
           <A.Label>비밀번호 확인</A.Label>
           <A.InputBox
@@ -48,7 +53,10 @@ export default function JoinUI(props) {
         <A.Error>비밀번호를 정확하게 입력하세요</A.Error> */}
         <A.JoinBtn
           type="button"
-          onClick={props.handleSubmit(props.onClickSignUp)}
+          // onClick={props.handleSubmit(props.onClickSignUp)}
+          onClick={props.onClickSignUp}
+
+          // onClick={props.onClickTest}
         >
           회원가입
         </A.JoinBtn>

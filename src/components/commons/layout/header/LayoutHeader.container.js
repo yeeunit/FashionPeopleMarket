@@ -28,7 +28,7 @@ export default function LayoutHeader(props) {
   const [logoutUser] = useMutation(LOGOUT_USER);
 
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
-  console.log("logged", data);
+  // console.log("logged", data);
 
   const { register, handleSubmit } = useForm({
     mode: "onChange",

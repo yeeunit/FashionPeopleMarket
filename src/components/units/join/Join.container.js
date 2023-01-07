@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { message } from "antd";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useState } from "react";
+import { Modal } from "antd";
 
 const schemaLogin = yup.object({
   email: yup
@@ -19,51 +21,70 @@ const schemaLogin = yup.object({
       "영문 + 숫자 조합 8~16자리의 비밀번호를 입력해주세요"
     )
     .required("비밀번호를 입력해주세요"),
-  passwordRe: yup
-    .string()
-    .oneOf([yup.ref("password")], "비밀번호가 일치하지 않습니다.")
-    .required("비밀번호를 다시 입력해주세요"),
+  // passwordRe: yup
+  //   .string()
+  //   .oneOf([yup.ref("password")], "비밀번호가 일치하지 않습니다.")
+  //   .required("비밀번호를 다시 입력해주세요"),
   name: yup.string().required("ex)홍길동"),
 });
 
 export default function Join() {
   const router = useRouter();
-  const client = useApolloClient();
 
-  const { register, handleSubmit, formState } = useForm({
-    resolver: yupResolver(schemaLogin),
-    mode: "onChange",
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function onChangeName(event) {
+    setName(event.target.value);
+  }
+  function onChangeEmail(event) {
+    setEmail(event.target.value);
+  }
+  function onChangePassword(event) {
+    setPassword(event.target.value);
+  }
+
+  // const { register, handleSubmit, formState } = useForm({
+  //   resolver: yupResolver(schemaLogin),
+  //   mode: "onChange",
+  // });
 
   const [createUser] = useMutation(CREATE_USER);
 
-  const onClickSignUp = async (data) => {
+  // const client = useApolloClient();
+  const onClickSignUp = async () => {
+    // console.log("data", data);
+    console.log(name, email, password);
     try {
-      await createUser({
+      const result = await createUser({
         variables: {
+          // ...data,
           createUserInput: {
-            email: data.email,
-            password: data.password,
-            name: data.name,
+            name,
+            email,
+            password,
           },
         },
       });
-      console.log("성공");
-      alert("회원가입을 축하합니다!!!");
+      console.log("성공결과", result);
+      message.success("회원가입에 성공하였습니다! 로그인을 해주세요");
       router.push("/login");
-      message.success("회원가입에 성공하셨습니다!! 로그인을 해주세요");
     } catch (error) {
-      alert("실패!");
-      message.error("회원가입 실패");
+      console.log("실패", error);
+      Modal.error({ content: error.message });
     }
   };
   return (
     <>
       <JoinUI
+        onChangeName={onChangeName}
+        onChangeEmail={onChangeEmail}
         onClickSignUp={onClickSignUp}
-        handleSubmit={handleSubmit}
-        register={register}
-        formState={formState}
+        onChangePassword={onChangePassword}
+        // handleSubmit={handleSubmit}
+        // register={register}
+        // formState={formState}
       />
     </>
   );
