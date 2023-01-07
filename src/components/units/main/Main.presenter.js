@@ -36,7 +36,7 @@ export default function MainUI(props) {
             <Link href="/weather">
               <a>
                 ☀️ 현재 날씨 확인하기 <br />
-                <span>날씨에 맞는 옷을 구입하세요!</span>
+                {/* <span>날씨에 맞는 옷을 구입하세요!</span> */}
               </a>
             </Link>
           </A.WeatherBox>

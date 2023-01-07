@@ -130,17 +130,16 @@ export const Image = styled.img`
 `;
 
 export const WeatherBox = styled.div`
-  height: 6.6rem;
-  padding: 1.6rem;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-
+  /* height: 6.6rem; */
+  /* padding: 1.6rem; */
+  font-size: 1rem;
+  /* border: 1px solid #eaeaea; */
+  /* border-radius: 10px; */
   :hover {
-    background-color: #333;
-    color: white;
+    /* background-color: #333; */
+    /* color: #0070f3; */
     cursor: pointer;
   }
   span {
-    color: #0070f3;
   }
 `;
