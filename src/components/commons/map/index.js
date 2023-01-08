@@ -73,7 +73,11 @@ export default function KaKaoMap(props) {
 
   return (
     <div
-      style={{ width: `${props.width}`, height: `${props.height}` }}
+      style={{
+        width: `${props.width}`,
+        height: `${props.height}`,
+        border: "1px solid grey",
+      }}
       id="map"
     ></div>
   );

@@ -15,6 +15,7 @@ import FETCH_USED_ITEMS from "../list/MarketList.queries";
 import { isBucketActiveState } from "../../../../commons/store/index";
 import { useForm } from "react-hook-form";
 import MarketDetailUI from "./MarketDetail.presenter";
+import { FETCH_USER_LOGGED_IN } from "../../board/detail/BoardDetail.queries";
 
 export default function MarketDetail() {
   const router = useRouter();
@@ -37,7 +38,10 @@ export default function MarketDetail() {
   const { data } = useQuery(FETCH_USED_ITEM, {
     variables: { useditemId: router.query.marketId },
   });
-  // console.log(data);
+  console.log("FETCH_USED_ITEM", data);
+
+  // const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
+  // console.log("userData", userData);
 
   const { data: dataUsedItemQuestions } = useQuery(FETCH_USED_ITEM_QUESTION, {
     variables: {

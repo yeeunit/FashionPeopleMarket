@@ -51,7 +51,7 @@ export default function BoardCommentWrite() {
       console.log("댓글성공", result);
       Modal.success({ title: "등록 완료" });
     } catch (error) {
-      console.log("댓글 실패");
+      // console.log("댓글 실패");
       Modal.error({ title: "등록 실패" });
       // alert("등록완료");
     }

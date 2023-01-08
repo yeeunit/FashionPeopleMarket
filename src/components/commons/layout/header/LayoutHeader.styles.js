@@ -2,12 +2,13 @@ import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 import * as A from "../../../../commons/styles/commonStyles";
 export const Wrapper = styled.div`
+  width: 1500px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 5rem;
   line-height: 4rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 5rem 0 3rem;
   border-bottom: 1px solid gray;
   /* background-color: yellow; */
 `;
@@ -19,7 +20,7 @@ export const LogoMenuWrap = styled.div`
 export const Logo = styled.div`
   display: flex;
   width: 12.8rem;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
   font-size: 1.6rem;
   font-weight: 800;
   /* line-height: 4rem; */

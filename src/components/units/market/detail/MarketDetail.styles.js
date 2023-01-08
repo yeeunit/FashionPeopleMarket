@@ -4,7 +4,6 @@ export const DetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 1300px;
-  height: 40rem;
   padding: 7rem;
   /* background-color: cadetblue; */
 `;

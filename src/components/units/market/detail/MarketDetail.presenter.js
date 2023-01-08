@@ -6,11 +6,11 @@ import {
 } from "@ant-design/icons";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import "antd/dist/antd";
-import { KaKaoMap } from "../../../commons/map/index";
 import Comment from "../comment/Comment.containter";
 import * as A from "./MarketDetail.styles";
 import Dompurify from "dompurify";
 import { v4 as uuidv4 } from "uuid";
+import KaKaoMap from "../../../commons/map/index";
 
 export default function MarketDetailUI(props) {
   return (
@@ -47,6 +47,7 @@ export default function MarketDetailUI(props) {
           </A.HeaderRightPrice>
           <A.HeaderRightContents>
             <div>{props.data?.fetchUseditem.remarks}</div> <br />
+            {/* <div className="tag"> {props.data?.fetchUseditem.tags}</div> */}
             {props.data?.fetchUseditem.tags?.map((el, index) => (
               <div key={uuidv4()} className="tag">
                 # {el}
@@ -99,16 +100,24 @@ export default function MarketDetailUI(props) {
             ></A.BodyLeftContentsBox>
           )}
           <A.BodyLeftMapBox>
-            {/* <div className="title">
+            <div className="title">
               <EnvironmentFilled />
-              <span>거래지역</span>
+              <span>거래지역 : </span>
+              <span>{props.data?.fetchUseditem.useditemAddress.address}</span>
+              &nbsp;
+              <span>
+                {props.data?.fetchUseditem.useditemAddress.addressDetail}
+              </span>
+              &nbsp;
+              <span>{props.data?.fetchUseditem.useditemAddress.zipcode}</span>
+              &nbsp;
             </div>
             <KaKaoMap
               data={props.data?.fetchUseditem}
               address={props.data?.fetchUseditem.useditemAddress?.address}
-              width="100%"
-              height="448px"
-            /> */}
+              width="90%"
+              height="22rem"
+            />
           </A.BodyLeftMapBox>
         </A.BodyLeft>
         <A.BodyRight>

@@ -6,6 +6,7 @@ import {
   DELETE_BOARD,
   DISLIKE_BOARD,
   FETCH_BOARD,
+  FETCH_USER_LOGGED_IN,
   LIKE_BOARD,
 } from "./BoardDetail.queries";
 
@@ -17,14 +18,20 @@ export default function BoardDetail() {
   });
   // console.log("data: ", data);
 
+  const { data: userData } = useQuery(FETCH_USER_LOGGED_IN);
+  // console.log("userData", userData);
+
   const [deleteBoard] = useMutation(DELETE_BOARD);
 
   const [likeBoard] = useMutation(LIKE_BOARD);
   const [dislikeBoard] = useMutation(DISLIKE_BOARD);
 
   const onClickLike = async () => {
+    console.log("data", data);
+    // if (typeof router.query.boardId !== "string") return;
+    // if(router.query.boardId === ) return
     try {
-      await likeBoard({
+      const result = await likeBoard({
         variables: {
           boardId: router.query.boardId,
         },
@@ -37,9 +44,31 @@ export default function BoardDetail() {
           },
         ],
       });
+      // console.log("result", result);
       message.success("좋아요 성공");
     } catch (error) {
       message.error("좋아요 실패");
+    }
+  };
+
+  const onClickDisLike = async () => {
+    try {
+      await dislikeBoard({
+        variables: {
+          boardId: router.query.boardId,
+        },
+        refetchQueries: [
+          {
+            query: FETCH_BOARD,
+            variables: {
+              boardId: router.query.boardId,
+            },
+          },
+        ],
+      });
+      message.success("싫어요 성공");
+    } catch (error) {
+      message.error("싫어요 실패");
     }
   };
 
@@ -68,6 +97,7 @@ export default function BoardDetail() {
         onClickDelete={onClickDelete}
         onClickModifyBtn={onClickModifyBtn}
         onClickLike={onClickLike}
+        onClickDisLike={onClickDisLike}
       />
     </>
   );

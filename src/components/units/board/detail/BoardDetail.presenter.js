@@ -95,8 +95,9 @@ export default function BoardDetailUI(props) {
                 {props.data?.fetchBoard?.likeCount}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </A.TextBox>
+              <A.Label>싫어요</A.Label>
               <A.TextBox>
-                <DislikeOutlined />
+                <DislikeOutlined onClick={props.onClickDisLike} />
                 &nbsp;
                 {props.data?.fetchBoard?.dislikeCount}
               </A.TextBox>

@@ -11,20 +11,20 @@ export default function BoardCommentList() {
   const result = useQuery(FETCH_BOARD_COMMENTS, {
     variables: { boardId: router.query.boardId },
   });
-  console.log("댓글", result);
+  // console.log("댓글", result);
 
   const { data } = useQuery(FETCH_BOARD_COMMENTS, {
     variables: { boardId: router.query.boardId },
   });
 
-  console.log("댓글data", data);
+  // console.log("댓글data", data);
 
   const [deleteBoardComment] = useMutation(DELETE_BOARD_COMMENT);
 
   const onClickDelete = () => {
     deleteBoardComment({
       variables: {
-        boardCommentId,
+        // boardCommentId,
         password,
       },
     });

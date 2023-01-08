@@ -63,15 +63,15 @@ export const OneBoxWrap = styled.div`
   background-color: white;
   border: 1px solid grey;
   overflow: hidden;
+  /* background-color: pink; */
 `;
 export const ImageBox = styled.div`
   display: flex;
   flex-direction: column;
+
   width: 14rem;
   height: 100%;
   cursor: pointer;
-
-  /* background-color: pink; */
   /* object-fit: cover; */
 `;
 
@@ -109,17 +109,28 @@ export const Image = styled.div`
   }
 `;
 export const TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: flex-end; */
   width: 100%;
   height: 50%;
-  padding: 1rem;
+  padding: 0.4rem 0.8rem 0.1rem;
   /* background-color: yellow; */
-  font-size: 0.8rem;
+  font-size: 1rem;
   object-fit: cover;
   .name {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0.6rem 0;
-
     font-weight: 600;
+  }
+  .price {
+  }
+  .date {
+    font-size: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 `;
 

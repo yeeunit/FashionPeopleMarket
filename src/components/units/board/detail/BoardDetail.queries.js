@@ -43,3 +43,13 @@ export const DISLIKE_BOARD = gql`
     dislikeBoard(boardId: $boardId)
   }
 `;
+
+export const FETCH_USER_LOGGED_IN = gql`
+  query fetchUserLoggedIn {
+    fetchUserLoggedIn {
+      _id
+      email
+      name
+    }
+  }
+`;

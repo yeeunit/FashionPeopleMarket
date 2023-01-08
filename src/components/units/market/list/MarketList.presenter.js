@@ -74,9 +74,9 @@ export default function MarketListUI(props) {
                     {/* <div>{el.remarks}</div> */}
                     {/* <div>{el.contents}</div> */}
                     <div className="name">{el.name}</div>
-                    <div>{el.price}</div>
+                    <div className="price">💰 {el.price} 원</div>
                     <div>{el.tags}</div>
-                    <div>{getDate(el.createdAt)}</div>
+                    <div className="date">(등록일) {getDate(el.createdAt)}</div>
                     <div>{el.seller}</div>
                   </A.TextBox>
                 </A.ImageBox>

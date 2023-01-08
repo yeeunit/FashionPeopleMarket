@@ -8,11 +8,7 @@ import { message, Modal } from "antd";
 import { useRecoilState } from "recoil";
 import { isBucketActiveState, isLoginStatus } from "../../../../commons/store";
 import LayoutHeaderUI from "./LayoutHeader.presenter";
-import {
-  CREATE_POINT_TRANSACTION_OF_LOADING,
-  FETCH_USER_LOGGED_IN,
-  LOGOUT_USER,
-} from "./LayoutHeader.queries";
+import { FETCH_USER_LOGGED_IN, LOGOUT_USER } from "./LayoutHeader.queries";
 
 export default function LayoutHeader(props) {
   const router = useRouter();
