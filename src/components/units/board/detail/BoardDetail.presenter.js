@@ -20,8 +20,9 @@ export default function BoardDetailUI(props) {
           </A.TitleBox>{" "}
           <A.Date>
             {/* <PersonIcon /> {props.data?.fetchBoard?.writer} &nbsp; &nbsp; &nbsp; */}
-            {/* &nbsp; <WatchLaterIcon />{" "} */}
-            게시일 : {getDate(props.data?.fetchBoard?.createdAt)}
+            {/* &nbsp; <WatchLaterIcon />{" "} */} 작성자 :{" "}
+            {props.data?.fetchBoard?.writer} &nbsp;&nbsp; l &nbsp;&nbsp;게시일 :{" "}
+            {getDate(props.data?.fetchBoard?.createdAt)}
           </A.Date>
         </A.TitleWrapper>
 
@@ -78,24 +79,35 @@ export default function BoardDetailUI(props) {
             <A.InputWrap>
               <A.Label>유튜브</A.Label>
               <A.YoutubeBox>
-                <ReactPlayer
-                  url={props.data?.fetchBoard?.youtubeUrl}
-                  width="100%"
-                  height="100%"
-                />
+                {props.data?.fetchBoard?.youtubeUrl ? (
+                  <>
+                    <ReactPlayer
+                      url={props.data?.fetchBoard?.youtubeUrl}
+                      width="100%"
+                      height="100%"
+                    />
+                  </>
+                ) : (
+                  <>
+                    <img
+                      style={{ height: "100%" }}
+                      src="https://www.nucleustechnologies.com/blog/wp-content/uploads/2020/12/video-is-not-available-1.jpg"
+                    />
+                  </>
+                )}
               </A.YoutubeBox>
             </A.InputWrap>
 
             <A.LikeBox>
               {" "}
-              <A.Label>좋아요</A.Label>
+              {/* <A.Label>좋아요</A.Label> */}
               <A.TextBox>
                 <LikeOutlined onClick={props.onClickLike} />
                 &nbsp;
                 {props.data?.fetchBoard?.likeCount}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </A.TextBox>
-              <A.Label>싫어요</A.Label>
+              {/* <A.Label>싫어요</A.Label> */}
               <A.TextBox>
                 <DislikeOutlined onClick={props.onClickDisLike} />
                 &nbsp;

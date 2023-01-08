@@ -95,7 +95,12 @@ export const TextBox = styled.div`
 export const YoutubeBox = styled.div`
   width: 26rem;
   height: 14rem;
-  background-color: #eee;
+  /* background-color: #eee; */
+`;
+
+export const VideoImage = styled.img`
+  height: 100%;
+  src: url("https://www.nucleustechnologies.com/blog/wp-content/uploads/2020/12/video-is-not-available-1.jpg");
 `;
 
 export const DateWrap = styled.div`
