@@ -24,7 +24,6 @@ export default function Mypage(props) {
   const onClickPoint = () => {
     setIsTrue((prev) => !prev);
   };
-
   return (
     <>
       <MypageUI
@@ -32,6 +31,10 @@ export default function Mypage(props) {
         fetchUserLoggedIn={props.fetchUserLoggedIn}
         isTrue={isTrue}
         onClickPoint={onClickPoint}
+        // input={input}
+        // onChangeInput={onChangeInput}
+        // lists={lists}
+        // onClickAddList={onClickAddList}
       />
     </>
   );

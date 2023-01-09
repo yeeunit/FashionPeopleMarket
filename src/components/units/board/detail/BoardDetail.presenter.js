@@ -80,20 +80,13 @@ export default function BoardDetailUI(props) {
               <A.Label>유튜브</A.Label>
               <A.YoutubeBox>
                 {props.data?.fetchBoard?.youtubeUrl ? (
-                  <>
                     <ReactPlayer
                       url={props.data?.fetchBoard?.youtubeUrl}
                       width="100%"
                       height="100%"
                     />
-                  </>
                 ) : (
-                  <>
-                    <img
-                      style={{ height: "100%" }}
-                      src="https://www.nucleustechnologies.com/blog/wp-content/uploads/2020/12/video-is-not-available-1.jpg"
-                    />
-                  </>
+                    <VideoImage / >
                 )}
               </A.YoutubeBox>
             </A.InputWrap>
