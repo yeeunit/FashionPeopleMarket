@@ -1,20 +1,5 @@
-import styled from "@emotion/styled";
 import { useState } from "react";
-
-const Wrapper = styled.div`
-  padding: 5rem;
-`;
-const Input = styled.input`
-  width: 12rem;
-  height: 2.2rem;
-`;
-
-const Button = styled.button`
-  width: 7.7rem;
-  height: 2.2rem;
-  margin: 1rem;
-  cursor: pointer;
-`;
+import * as A from "./styles";
 
 export default function PracticePage() {
   const [input, setInput] = useState("");
@@ -32,18 +17,21 @@ export default function PracticePage() {
 
   return (
     <>
-      <Wrapper>
+      <A.Wrapper>
         <h2>구매 희망 상품을 입력해보세요.</h2>
-        <Input type="text" value={input} onChange={onChangeInput} />
+        <A.Input type="text" value={input} onChange={onChangeInput} />
 
-        <Button onClick={onClickAddList}>추가하기</Button>
+        <A.Button onClick={onClickAddList}>추가하기</A.Button>
 
-        {lists.map((item, index) => (
-          <div key={index}>
-            <input type="checkbox" id={index} /> {item}
-          </div>
-        ))}
-      </Wrapper>
+        <A.CardWrap>
+          {lists.map((item, index) => (
+            <A.Card key={index}>
+              <A.Checkbox type="checkbox" id={index} /> {item}
+              <A.Close>x</A.Close>
+            </A.Card>
+          ))}
+        </A.CardWrap>
+      </A.Wrapper>
     </>
   );
 }
