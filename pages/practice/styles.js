@@ -1,4 +1,7 @@
+import * as A from "../../src/commons/styles/commonStyles";
+
 import styled from "@emotion/styled";
+const CCC = "#E87907";
 
 export const Wrapper = styled.div`
   padding: 5rem;
@@ -33,9 +36,12 @@ export const Card = styled.div`
   margin: 1rem;
   padding: 1rem;
   border: 1px solid black;
-  color: ${CCC};
-  /* color: rebeccapurple; */
+  background-color: ${A.RainbowColor};
+  /* background-color: ${A.BlueColor}; */
+  background-color: ${(props) => A.RainbowColor[props.key]};
 `;
+
+const AAA = "#000000";
 
 export const Checkbox = styled.input`
   width: 1rem;
@@ -55,8 +61,6 @@ export const Close = styled.div`
   border: 1px solid black;
   cursor: pointer;
 `;
-
-const CCC = "#E87907";
 
 const Colors = [
   "red",

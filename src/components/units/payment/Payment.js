@@ -52,8 +52,10 @@ export default function Payment(props) {
   };
 
   const onClickPayment = (data) => {
-    const IMP = window.IMP; // 생략 가능
-    IMP.init("imp49910675");
+    // const IMP = window.IMP;
+    const { IMP } = window;
+    console.log(IMP);
+    // IMP.init("imp49910675");
 
     IMP.request_pay(
       {

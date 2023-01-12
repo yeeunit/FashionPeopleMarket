@@ -20,7 +20,7 @@ export default function MarketDetailUI(props) {
           {props.data?.fetchUseditem.images?.[0] !== "" ? (
             <>
               <A.Image
-                src={`https://storage.googleapis.com/${props.data?.fetchUseditem.images?.[0]}`}
+                src={`https://storage.googleapis.com/${props.data?.fetchUseditem?.images?.[0]}`}
                 alt="이미지"
               />
             </>
@@ -42,11 +42,11 @@ export default function MarketDetailUI(props) {
           </A.HeaderRightTitle>
 
           <A.HeaderRightPrice>
-            {props.data?.fetchUseditem.price}
+            {props.data?.fetchUseditem?.price}
             <span>원</span>
           </A.HeaderRightPrice>
           <A.HeaderRightContents>
-            <div>{props.data?.fetchUseditem.remarks}</div> <br />
+            <div>{props.data?.fetchUseditem?.remarks}</div> <br />
             {/* <div className="tag"> {props.data?.fetchUseditem.tags}</div> */}
             {props.data?.fetchUseditem.tags?.map((el, index) => (
               <div key={uuidv4()} className="tag">
@@ -81,7 +81,7 @@ export default function MarketDetailUI(props) {
       <A.DetailBody>
         <A.BodyLeft>
           <h1>상품정보</h1>
-          {props.data?.fetchUseditem.images?.map((el, index) => (
+          {props.data?.fetchUseditem?.images?.map((el, index) => (
             <div key={uuidv4()}>
               {el !== "" ? (
                 <>
@@ -103,18 +103,18 @@ export default function MarketDetailUI(props) {
             <div className="title">
               <EnvironmentFilled />
               <span>거래지역 : </span>
-              <span>{props.data?.fetchUseditem.useditemAddress.address}</span>
+              <span>{props.data?.fetchUseditem?.useditemAddress?.address}</span>
               &nbsp;
               <span>
-                {props.data?.fetchUseditem.useditemAddress.addressDetail}
+                {props.data?.fetchUseditem?.useditemAddress?.addressDetail}
               </span>
               &nbsp;
-              <span>{props.data?.fetchUseditem.useditemAddress.zipcode}</span>
+              <span>{props.data?.fetchUseditem?.useditemAddress?.zipcode}</span>
               &nbsp;
             </div>
             <KaKaoMap
               data={props.data?.fetchUseditem}
-              address={props.data?.fetchUseditem.useditemAddress?.address}
+              address={props.data?.fetchUseditem?.useditemAddress?.address}
               width="90%"
               height="22rem"
             />

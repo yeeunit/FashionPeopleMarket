@@ -15,9 +15,12 @@ export async function getAccessToken() {
       { credentials: "include" }
     );
     const result = await graphQLClient.request(RESTORE_ACCESS_TOKEN);
-    const newAccessToken = result.restoreAccessToken.getAccessToken;
+    const newAccessToken = result.restoreAccessToken.accessToken;
+    // const newAccessToken = result.restoreAccessToken.getAccessToken;
+
     return newAccessToken;
   } catch (error) {
+    console.log("getAccessToken", error);
     if (error) console.log("error.message", error.message);
   }
 }
