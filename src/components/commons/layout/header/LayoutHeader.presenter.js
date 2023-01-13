@@ -23,9 +23,9 @@ export default function LayoutHeaderUI(props) {
   `;
 
   const onClickPaymant = () => {
-    const IMP = window.IMP;
+    // const IMP = window.IMP;
 
-    // const { IMP } = window;
+    const { IMP } = window;
 
     console.log(IMP);
     IMP?.init("imp49910675");
