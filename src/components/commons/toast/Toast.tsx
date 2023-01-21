@@ -4,7 +4,6 @@ import { EditorType } from "@toast-ui/editor";
 import { LegacyRef } from "react";
 import "@toast-ui/editor/dist/i18n/ko-kr";
 import "tui-color-picker/dist/tui-color-picker.css";
-import colorSyntax from "@toast-ui/editor-plugin-color-syntax";
 
 export default function ToastEditor(props: {
   defaultValue: string;
@@ -22,7 +21,7 @@ export default function ToastEditor(props: {
       useCommandShortcut={false}
       hideModeSwitch={true}
       ref={props.editorRef}
-      plugins={[colorSyntax]}
+      // plugins={[colorSyntax]}
     />
   );
 }

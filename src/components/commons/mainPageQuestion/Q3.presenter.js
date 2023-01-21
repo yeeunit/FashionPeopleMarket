@@ -8,13 +8,13 @@ export default function Q3Presenter(props) {
       isAnswer3={props.isAnswer3}
     >
       <S.QuestionContents3 isAnswer3={props.isAnswer3}>
-        이 사이트는 어떤 목적으로 제작된 것이지요?
+        포인트 충전했는데 환불은 어떻게 할 수 있나요?
         <ExpandMoreIcon fontSize="large" />
       </S.QuestionContents3>
       {props.isAnswer3 && (
         <S.AnswerContents>
-          개인 포트폴리오를 위해 만들어진 웹사이트입니다. <br />
-          즐겁게 둘러봐 주세요 ^^
+          포인트 충전은 임시 결제 테스트 기능입니다. <br />
+          자정이 지나면 자동 환불됩니다. ^^
         </S.AnswerContents>
       )}
     </S.QuestionBox3>
